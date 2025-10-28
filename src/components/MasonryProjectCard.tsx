@@ -13,6 +13,7 @@ import rebatr from '/videos/rebatr-short.mp4';
 import lazycommitVideo from '/videos/lazycommit-video.mp4';
 import gocache from '/videos/gocache.mp4';
 import quotick from '/videos/quotick.mp4'
+import doable from '/videos/doable.mp4';
 interface MasonryProjectCardProps {
   project: Project;
   className?: string;
@@ -37,6 +38,8 @@ const getVideoSource = (videoId: string) => {
       return gocache;
     case 'quotick':
       return quotick;
+    case 'doable':
+      return doable;
     default:
       return null;
   }
