@@ -25,7 +25,7 @@ export const projects: Project[] = [
     id: 'doable',
     title: "Doable",
     description: "A modern task management platform with AI-powered assistance.",
-    longDescription: "A modern task management platform with AI-powered assistance.",
+    longDescription: "Doable is a modern, AI-powered task management platform designed for teams who want to ship faster and work smarter. Built with Next.js 15, React 19, and TypeScript, Doable combines the power of AI assistance with intuitive project management tools.",
     liveLink: "https://doable-lyart.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/doable",
     video: 'doable',
