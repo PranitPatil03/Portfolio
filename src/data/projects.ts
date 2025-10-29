@@ -204,18 +204,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Razorpay API"
     ],
-  },
-  {
-    id: 'taskmaster',
-    title: "TaskMaster",
-    description: "A dynamic task management platform with Kanban board implementation and detailed list views.",
-    longDescription: "Combines the flexibility of Next.js with the reliability of MongoDB\n\nDelivers seamless task organization experience with real-time updates\n\nFeatures drag-and-drop functionality and customizable workflows\n\nWrapped in an elegant, responsive interface that prioritizes productivity and user experience",
-    liveLink: "https://task-management-dashboard-zeta.vercel.app/",
-    githubLink: "https://github.com/KartikLabhshetwar/task-management-dashboard",
-    image:'/images/taskmaster.png',
-    // tweetUrl: "https://x.com/code_kartik/status/1887125453359788069",
-    tags: ["Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-  },
+  }
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
