@@ -70,12 +70,12 @@ export default function RootLayout({
             <BackgroundMusic />
           </MusicProvider>
         </ThemeProvider>
-        <script
-          src="https://script.refix.ai/script.min.js"
-          type="text/javascript"
-          data-refix-token="c9a48825-4062-464a-941d-c958ddf21a96"
-          defer
-        ></script>
+       <script
+          src="https://cdn.databuddy.cc/databuddy.js"
+          data-client-id="2cYj0B5Uv0T4q70DhnoAc"
+          data-enable-batching="true"
+          async
+  ></script>
       </body>
     </html>
   );
