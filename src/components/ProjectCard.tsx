@@ -15,6 +15,7 @@ import lazycommitVideo from '/videos/lazycommit-video.mp4';
 import gocache from '/videos/gocache.mp4';
 import quotick from '/videos/quotick.mp4';
 import doable from '/videos/doable.mp4';
+import stage from '/videos/stage.mp4';
 
 
 interface ProjectCardProps {
@@ -43,6 +44,8 @@ const getVideoSource = (videoId: string) => {
       return quotick
     case 'doable':
       return doable
+    case 'stage':
+      return stage
     default:
       return null;
   }

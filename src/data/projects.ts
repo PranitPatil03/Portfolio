@@ -9,7 +9,7 @@ export const projects: Project[] = [
     liveLink: "https://mind-mentor-pearl.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/mind-mentor",
     video: 'mind-mentor',
-    image: '/images/mindmentorai.png',
+    image: '/images/mindmentorai.jpg',
     tweetUrl: "https://x.com/code_kartik/status/1887125453359788069",
     tags: [
       "Next.js",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     liveLink: "https://doable-lyart.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/doable",
     video: 'doable',
-    image: '/images/doable.png',
+    image: '/images/doable.jpg',
     tweetUrl: "https://x.com/code_kartik/status/1983166411192340957",
     tags: [
       "Next.js",
@@ -62,6 +62,26 @@ export const projects: Project[] = [
       "Groq AI",
       "OpenAI gpt-oss-120b",
       "Better Auth",
+    ],
+  },
+  {
+    id: 'stage',
+    title: "Stage",
+    description: "A modern web-based canvas editor for creating stunning visual designs. Upload images, add text overlays, customize backgrounds, and export high-quality graphics—all in your browser.",
+    longDescription: "Stage is a modern web-based canvas editor for creating stunning visual designs. Upload images, add text overlays, customize backgrounds, and export high-quality graphics—all in your browser.",
+    liveLink: "https://stagee.art/",
+    githubLink: "https://github.com/KartikLabhshetwar/stage",
+    video: 'stage',
+    image: '/images/stage.png',
+    tweetUrl: "https://x.com/code_kartik/status/1986085019325260062",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "Konva",
+      "shadcn/ui",
+      "React-Konva",
+      "Cloudinary"
     ],
   },
   {
@@ -88,7 +108,7 @@ export const projects: Project[] = [
     liveLink: "https://satya-check.vercel.app/",
     githubLink: "https://github.com/21prnv/SatyaCheck",
     video: "satya-check",
-    image: '/images/satyacheck.png',
+    image: '/images/satyacheck.jpg',
     tweetUrl: "https://x.com/code_kartik/status/1901635520838639710",
     tags: [
       "Next.js",
@@ -108,7 +128,7 @@ export const projects: Project[] = [
     liveLink: "https://fleet-hq.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/FleetHQ",
     video: "fleethq",
-    image: '/images/fleet-hq.png',
+    image: '/images/fleethq.jpg',
     tweetUrl: "",
     tags: [
       "React.js",
@@ -128,7 +148,7 @@ export const projects: Project[] = [
     liveLink: "https://rebatr.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/rebatr",
     video: "rebatr-short",
-    image: '/images/rebatr.png',
+    image: '/images/rebatr.jpg',
     tweetUrl: "",
     tags: [
       "Next.js",
@@ -168,7 +188,7 @@ export const projects: Project[] = [
     liveLink: "https://github.com/KartikLabhshetwar/Gocache",
     githubLink: "https://github.com/KartikLabhshetwar/Gocache",
     video: "gocache",
-    image: '/images/gocache.png',
+    image: '/images/gocache.jpg',
     tweetUrl: "",
     tags: [
       "Go",
@@ -213,7 +233,7 @@ export const projects: Project[] = [
     longDescription: "Built on the MERN stack with TypeScript for robust architecture\n\nFeatures secure user authentication and streamlined course management\n\nIntegrated payment processing through Razorpay for seamless transactions\n\nEmphasizes user experience with intuitive navigation and responsive design\n\nRobust content delivery makes online education accessible and engaging",
     liveLink: "https://learnx-frontend.onrender.com/",
     githubLink: "https://github.com/KartikLabhshetwar/LearnX",
-    image: '/images/learnx.png',
+    image: '/images/learnx.jpg',
     tweetUrl: "https://x.com/code_kartik/status/1832882108316176563",
     tags: [
       "MERN",
