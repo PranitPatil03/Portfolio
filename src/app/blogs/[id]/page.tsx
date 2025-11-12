@@ -19,19 +19,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   return {
     title: `${blog.title} | Kartik Labhshetwar`,
-    description: blog.description,
+    description: blog.description || blog.title,
     openGraph: {
       title: blog.title,
-      description: blog.description,
+      description: blog.description || blog.title,
       type: 'article',
       publishedTime: blog.date,
-      authors: [blog.author],
+      authors: blog.author ? [blog.author] : undefined,
       tags: blog.tags,
     },
     twitter: {
       card: 'summary_large_image',
       title: blog.title,
-      description: blog.description,
+      description: blog.description || blog.title,
     }
   }
 }
