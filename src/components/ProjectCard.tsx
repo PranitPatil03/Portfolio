@@ -16,6 +16,7 @@ import gocache from '/videos/gocache.mp4';
 import quotick from '/videos/quotick.mp4';
 import doable from '/videos/doable.mp4';
 import stage from '/videos/stage.mp4';
+import readmelingo from '/videos/readmelingo.mp4';
 
 
 interface ProjectCardProps {
@@ -46,6 +47,8 @@ const getVideoSource = (videoId: string) => {
       return doable
     case 'stage':
       return stage
+    case 'readmelingo':
+      return readmelingo
     default:
       return null;
   }

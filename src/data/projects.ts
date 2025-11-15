@@ -93,12 +93,31 @@ export const projects: Project[] = [
     githubLink: "https://github.com/KartikLabhshetwar/quotick",
     video: 'quotick',
     image: '/images/quotick.png',
-    tweetUrl: "",
+    tweetUrl: "https://x.com/code_kartik/status/1980270608974754172",
     tags: [
       "Vscode Extension",
       "Typescript",
       "Template Literal"
     ],
+  },
+  {
+    id: 'readmelingo',
+    title: "Readmelingo",
+    description: "Translate GitHub repository documentation into 40+ languages using Lingo.dev. Fast batch translation CLI tool for README, CONTRIBUTING, and docs.",
+    longDescription: "Translate GitHub repository documentation into 40+ languages using Lingo.dev. Fast batch translation CLI tool for README, CONTRIBUTING, and docs.",
+    liveLink: "https://read-me-lingo.vercel.app",
+    githubLink: "https://github.com/KartikLabhshetwar/ReadMeLingo",
+    video: 'readmelingo',
+    image: '/images/readmelingo.png',
+    tweetUrl: "https://x.com/code_kartik/status/1989714433455919529",
+    tags: [
+      "TypeScript",
+      "Inquirer",
+      "Lingo.dev",
+      "Lingo SDK",
+      "NPM package",
+      "CLI",
+    ]
   },
   {
     id: 'satya-check',
