@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -15,62 +15,121 @@ export const Tooltip = ({
   const [isVisible, setIsVisible] = useState(false);
   const [mouse, setMouse] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
   const [position, setPosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
   });
   const contentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const [bgColor, setBgColor] = useState<string>('rgb(255, 255, 255)');
 
   useEffect(() => {
-    if (isVisible && contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
+    const updateBgColor = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setBgColor(isDark ? 'rgb(23, 23, 23)' : 'rgb(255, 255, 255)');
+    };
+    
+    updateBgColor();
+    const observer = new MutationObserver(updateBgColor);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && contentRef.current && tooltipRef.current) {
+      const updateDimensions = () => {
+        if (contentRef.current && tooltipRef.current) {
+          setHeight(contentRef.current.scrollHeight);
+          setWidth(tooltipRef.current.offsetWidth || tooltipRef.current.scrollWidth);
+        }
+      };
+      
+      const ensureImageOpacity = () => {
+        if (!tooltipRef.current) return;
+        
+        const images = tooltipRef.current.querySelectorAll('img');
+        images.forEach((img) => {
+          img.style.setProperty('opacity', '1', 'important');
+          img.style.setProperty('display', 'block', 'important');
+          const parent = img.parentElement;
+          if (parent) {
+            parent.style.setProperty('opacity', '1', 'important');
+          }
+        });
+      };
+      
+      updateDimensions();
+      ensureImageOpacity();
+      
+      requestAnimationFrame(() => {
+        updateDimensions();
+        ensureImageOpacity();
+      });
+      
+      const observer = new MutationObserver(() => {
+        ensureImageOpacity();
+      });
+      
+      observer.observe(tooltipRef.current, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class'],
+      });
+      
+      return () => {
+        observer.disconnect();
+      };
     }
   }, [isVisible, content]);
 
-  const calculatePosition = (mouseX: number, mouseY: number) => {
-    if (!contentRef.current || !containerRef.current)
-      return { x: mouseX + 12, y: mouseY + 12 };
+  const calculatePosition = useCallback((mouseX: number, mouseY: number) => {
+    if (!containerRef.current) return { x: mouseX + 12, y: mouseY + 12 };
 
-    const tooltip = contentRef.current;
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
+    const padding = 12;
 
-    // Get tooltip dimensions
-    const tooltipWidth = 240; // min-w-[15rem] = 240px
-    const tooltipHeight = tooltip.scrollHeight;
+    const tooltipWidth = width || 240;
+    const tooltipHeight = height || 0;
 
-    // Calculate absolute position relative to viewport
-    const absoluteX = containerRect.left + mouseX;
-    const absoluteY = containerRect.top + mouseY;
+    const mouseAbsoluteX = containerRect.left + mouseX;
+    const mouseAbsoluteY = containerRect.top + mouseY;
 
-    let finalX = mouseX + 12;
-    let finalY = mouseY + 12;
+    let finalX: number;
+    let finalY: number;
 
-    // Check if tooltip goes beyond right edge
-    if (absoluteX + 12 + tooltipWidth > viewportWidth) {
-      finalX = mouseX - tooltipWidth - 12;
+    const spaceRight = viewportWidth - mouseAbsoluteX;
+    const spaceLeft = mouseAbsoluteX;
+    const spaceBottom = viewportHeight - mouseAbsoluteY;
+    const spaceTop = mouseAbsoluteY;
+
+    if (spaceRight >= tooltipWidth + padding) {
+      finalX = mouseX + padding;
+    } else if (spaceLeft >= tooltipWidth + padding) {
+      finalX = mouseX - tooltipWidth - padding;
+    } else {
+      finalX = Math.max(padding - containerRect.left, viewportWidth - tooltipWidth - containerRect.left - padding);
     }
 
-    // Check if tooltip goes beyond left edge
-    if (absoluteX + finalX < 0) {
-      finalX = -containerRect.left + 12;
-    }
-
-    // Check if tooltip goes beyond bottom edge
-    if (absoluteY + 12 + tooltipHeight > viewportHeight) {
-      finalY = mouseY - tooltipHeight - 12;
-    }
-
-    // Check if tooltip goes beyond top edge
-    if (absoluteY + finalY < 0) {
-      finalY = -containerRect.top + 12;
+    if (spaceBottom >= tooltipHeight + padding) {
+      finalY = mouseY + padding;
+    } else if (spaceTop >= tooltipHeight + padding) {
+      finalY = mouseY - tooltipHeight - padding;
+    } else {
+      finalY = Math.max(padding - containerRect.top, viewportHeight - tooltipHeight - containerRect.top - padding);
     }
 
     return { x: finalX, y: finalY };
-  };
+  }, [width, height]);
 
   const updateMousePosition = (mouseX: number, mouseY: number) => {
     setMouse({ x: mouseX, y: mouseY });
@@ -136,13 +195,12 @@ export const Tooltip = ({
     }
   };
 
-  // Update position when tooltip becomes visible or content changes
   useEffect(() => {
     if (isVisible && contentRef.current) {
       const newPosition = calculatePosition(mouse.x, mouse.y);
       setPosition(newPosition);
     }
-  }, [isVisible, height, mouse.x, mouse.y]);
+  }, [isVisible, height, width, mouse.x, mouse.y, calculatePosition]);
 
   return (
     <div
@@ -159,24 +217,30 @@ export const Tooltip = ({
       <AnimatePresence>
         {isVisible && (
           <motion.div
+            ref={tooltipRef}
             key={String(isVisible)}
             initial={{ height: 0, opacity: 1 }}
-            animate={{ height, opacity: 1 }}
+            animate={{ height: height || 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{
               type: "spring",
               stiffness: 200,
               damping: 20,
             }}
-            className="pointer-events-none absolute z-50 min-w-[15rem] max-w-[90vw] overflow-hidden rounded-md border border-transparent bg-white shadow-sm ring-1 shadow-black/5 ring-black/5 dark:bg-neutral-900 dark:shadow-white/10 dark:ring-white/5"
+            className="pointer-events-none absolute z-[9999] min-w-[15rem] max-w-[90vw] overflow-hidden rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
             style={{
               top: position.y,
               left: position.x,
+              opacity: 1,
+              backgroundColor: bgColor,
+              mixBlendMode: 'normal',
+              isolation: 'isolate',
             }}
           >
             <div
               ref={contentRef}
-              className=" text-sm text-neutral-600 md:p-4 dark:text-neutral-400 [&>img]:max-w-full [&>img]:h-auto"
+              className="text-sm text-neutral-600 p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[600px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
+              style={{ opacity: 1 }}
             >
               {content}
             </div>
