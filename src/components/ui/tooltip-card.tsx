@@ -227,7 +227,7 @@ export const Tooltip = ({
               stiffness: 300,
               damping: 25,
             }}
-            className="pointer-events-none absolute z-[9999] min-w-[15rem] max-w-[90vw] rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
+            className="pointer-events-none absolute z-[9999] max-w-[90vw] rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
             style={{
               top: position.y,
               left: position.x,
@@ -236,7 +236,7 @@ export const Tooltip = ({
           >
             <div
               ref={contentRef}
-              className="text-sm text-neutral-600 p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[600px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
+              className="text-sm text-neutral-600 p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[300px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
             >
               {content}
             </div>
