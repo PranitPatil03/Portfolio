@@ -218,29 +218,25 @@ export const Tooltip = ({
         {isVisible && (
           <motion.div
             ref={tooltipRef}
-            key={String(isVisible)}
-            initial={{ height: 0, opacity: 1 }}
-            animate={{ height: height || 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            key="tooltip"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             transition={{
               type: "spring",
-              stiffness: 200,
-              damping: 20,
+              stiffness: 300,
+              damping: 25,
             }}
-            className="pointer-events-none absolute z-[9999] min-w-[15rem] max-w-[90vw] overflow-hidden rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
+            className="pointer-events-none absolute z-[9999] min-w-[15rem] max-w-[90vw] rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
             style={{
               top: position.y,
               left: position.x,
-              opacity: 1,
               backgroundColor: bgColor,
-              mixBlendMode: 'normal',
-              isolation: 'isolate',
             }}
           >
             <div
               ref={contentRef}
               className="text-sm text-neutral-600 p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[600px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
-              style={{ opacity: 1 }}
             >
               {content}
             </div>
