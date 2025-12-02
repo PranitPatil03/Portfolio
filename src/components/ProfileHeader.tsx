@@ -23,7 +23,7 @@ export default function ProfileHeader({
     twitter: "https://x.com/code_kartik",
     github: "https://github.com/KartikLabhshetwar",
     linkedin: "https://www.linkedin.com/in/kartikcode/",
-    resume: "https://drive.google.com/file/d/1iePpSqo5l0cztVSghCf2PfKH7mFTCTzs/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1U8450r8Qsf9Xo1IcQhMdSrdzFY2__JXP/view?usp=sharing",
   }
 }: ProfileHeaderProps) {
 
