@@ -65,6 +65,27 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "mercurius",
+    title: "Mercurius",
+    description: "A privacy-first, anonymous chat app with self-destructing rooms.",
+    longDescription:
+      "Mercurius is a privacy-first, anonymous chat application built for short-lived, sensitive conversations. Chat rooms automatically expire after 10 minutes, leaving no message history behind. Designed with a serverless, real-time architecture, Mercurius supports live messaging, reactions, read receipts, typing indicators, and presence — without accounts, profiles, or persistent data. Built using Next.js, Elysia, and Upstash Realtime/Redis, it demonstrates how to design ephemeral systems with strong UX and minimal infrastructure.",
+    liveLink: "https://mercurius.kartikk.tech",
+    githubLink: "https://github.com/KartikLabhshetwar/Mercurius",
+    video: "mercurius",
+    image: "/images/mercurius.png",
+    tweetUrl: "https://x.com/code_kartik/status/1999773170841375196",
+    tags: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "Elysia",
+      "Bun",
+      "Upstash Redis",
+      "Upstash Realtime",
+    ],
+  },
+  {
     id: 'foliox',
     title: "FolioX",
     description: "Foliox is an AI-powered portfolio generator that automatically creates beautiful developer portfolios from GitHub profiles. It fetches your GitHub data, uses AI to generate professional summaries and highlights, and presents everything in a modern, responsive portfolio website.",

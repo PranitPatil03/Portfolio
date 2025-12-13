@@ -2,6 +2,12 @@ import { BlogPost } from '@/types/blog'
 
 export const blogs: BlogPost[] = [
   {
+    id: 'problem-solving',
+    title: 'How I Choose Problems, Solve Them, and End Up Getting Traction',
+    readTime: '4 min read',
+    externalUrl: 'https://medium.com/@code_kartik/how-i-choose-problems-solve-them-and-end-up-getting-traction-89f259eadd4b'
+  },
+  {
     id: 'ssh-server-guide',
     title: 'How to SSH Into Your Server (The Right Way) A Beginner-Friendly Guide with Pro Tips',
     readTime: '3 min read',

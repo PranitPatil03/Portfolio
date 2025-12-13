@@ -18,6 +18,7 @@ import doable from '/videos/doable.mp4';
 import stage from '/videos/stage.mp4';
 import readmelingo from '/videos/readmelingo.mp4';
 import foliox from '/videos/foliox.mp4';
+import mercurius from '/videos/mercurius.mp4';
 
 
 interface ProjectCardProps {
@@ -52,6 +53,8 @@ const getVideoSource = (videoId: string) => {
       return readmelingo
     case 'foliox':
       return foliox
+    case 'mercurius':
+      return mercurius
     default:
       return null;
   }
