@@ -25,7 +25,7 @@ export default function BlogsListClient({ blogs }: BlogsListClientProps) {
                 {/* Header - Minimal Typography */}
                 <div className="mb-16 sm:mb-20">
                   <FadeIn delay={0.1} duration={0.5}>
-                    <h1 className="text-2xl sm:text-3xl font-[family-name:var(--font-instrument-serif)] font-medium mb-4 text-neutral-900 dark:text-neutral-100 tracking-tight">
+                    <h1 className="text-2xl sm:text-3xl font-[family-name:var(--font-instrument-serif)] italic font-medium mb-4 text-neutral-900 dark:text-neutral-100 tracking-tight">
                       Blogs
                     </h1>
                   </FadeIn>

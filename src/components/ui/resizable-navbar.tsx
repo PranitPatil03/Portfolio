@@ -118,7 +118,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           <Link 
             href={item.link}
             onClick={onItemClick}
-            className={`text-sm sm:text-md lg:text-lg font-[family-name:var(--font-instrument-serif)] hover:opacity-80 hover:underline transition-opacity duration-200 ${
+            className={`text-sm sm:text-md lg:text-lg font-[family-name:var(--font-instrument-serif)] italic hover:opacity-80 hover:underline transition-opacity duration-200 ${
               isActive(item.link) ? 'opacity-100' : 'opacity-60'
             }`}
           >
@@ -210,7 +210,7 @@ export const NavbarLogo = () => {
     <div className="transform transition-transform duration-400 hover:scale-105 active:scale-95">
       <Link 
         href="/"
-        className="text-lg sm:text-xl font-[family-name:var(--font-instrument-serif)] font-medium hover:opacity-80 hover:underline transition-opacity duration-200"
+        className="text-lg sm:text-xl font-[family-name:var(--font-instrument-serif)] italic font-medium hover:opacity-80 hover:underline transition-opacity duration-200"
       >
         Kartik
       </Link>

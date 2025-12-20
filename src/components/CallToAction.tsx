@@ -20,7 +20,7 @@ export default function CallToAction({
 
   return (
     <div className="mt-4 sm:mt-6 pb-6 sm:pb-8 sm:flex sm:justify-between sm:items-center w-full flex-col">
-      <p className="text-neutral-600 dark:text-neutral-400 font-[family-name:var(--font-instrument-serif)] text-base sm:text-xl mb-3 sm:mb-3">{preText}</p>
+      <p className="text-neutral-600 dark:text-neutral-400 font-[family-name:var(--font-instrument-serif)] italic text-base sm:text-xl mb-3 sm:mb-3">{preText}</p>
       <div className="gradient bg-gradient-to-b from-zinc-800 to-zinc-700 dark:from-zinc-800 dark:to-zinc-700 rounded-lg p-[1px] relative overflow-hidden w-full sm:w-auto mt-3 sm:mt-0">
         <a 
           href={linkUrl} 

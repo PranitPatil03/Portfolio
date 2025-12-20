@@ -17,32 +17,31 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
         <ResizablePortfolioNavigation />
         <OnekoCat />
           
-          {/* Page Header */}
-          <div className="w-full relative bg-neutral-50/30 dark:bg-zinc-900/30 border-b border-neutral-200 dark:border-neutral-700 pt-20 sm:pt-24">
-            <div className="px-6 sm:px-8 md:px-16 lg:px-20 py-12 sm:py-16 md:py-20">
-              <div className="max-w-6xl mx-auto">
-                <FadeIn delay={0.1} duration={0.5}>
-                  <div>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-instrument-serif)] font-medium mb-6 sm:mb-8 text-center leading-tight">proof of work</h1>
-                  </div>
-                </FadeIn>
-                <FadeIn delay={0.2} duration={0.5}>
-                  <div>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl md:text-2xl text-center max-w-3xl mx-auto leading-relaxed">
+          {/* Page Content - Swiss Design Layout */}
+          <div className="w-full relative pt-16 sm:pt-16">
+            <div className="px-6 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20">
+              <div className="max-w-4xl mx-auto">
+                
+                {/* Header - Minimal Typography */}
+                <div className="mb-16 sm:mb-20">
+                  <FadeIn delay={0.1} duration={0.5}>
+                    <h1 className="text-2xl sm:text-3xl font-[family-name:var(--font-instrument-serif)] italic font-medium mb-4 text-neutral-900 dark:text-neutral-100 tracking-tight">
+                      proof of work
+                    </h1>
+                  </FadeIn>
+                  <FadeIn delay={0.2} duration={0.5}>
+                    <p className="text-lg text-neutral-500 dark:text-neutral-400 tracking-wide">
                       A showcase of my work and side projects.
                     </p>
-                  </div>
-                </FadeIn>
+                  </FadeIn>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Section Transition */}
-          <div className="w-full h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-neutral-50/30 dark:from-zinc-900/30 to-neutral-100 dark:to-zinc-900"></div>
-
-          {/* Masonry Grid */}
-          <div className="relative">
-            <MasonryGrid projects={projects} />
+            
+            {/* Projects Grid - Full Width */}
+            <div className="w-full">
+              <MasonryGrid projects={projects} />
+            </div>
           </div>
         </div>
   )

@@ -62,7 +62,7 @@ export default function ResizablePortfolioNavigation() {
                 <Link 
                   href={item.link}
                   onClick={handleItemClick}
-                  className="text-lg font-[family-name:var(--font-instrument-serif)] hover:opacity-80 hover:underline transition-opacity duration-200 py-1"
+                  className="text-lg font-[family-name:var(--font-instrument-serif)] italic hover:opacity-80 hover:underline transition-opacity duration-200 py-1"
                 >
                   {item.name}
                 </Link>

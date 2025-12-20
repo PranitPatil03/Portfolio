@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Geist as GeistSans } from "next/font/google";
+import { Instrument_Serif, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { ScrollToTop } from "@/components/ui/ScrollAnimations"
 
-// const inter = Inter_Tight({
-//   weight: '400',
-//   style: 'normal',
-//   subsets: ['latin']
-// })
-
-const geistSans = GeistSans({
-  weight: '400',
+const hkGrotesk = Hanken_Grotesk({
+  weight: ['400'],
   style: 'normal',
   subsets: ['latin'],
-  variable: '--font-geist-sans'
+  variable: '--font-hk-grotesk',
+  display: 'swap',
 })
 
 
@@ -53,7 +48,7 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="tMCNs2fgM6voEHBd3JsySffMFSiUCQDEFEF1iYI3-ZQ" />
       </head>
-      <body className={`${geistSans.className} ${instrumentSerif.variable}`} suppressHydrationWarning={true}>
+      <body className={`${hkGrotesk.className} ${instrumentSerif.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
