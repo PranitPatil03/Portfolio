@@ -98,8 +98,8 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
       <div 
         className={`rounded-xl border border-neutral-300 dark:border-[#2E2E2E] bg-white dark:bg-zinc-900 p-2 shadow-sm dark:shadow-none cursor-pointer h-full flex flex-col ${className}`}
       >
-        {/* Media Section - Fixed Height */}
-        <div className="relative overflow-hidden rounded-lg h-48 sm:h-56 flex-shrink-0">
+        {/* Media Section - Aspect Ratio */}
+        <div className="relative overflow-hidden rounded-lg aspect-video flex-shrink-0">
           <div className="relative w-full h-full overflow-hidden rounded-lg">
             {videoSource && isHovered ? (
               <div className="relative h-full w-full">

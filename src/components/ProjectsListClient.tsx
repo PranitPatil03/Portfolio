@@ -23,7 +23,7 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
               <div className="max-w-4xl mx-auto">
                 
                 {/* Header - Minimal Typography */}
-                <div className="mb-16 sm:mb-20">
+                <div className="mb-5 sm:mb-5">
                   <FadeIn delay={0.1} duration={0.5}>
                     <h1 className="text-2xl sm:text-3xl font-[family-name:var(--font-instrument-serif)] italic font-medium mb-4 text-neutral-900 dark:text-neutral-100 tracking-tight">
                       proof of work
