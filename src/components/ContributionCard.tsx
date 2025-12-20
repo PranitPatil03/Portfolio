@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from 'lucide-react'
 import { fallbackContributions } from '@/lib/github'
 
 interface Contribution {
@@ -85,6 +85,9 @@ export default function OpenSourceContributionsCard() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-2">
+                  {contribution.state === 'merged' && (
+                    <GitMerge className="w-4 h-4 text-purple-500 dark:text-purple-400" />
+                  )}
                   <h4 className="text-md text-neutral-800 dark:text-neutral-200 group-hover:text-[#006FEE] transition-colors duration-200">
                     {contribution.title}
                   </h4>

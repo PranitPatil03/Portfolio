@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ModeToggle } from '@/components/theme-toggle';
-import MusicControl from '@/components/MusicControl';
 import {
   Navbar,
   NavBody,
@@ -38,10 +37,7 @@ export default function ResizablePortfolioNavigation() {
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />
-        <div className="flex items-center gap-3">
-          <MusicControl />
-          <NavItems items={navItems} onItemClick={handleItemClick} />
-        </div>
+        <NavItems items={navItems} onItemClick={handleItemClick} />
       </NavBody>
 
       {/* Mobile Navigation */}
@@ -72,8 +68,7 @@ export default function ResizablePortfolioNavigation() {
                 </Link>
               </div>
             ))}
-            <div className="pt-4 mt-2 border-t border-neutral-200 dark:border-neutral-700 flex items-center justify-between">
-              <MusicControl />
+            <div className="pt-4 mt-2 border-t border-neutral-200 dark:border-neutral-700 flex items-center justify-end">
               <ModeToggle />
             </div>
           </div>
