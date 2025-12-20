@@ -13,12 +13,12 @@ interface ProjectsListClientProps {
 export default function ProjectsListClient({ projects }: ProjectsListClientProps) {
 
   return (
-      <div className="min-h-screen w-full bg-white dark:bg-black">
+      <div className="min-h-screen w-full bg-white dark:bg-zinc-900">
         <ResizablePortfolioNavigation />
         <OnekoCat />
           
           {/* Page Header */}
-          <div className="w-full relative bg-neutral-50/30 dark:bg-neutral-900/30 border-b border-neutral-200 dark:border-neutral-700 pt-20 sm:pt-24">
+          <div className="w-full relative bg-neutral-50/30 dark:bg-zinc-900/30 border-b border-neutral-200 dark:border-neutral-700 pt-20 sm:pt-24">
             <div className="px-6 sm:px-8 md:px-16 lg:px-20 py-12 sm:py-16 md:py-20">
               <div className="max-w-6xl mx-auto">
                 <FadeIn delay={0.1} duration={0.5}>
@@ -38,7 +38,7 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
           </div>
 
           {/* Section Transition */}
-          <div className="w-full h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-neutral-50/30 dark:from-neutral-900/30 to-neutral-100 dark:to-[#161616]"></div>
+          <div className="w-full h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-neutral-50/30 dark:from-zinc-900/30 to-neutral-100 dark:to-zinc-900"></div>
 
           {/* Masonry Grid */}
           <div className="relative">

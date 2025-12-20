@@ -35,7 +35,7 @@ export const MasonryGrid = ({ projects, className = "" }: MasonryGridProps) => {
   const { col1, col2, col3, mobileRemaining } = columnData;
 
   return (
-    <div className={`min-h-screen w-full bg-neutral-100 dark:bg-[#161616] p-3 sm:p-6 lg:p-8 xl:p-12 ${className}`}>
+    <div className={`min-h-screen w-full bg-neutral-100 dark:bg-zinc-900 p-3 sm:p-6 lg:p-8 xl:p-12 ${className}`}>
       <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {/* Column 1 */}
         <div className="flex flex-col gap-4 sm:gap-3">

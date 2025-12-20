@@ -118,12 +118,12 @@
 }
 
 .dark {
-  --background: hsl(0, 3%, 6.5%);
+  --background: #18181b;
   --foreground: oklch(0.985 0 0);
-  --loader-bg: hsl(0, 3%, 6.5%);
+  --loader-bg: #18181b;
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
-  --popover: hsl(0, 3%, 6.5%);
+  --popover: #18181b;
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.92 0.004 286.32);
   --primary-foreground: oklch(0.21 0.006 285.885);

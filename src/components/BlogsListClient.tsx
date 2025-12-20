@@ -13,7 +13,7 @@ interface BlogsListClientProps {
 export default function BlogsListClient({ blogs }: BlogsListClientProps) {
 
   return (
-      <div className="min-h-screen w-full bg-white dark:bg-black">
+      <div className="min-h-screen w-full bg-white dark:bg-zinc-900">
         <ResizablePortfolioNavigation />
         <OnekoCat />
           

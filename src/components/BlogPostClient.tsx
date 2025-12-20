@@ -15,7 +15,7 @@ interface BlogPostClientProps {
 export default function BlogPostClient({ blog }: BlogPostClientProps) {
 
   return (
-      <div className="min-h-screen w-full bg-white dark:bg-black">
+      <div className="min-h-screen w-full bg-white dark:bg-zinc-900">
         <ResizablePortfolioNavigation />
         <OnekoCat />
           

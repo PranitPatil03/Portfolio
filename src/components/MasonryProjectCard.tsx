@@ -96,7 +96,7 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
       onClick={playTapSound}
     >
       <div 
-        className={`rounded-xl border border-neutral-300 dark:border-[#2E2E2E] bg-white dark:bg-[#111111] p-2 shadow-sm dark:shadow-none cursor-pointer h-full flex flex-col ${className}`}
+        className={`rounded-xl border border-neutral-300 dark:border-[#2E2E2E] bg-white dark:bg-zinc-900 p-2 shadow-sm dark:shadow-none cursor-pointer h-full flex flex-col ${className}`}
       >
         {/* Media Section - Fixed Height */}
         <div className="relative overflow-hidden rounded-lg h-48 sm:h-56 flex-shrink-0">
@@ -142,7 +142,7 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
         
         {/* Action Button - Fixed at bottom */}
         <div className="mt-auto pt-2">
-          <div className="w-full rounded-lg bg-neutral-100 dark:bg-[#1C1C1C] border border-neutral-300 dark:border-[#2E2E2E] px-4 sm:px-5 py-3 sm:py-4 text-neutral-700 dark:text-[#a8a8a8] text-sm sm:text-base transition-colors duration-150 text-center hover:bg-neutral-200 dark:hover:bg-[#2E2E2E]">
+          <div className="w-full rounded-lg bg-neutral-100 dark:bg-zinc-900 border border-neutral-300 dark:border-[#2E2E2E] px-4 sm:px-5 py-3 sm:py-4 text-neutral-700 dark:text-[#a8a8a8] text-sm sm:text-base transition-colors duration-150 text-center hover:bg-neutral-200 dark:hover:bg-zinc-800">
             {project.liveLink ? "More Info →" : project.githubLink ? "More Info →" : "Read Article →"}
           </div>
         </div>
