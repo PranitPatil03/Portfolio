@@ -9,7 +9,7 @@ export const projects: Project[] = [
     liveLink: "https://mind-mentor-pearl.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/mind-mentor",
     video: 'mind-mentor',
-    image: '/images/mindmentorai.jpg',
+    image: '/images/mindmentorai.png',
     tweetUrl: "https://x.com/code_kartik/status/1887125453359788069",
     tags: [
       "Next.js",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     liveLink: "https://doable.kartikk.tech",
     githubLink: "https://github.com/KartikLabhshetwar/doable",
     video: 'doable',
-    image: '/images/doable.jpg',
+    image: '/images/doable.png',
     tweetUrl: "https://x.com/code_kartik/status/1983166411192340957",
     tags: [
       "Next.js",
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     liveLink: "https://satya-check.vercel.app/",
     githubLink: "https://github.com/21prnv/SatyaCheck",
     video: "satya-check",
-    image: '/images/satyacheck.jpg',
+    image: '/images/satyacheck.png',
     tweetUrl: "https://x.com/code_kartik/status/1901635520838639710",
     tags: [
       "Next.js",
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     liveLink: "https://fleet-hq.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/FleetHQ",
     video: "fleethq",
-    image: '/images/fleethq.jpg',
+    image: '/images/fleethq.png',
     tweetUrl: "",
     tags: [
       "React.js",
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     liveLink: "https://rebatr.vercel.app/",
     githubLink: "https://github.com/KartikLabhshetwar/rebatr",
     video: "rebatr-short",
-    image: '/images/rebatr.jpg',
+    image: '/images/rebatr.png',
     tweetUrl: "",
     tags: [
       "Next.js",
@@ -253,7 +253,7 @@ export const projects: Project[] = [
     liveLink: "https://github.com/KartikLabhshetwar/Gocache",
     githubLink: "https://github.com/KartikLabhshetwar/Gocache",
     video: "gocache",
-    image: '/images/gocache.jpg',
+    image: '/images/gocache.png',
     tweetUrl: "",
     tags: [
       "Go",
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     longDescription: "Built on the MERN stack with TypeScript for robust architecture\n\nFeatures secure user authentication and streamlined course management\n\nIntegrated payment processing through Razorpay for seamless transactions\n\nEmphasizes user experience with intuitive navigation and responsive design\n\nRobust content delivery makes online education accessible and engaging",
     liveLink: "https://learnx-frontend.onrender.com/",
     githubLink: "https://github.com/KartikLabhshetwar/LearnX",
-    image: '/images/learnx.jpg',
+    image: '/images/learnx.png',
     tweetUrl: "https://x.com/code_kartik/status/1832882108316176563",
     tags: [
       "MERN",
