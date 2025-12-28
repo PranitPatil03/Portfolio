@@ -58,6 +58,7 @@ export default function RootLayout({
           <div className="relative z-10">
             {children}
           </div>
+          <div className="fixed bottom-0 left-0 right-0 h-20 bg-linear-to-t from-white dark:from-zinc-900 to-transparent pointer-events-none z-10" />
           <ScrollToTop />
         </ThemeProvider>
        <script
