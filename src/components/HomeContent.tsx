@@ -87,7 +87,7 @@ export default function NewHeroSection() {
                {/* Experience Section */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
-                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4 font-[family-name:var(--font-instrument-serif)] italic">Professional Experience</h2>
+                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4 font-[family-name:var(--font-instrument-serif)]">Professional Experience</h2>
                   <div className="px-4">
                     <ExperienceContent />
                   </div>
@@ -102,7 +102,7 @@ export default function NewHeroSection() {
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)] italic">Proof of Work</h2>
+                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Proof of Work</h2>
                   </div>
                   <div className="px-4">
                     <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
@@ -131,7 +131,7 @@ export default function NewHeroSection() {
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)] italic ">Thoughts</h2>
+                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Thoughts</h2>
                   </div>
                   <div className="px-4">
                     <div className="space-y-0">
@@ -159,7 +159,7 @@ export default function NewHeroSection() {
               {/* GitHub Contributions */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 px-0 mt-4">
-                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] italic sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4 px-4">
+                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4 px-4">
                     GitHub Contributions <span className="opacity-20">●</span> @KartikLabhshetwar
                   </h2>
                   <div className="mb-4 sm:mb-6">
@@ -192,7 +192,7 @@ export default function NewHeroSection() {
               {/* Open Source Contributions Section */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 mt-4">
-                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] italic sm:text-xl opacity-20 mt-4 sm:mt-8 sm:ml-5 leading-relaxed -tracking-[0.01em] mb-4 px-4">
+                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-20 mt-4 sm:mt-8 sm:ml-5 leading-relaxed -tracking-[0.01em] mb-4 px-4">
                     Open Source Contributions <span className="opacity-20">●</span> {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
                   </h2>
                   <div className="px-4">

@@ -31,7 +31,7 @@ export default function Reachout({
     <div className="sm:px-12 px-4 pb-8">
       <div className="text-left w-full">
         <div className="mb-4 sm:mb-6">
-          <h2 className="font-[family-name:var(--font-instrument-serif)] italic text-lg sm:text-xl mb-2 opacity-20 mt-4 sm:mt-6">
+          <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl mb-2 opacity-20 mt-4 sm:mt-6">
             {title}
           </h2>
           <p className="opacity-20 text-md sm:text-lg mb-3 sm:mb-4">

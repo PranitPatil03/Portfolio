@@ -88,7 +88,7 @@ export default function TechStackMarquee({ className = "" }: TechStackMarqueePro
     <div className={`w-full ${className}`}>
       {/* Title - matching other component styles */}
       <div className="mb-4">
-        <h2 className="text-base font-[family-name:var(--font-instrument-serif)] italic sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 -tracking-[0.01em]">
+        <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 -tracking-[0.01em]">
           Stack I use
         </h2>
         <p className="text-sm sm:text-base dark:text-white/70 text-black/70 leading-relaxed">
