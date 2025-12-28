@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Video from "next-video";
 import { ProjectNavigation } from './ProjectNavigation';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import donezovideo from '/videos/donezo.mp4';
 import mindMentorVideo from '/videos/mind-mentor.mp4';
 import satyaCheckVideo from '/videos/satya-check.mp4';
@@ -92,34 +93,48 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
           <h1 className="text-xl sm:text-2xl md:text-4xl font-medium flex-1 min-w-0 wrap-break-word">{project.title}</h1>
           <div className="flex items-center gap-2 shrink-0">
             {project.liveLink && (
-              <Link 
-                href={project.liveLink} 
-                target="_blank" 
-                className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FiArrowUpRight className="size-4" />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link 
+                    href={project.liveLink} 
+                    target="_blank" 
+                    className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FiArrowUpRight className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  View live site
+                </TooltipContent>
+              </Tooltip>
             )}
             {project.githubLink && (
-              <Link 
-                href={project.githubLink} 
-                target="_blank" 
-                className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FaGithub className="size-4" />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FaGithub className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  View on GitHub
+                </TooltipContent>
+              </Tooltip>
             )}
           </div>
         </div>

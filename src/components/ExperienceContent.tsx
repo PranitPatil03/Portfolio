@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 
 interface ExperienceItem {
   company: string;
@@ -96,16 +97,23 @@ export default function ExperienceContent() {
                 </div>
                 
                 {exp.achievements && exp.achievements.length > 0 && (
-                  <button
-                    onClick={() => toggleExpanded(exp.company)}
-                    className="shrink-0 p-1.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-                    aria-expanded={isExpanded}
-                    aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
-                  >
-                    <ChevronDown 
-                      className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-                    />
-                  </button>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => toggleExpanded(exp.company)}
+                        className="shrink-0 p-1.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                        aria-expanded={isExpanded}
+                        aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
+                      >
+                        <ChevronDown 
+                          className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {isExpanded ? 'Collapse details' : 'Expand details'}
+                    </TooltipContent>
+                  </Tooltip>
                 )}
               </div>
             </div>

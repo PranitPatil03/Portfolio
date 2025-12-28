@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from 'lucide-react'
 import { fallbackContributions } from '@/lib/github'
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 
 interface Contribution {
   title: string
@@ -99,14 +100,21 @@ export default function OpenSourceContributionsCard() {
                 </p>
               </div>
               
-              <Link
-                href={contribution.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 p-2 rounded-lg bg-neutral-200 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-500 transition-all duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100"
-              >
-                <ArrowUpRight className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={contribution.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 p-2 rounded-lg bg-neutral-200 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-500 transition-all duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100"
+                  >
+                    <ArrowUpRight className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  View contribution
+                </TooltipContent>
+              </Tooltip>
             </div>
             
             {index < displayedContributions.length - 1 && (

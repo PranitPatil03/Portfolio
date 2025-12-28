@@ -3,6 +3,7 @@ import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
 import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 import * as React from 'react';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 
 interface ProfileHeaderProps {
   name?: string
@@ -55,97 +56,141 @@ export default function ProfileHeader({
         </div>
         <div className="flex justify-start gap-1 sm:gap-2 mt-3 sm:mt-0 px-0">
           {socialLinks.github && (
-            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-              <a 
-                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                href={socialLinks.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FaGithub className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-              </a>
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                  <a 
+                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                    href={socialLinks.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FaGithub className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                  </a>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                GitHub
+              </TooltipContent>
+            </Tooltip>
           )}
           {socialLinks.twitter && (
-            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-              <a 
-                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                href={socialLinks.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FaXTwitter className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-              </a>
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                  <a 
+                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                    href={socialLinks.twitter} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FaXTwitter className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                  </a>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                Twitter
+              </TooltipContent>
+            </Tooltip>
           )}
           {socialLinks.resume && (
-            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-              <a 
-                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                href={socialLinks.resume} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FaPaperclip className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-              </a>
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                  <a 
+                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                    href={socialLinks.resume} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FaPaperclip className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                  </a>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                Resume
+              </TooltipContent>
+            </Tooltip>
           )}
           {socialLinks.linkedin && (
-            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-              <a 
-                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                href={socialLinks.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                <FaLinkedin className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-              </a>
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                  <a 
+                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                    href={socialLinks.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    <FaLinkedin className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+                  </a>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                LinkedIn
+              </TooltipContent>
+            </Tooltip>
           )}
           {mounted && (
-            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-              <button
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
-                aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
-                }}
-              >
-                {theme === 'light' ? (
-                  <Moon className="size-[14px] -mt-px" aria-hidden="true" />
-                ) : (
-                  <Sun className="size-[14px] -mt-px" aria-hidden="true" />
-                )}
-              </button>
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+                  <button
+                    onClick={() => {
+                      const newTheme = theme === 'light' ? 'dark' : 'light'
+                      if (typeof document !== "undefined" && "startViewTransition" in document) {
+                        ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(() => {
+                          setTheme(newTheme)
+                        })
+                      } else {
+                        setTheme(newTheme)
+                      }
+                    }}
+                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
+                    aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                    style={{ 
+                      WebkitTapHighlightColor: 'transparent',
+                      WebkitTouchCallout: 'none',
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none'
+                    }}
+                  >
+                    {theme === 'light' ? (
+                      <Moon className="size-[14px] -mt-px" aria-hidden="true" />
+                    ) : (
+                      <Sun className="size-[14px] -mt-px" aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                {theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+              </TooltipContent>
+            </Tooltip>
           )}
         </div>
       </div>

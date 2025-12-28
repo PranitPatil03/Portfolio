@@ -10,7 +10,18 @@ export function ModeToggle() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
-  // Only render after mounting to avoid hydration mismatch
+  const handleThemeChange = React.useCallback(() => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    
+    if (typeof document !== "undefined" && "startViewTransition" in document) {
+      ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(() => {
+        setTheme(newTheme)
+      })
+    } else {
+      setTheme(newTheme)
+    }
+  }, [theme, setTheme])
+
   React.useEffect(() => {
     setMounted(true)
   }, [])
@@ -32,7 +43,7 @@ export function ModeToggle() {
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={handleThemeChange}
       className="w-10 h-10 rounded-full relative overflow-hidden"
     >
       <AnimatePresence mode="wait" initial={false}>
