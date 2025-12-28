@@ -315,3 +315,7 @@ export const projects: Project[] = [
 export const getProjectById = (id: string): Project | undefined => {
   return projects.find(project => project.id === id)
 }
+
+export const getAllProjects = (): Project[] => {
+  return projects
+}

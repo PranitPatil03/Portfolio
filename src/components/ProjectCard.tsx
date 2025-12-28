@@ -6,6 +6,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import Video from "next-video";
+import { ProjectNavigation } from './ProjectNavigation';
 import donezovideo from '/videos/donezo.mp4';
 import mindMentorVideo from '/videos/mind-mentor.mp4';
 import satyaCheckVideo from '/videos/satya-check.mp4';
@@ -24,6 +25,7 @@ import mercurius from '/videos/mercurius.mp4';
 interface ProjectCardProps {
   project: Project;
   isDetailed?: boolean;
+  allProjects?: Project[];
 }
 
 // Map video IDs to imported video assets
@@ -60,7 +62,7 @@ const getVideoSource = (videoId: string) => {
   }
 };
 
-export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) => {
+export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: ProjectCardProps) => {
 
   if (!isDetailed) {
     return (
@@ -215,6 +217,10 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
           </div>
         </div>
       </div>
+
+      {isDetailed && allProjects.length > 0 && (
+        <ProjectNavigation currentProject={project} allProjects={allProjects} />
+      )}
     </article>
   );
 };

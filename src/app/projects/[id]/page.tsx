@@ -1,4 +1,4 @@
-import { getProjectById } from '@/data/projects'
+import { getProjectById, getAllProjects } from '@/data/projects'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import ProjectDetailClient from '@/components/ProjectDetailClient'
@@ -37,10 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectPage({ params }: Props) {
   const { id } = await params
   const project = getProjectById(id)
+  const allProjects = getAllProjects()
   
   if (!project) {
     notFound()
   }
   
-  return <ProjectDetailClient project={project} />
+  return <ProjectDetailClient project={project} allProjects={allProjects} />
 }

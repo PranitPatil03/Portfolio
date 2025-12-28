@@ -9,10 +9,11 @@ import PageNavigation from '@/components/Navigation'
 import { Project } from '@/types/project'
 
 interface ProjectDetailClientProps {
-  project: Project
+  project: Project;
+  allProjects: Project[];
 }
 
-export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
+export default function ProjectDetailClient({ project, allProjects }: ProjectDetailClientProps) {
   return (
     <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
       <OnekoCat />
@@ -35,7 +36,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               <FadeInUp delay={0.4}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4">
-                    <ProjectCard project={project} isDetailed />
+                    <ProjectCard project={project} isDetailed allProjects={allProjects} />
                   </div>
                 </div>
               </FadeInUp>
