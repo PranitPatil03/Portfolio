@@ -88,13 +88,13 @@ export default function OpenSourceContributionsCard() {
                   {contribution.state === 'merged' && (
                     <GitMerge className="w-4 h-4 text-purple-500 dark:text-purple-400 transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100" />
                   )}
-                  <h4 className="text-[15px] leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/80 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300">
+                  <h4 className="text-[15px] leading-7 text-black/80 group-has-hover:text-black/40 group-has-hover:group-hover/item:text-black dark:text-white/80 dark:group-has-hover:text-white/40 dark:group-has-hover:group-hover/item:text-white font-medium transition-colors duration-300">
                     {contribution.title}
                   </h4>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400 transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">{contribution.date}</span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400 group-has-hover:text-neutral-400 dark:group-has-hover:text-neutral-500 group-has-hover:group-hover/item:text-neutral-500 dark:group-has-hover:group-hover/item:text-neutral-400 transition-colors duration-300">{contribution.date}</span>
                 </div>
                 
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 group-has-hover:text-neutral-400 dark:group-has-hover:text-neutral-500 group-has-hover:group-hover/item:text-neutral-600 dark:group-has-hover:group-hover/item:text-neutral-400 leading-relaxed transition-colors duration-300">
                   {contribution.description}
                 </p>
               </div>
