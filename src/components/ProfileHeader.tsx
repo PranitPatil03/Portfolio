@@ -1,5 +1,8 @@
 'use client';
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
+import { useTheme } from 'next-themes';
+import { Moon, Sun } from 'lucide-react';
+import * as React from 'react';
 
 interface ProfileHeaderProps {
   name?: string
@@ -26,6 +29,12 @@ export default function ProfileHeader({
     resume: "https://drive.google.com/file/d/1U8450r8Qsf9Xo1IcQhMdSrdzFY2__JXP/view?usp=sharing",
   }
 }: ProfileHeaderProps) {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="flex-col -mt-10">
@@ -44,70 +53,99 @@ export default function ProfileHeader({
             {age} • {title}
           </p>
         </div>
-        <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
+        <div className="flex justify-start gap-1 sm:gap-2 mt-3 sm:mt-0 px-0">
           {socialLinks.github && (
-            <a 
-              className="hover:opacity-80 touch-manipulation active:opacity-75" 
-              href={socialLinks.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ 
-                WebkitTapHighlightColor: 'transparent',
-                WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <FaGithub size={18} />
-            </a>
+            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+              <a 
+                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                href={socialLinks.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                <FaGithub className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+              </a>
+            </div>
           )}
           {socialLinks.twitter && (
-            <a 
-              className="hover:opacity-80 touch-manipulation active:opacity-75" 
-              href={socialLinks.twitter} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ 
-                WebkitTapHighlightColor: 'transparent',
-                WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <FaXTwitter size={18} />
-            </a>
+            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+              <a 
+                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                href={socialLinks.twitter} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                <FaXTwitter className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+              </a>
+            </div>
           )}
           {socialLinks.resume && (
-            <a 
-              className="hover:opacity-80 touch-manipulation active:opacity-75" 
-              href={socialLinks.resume} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ 
-                WebkitTapHighlightColor: 'transparent',
-                WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <FaPaperclip size={18} />
-            </a>
+            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+              <a 
+                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                href={socialLinks.resume} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                <FaPaperclip className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+              </a>
+            </div>
           )}
           {socialLinks.linkedin && (
-            <a 
-              className="hover:opacity-80 touch-manipulation active:opacity-75" 
-              href={socialLinks.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ 
-                WebkitTapHighlightColor: 'transparent',
-                WebkitTouchCallout: 'none',
-                WebkitUserSelect: 'none',
-                userSelect: 'none'
-              }}
-            >
-              <FaLinkedin size={18} />
-            </a>
+            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+              <a 
+                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
+                href={socialLinks.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                <FaLinkedin className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
+              </a>
+            </div>
+          )}
+          {mounted && (
+            <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
+              <button
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
+                aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                style={{ 
+                  WebkitTapHighlightColor: 'transparent',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none'
+                }}
+              >
+                {theme === 'light' ? (
+                  <Moon className="size-[14px] -mt-px" aria-hidden="true" />
+                ) : (
+                  <Sun className="size-[14px] -mt-px" aria-hidden="true" />
+                )}
+              </button>
+            </div>
           )}
         </div>
       </div>

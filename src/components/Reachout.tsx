@@ -39,7 +39,7 @@ export default function Reachout({
           </p>
         </div>
         
-        <div className="flex justify-center sm:justify-start space-x-6 sm:space-x-0 sm:grid sm:grid-cols-2 lg:flex lg:justify-start sm:gap-4 lg:gap-6 lg:space-x-0">
+        <div className="flex justify-center sm:justify-start gap-3 sm:gap-3">
           {socialLinks.github && (
             <Tooltip content={
                 <Image
@@ -52,7 +52,7 @@ export default function Reachout({
                 />
             }>
               <a 
-                className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-zinc-900 sm:bg-gray-50/50 sm:dark:bg-zinc-900/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent" 
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
                 href={socialLinks.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -63,10 +63,8 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <FaGithub size={20} className="sm:size-[18px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0 text-gray-700 dark:text-gray-200 sm:text-gray-600 sm:dark:text-gray-300" />
-                <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
-                  GitHub
-                </span>
+                <FaGithub className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">GitHub</span>
               </a>
             </Tooltip>
           )}
@@ -83,7 +81,7 @@ export default function Reachout({
                 />
             }>
               <a 
-                className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-zinc-900 sm:bg-gray-50/50 sm:dark:bg-zinc-900/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent" 
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
                 href={socialLinks.twitter} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -94,10 +92,8 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <FaXTwitter size={20} className="sm:size-[18px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0 text-gray-700 dark:text-gray-200 sm:text-gray-600 sm:dark:text-gray-300" />
-                <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
-                  Twitter
-                </span>
+                <FaXTwitter className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Twitter</span>
               </a>
             </Tooltip>
           )}
@@ -114,7 +110,7 @@ export default function Reachout({
                 />
             }>
               <a 
-                className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-zinc-900 sm:bg-gray-50/50 sm:dark:bg-zinc-900/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent" 
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
                 href={socialLinks.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -125,10 +121,8 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <FaLinkedin size={20} className="sm:size-[18px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0 text-gray-700 dark:text-gray-200 sm:text-gray-600 sm:dark:text-gray-300" />
-                <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
-                  LinkedIn
-                </span>
+                <FaLinkedin className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">LinkedIn</span>
               </a>
             </Tooltip>
           )}
@@ -136,7 +130,7 @@ export default function Reachout({
           {socialLinks.mail && (
             <Tooltip content="kartik.labhshetwar@gmail.com">
               <a 
-                className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-zinc-900 sm:bg-gray-50/50 sm:dark:bg-zinc-900/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent" 
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
                 href={socialLinks.mail} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -147,10 +141,8 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <IoMdMail size={20} className="sm:size-[18px] group-hover:scale-110 transition-transform duration-200 flex-shrink-0 text-gray-700 dark:text-gray-200 sm:text-gray-600 sm:dark:text-gray-300" />
-                <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
-                  Mail
-                </span>
+                <IoMdMail className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Mail</span>
               </a>
             </Tooltip>
           )}
@@ -167,7 +159,7 @@ export default function Reachout({
                 />
             }>
               <a 
-                className="flex items-center justify-center sm:justify-start space-x-0 sm:space-x-3 hover:opacity-80 transition-all duration-200 group p-3 sm:px-3 sm:py-3 lg:p-0 rounded-full sm:rounded-lg bg-gray-100/80 dark:bg-[hsl(0,3%,6.5%)] sm:bg-gray-50/50 sm:dark:bg-gray-800/30 lg:bg-transparent lg:dark:bg-transparent border border-gray-200/60 dark:border-gray-700/60 sm:border-gray-200/50 sm:dark:border-gray-700/50 lg:border-none hover:bg-gray-200/80 dark:hover:bg-gray-700/70 sm:hover:bg-gray-100/50 sm:dark:hover:bg-gray-700/40 lg:hover:bg-transparent lg:dark:hover:bg-transparent flex-shrink-0 touch-manipulation" 
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
                 href={socialLinks.resume} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -178,10 +170,8 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <FaPaperclip size={20} className="group-hover:scale-110 transition-transform duration-200 shrink-0 text-zinc-700 dark:text-white sm:text-zinc-600 sm:dark:text-gray-300" />
-                <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
-                  Resume
-                </span>
+                <FaPaperclip className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
+                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Resume</span>
               </a>
             </Tooltip>
           )}
