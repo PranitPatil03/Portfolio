@@ -82,7 +82,7 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
   }
 
   return (
-    <article className="w-full max-w-none px-2 sm:px-0">
+    <article className="w-full max-w-none px-4 sm:px-0">
       <header className="mb-6 sm:mb-8">
         <div className="flex items-start justify-between mb-4 sm:mb-6 gap-3">
           <h1 className="text-xl sm:text-2xl md:text-4xl font-medium flex-1 min-w-0 break-words">{project.title}</h1>
@@ -144,12 +144,13 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
             />
           </div>
         ) : project.image && (
-          <div className="w-full aspect-video relative rounded-lg overflow-hidden">
+          <div className="w-full relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5">
             <Image 
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover"
+              width={1200}
+              height={900}
+              className="w-full h-auto object-contain"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1200px) 70vw, 60vw"
               quality={95}
               priority

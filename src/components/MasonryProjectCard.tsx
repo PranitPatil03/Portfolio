@@ -18,12 +18,12 @@ import stage from '/videos/stage.mp4';
 import readmelingo from '/videos/readmelingo.mp4';
 import foliox from '/videos/foliox.mp4';
 import mercurius from '/videos/mercurius.mp4';
+
 interface MasonryProjectCardProps {
   project: Project;
   className?: string;
 }
 
-// Map video IDs to imported video assets
 const getVideoSource = (videoId: string) => {
   switch (videoId) {
     case 'donezo':
@@ -61,30 +61,10 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
   const [isHovered, setIsHovered] = useState(false);
   const videoSource = project.video ? getVideoSource(project.video) : null;
 
-  const playTapSound = () => {
-    // Create a simple tap/click sound using Web Audio API
-    const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-    const audioContext = new AudioContextClass();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.frequency.value = 800; // Higher pitch for a crisp click
-    oscillator.type = 'sine';
-    
-    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-    
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.1);
-  };
-
   return (
     <Link 
       href={`/projects/${project.id}`} 
-      className="block h-full touch-manipulation active:opacity-75" 
+      className="group block w-full touch-manipulation"
       style={{ 
         WebkitTapHighlightColor: 'transparent',
         WebkitTouchCallout: 'none',
@@ -93,58 +73,44 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={playTapSound}
     >
       <div 
-        className={`rounded-xl border border-neutral-300 dark:border-[#2E2E2E] bg-white dark:bg-zinc-900 p-2 shadow-sm dark:shadow-none cursor-pointer h-full flex flex-col ${className}`}
+        className={`flex flex-col gap-3 w-full p-1 bg-white dark:bg-white/10 border border-black/10 dark:border-white/5 rounded-[10px] group-hover:border-black/20 dark:group-hover:border-white/10 transition-colors ${className}`}
       >
-        {/* Media Section - Aspect Ratio */}
-        <div className="relative overflow-hidden rounded-lg aspect-video flex-shrink-0">
-          <div className="relative w-full h-full overflow-hidden rounded-lg">
-            {videoSource && isHovered ? (
-              <div className="relative h-full w-full">
-                <Video
-                  key={project.id}
-                  src={videoSource}
-                  poster={project.image}
-                  className="w-full h-full rounded-sm object-cover"
-                  playsInline
-                  autoPlay
-                  muted
-                  loop
-                  controls={false}
-                />
-              </div>
-            ) : project.image ? (
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={472}
-                height={267}
-                className="w-full h-full rounded-lg object-cover"
-                style={{ color: 'transparent' }}
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                quality={75}
-                priority={true}
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-600/20 rounded-lg" />
-            )}
-          </div>
-          
-          {/* Title Overlay */}
-          <div className="absolute bottom-0 w-full p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-            <h3 className="font-normal text-white text-sm sm:text-base m-0 line-clamp-1 break-words">
-              {project.title}
-            </h3>
-          </div>
+        <div className="relative overflow-hidden rounded-md w-full aspect-[4/3] bg-black/10 dark:bg-white/10 border border-black/5 dark:border-white/5">
+          {videoSource && isHovered ? (
+            <Video
+              key={project.id}
+              src={videoSource}
+              poster={project.image}
+              className="w-full h-full rounded-md object-cover"
+              playsInline
+              autoPlay
+              muted
+              loop
+              controls={false}
+            />
+          ) : project.image ? (
+            <Image
+              src={project.image}
+              alt={`${project.title} project cover`}
+              width={1200}
+              height={900}
+              className="rounded-md w-full h-full object-cover"
+              style={{ color: 'transparent' }}
+              sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
+              quality={75}
+              priority
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-600/20 rounded-md" />
+          )}
         </div>
         
-        {/* Action Button - Fixed at bottom */}
-        <div className="mt-auto pt-2">
-          <div className="w-full rounded-lg bg-neutral-100 dark:bg-zinc-900 border border-neutral-300 dark:border-[#2E2E2E] px-4 sm:px-5 py-3 sm:py-4 text-neutral-700 dark:text-[#a8a8a8] text-sm sm:text-base transition-colors duration-150 text-center hover:bg-neutral-200 dark:hover:bg-zinc-800">
-            {project.liveLink ? "More Info →" : project.githubLink ? "More Info →" : "Read Article →"}
-          </div>
+        <div className="w-full px-2 pb-4">
+          <span className="text-[15px] leading-6 text-black/80 dark:text-white/80 font-medium">
+            {project.title}
+          </span>
         </div>
       </div>
     </Link>

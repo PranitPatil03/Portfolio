@@ -14,6 +14,10 @@ import ContributionsDisplay from './ContributionsDisplay'
 import OpenSourceContributionsCard from './ContributionCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
+import { projects } from '@/data/projects'
+import { MasonryProjectCard } from './MasonryProjectCard'
+import { blogs } from '@/data/blogs'
+import { BlogCard } from './BlogCard'
 
 export default function NewHeroSection() {
   return (
@@ -83,7 +87,7 @@ export default function NewHeroSection() {
                {/* Experience Section */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
-                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4">Professional Experience</h2>
+                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4 font-[family-name:var(--font-instrument-serif)] italic">Professional Experience</h2>
                   <div className="px-4">
                     <ExperienceContent />
                   </div>
@@ -94,28 +98,59 @@ export default function NewHeroSection() {
                   <SectionBorder className="mt-4" />
                 </Reveal>
               
-                 {/* Technical Contributions */}
+                 {/* Proof of Work */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
-                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4">Technical Contributions</h2>
-                  <div className="px-4 space-y-3 sm:space-y-4 dark:text-white/70 text-black/70 pb-4 sm:pb-6">
-                    <ContentParagraph className="text-sm sm:text-base">
-                      <span className="font-medium dark:text-white text-black">At Turbo ML,</span> I spent 3 months building some pretty cool stuff. Think Redis Sorted Sets handling time-based tasks under 24-hour constraints, WhatsApp Business API integrations with custom commands, and secure MCP protocols using hash-based user identification. The kind of work that keeps you up at night because it&apos;s actually interesting.
-                    </ContentParagraph>
-                    <ContentParagraph className="text-sm sm:text-base">
-                      <span className="font-medium dark:text-white text-black">Here&apos;s where it gets interesting </span> I reverse engineered Blinkit and Swiggy APIs to understand their data structures and endpoints, then created an AI agent that could intelligently route food delivery and grocery orders. Not your typical API integration tutorial this was about understanding how these platforms really work under the hood and building something smarter on top of it.
-                    </ContentParagraph>
-                    <ContentParagraph className="text-sm sm:text-base">
-                      <span className="font-medium dark:text-white text-black">
-                        <Link href="https://github.com/KartikLabhshetwar" target='_blank' className="text-[#006FEE] hover:underline">0→1</Link> product development
-                      </span>
-                      <span> specialist for startups and personal projects. Faster iterations, clearer outcomes.</span>
-                    </ContentParagraph>
+                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
+                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)] italic">Proof of Work</h2>
+                  </div>
+                  <div className="px-4">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
+                      {projects.slice(0, 6).map((project) => (
+                        <MasonryProjectCard key={project.id} project={project} />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link 
+                      href="/projects"
+                      className="text-sm sm:text-base text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      View All
+                      <span>→</span>
+                    </Link>
                   </div>
                 </div>
               </Reveal>
 
+              <Reveal delay={0.05}>
+                <SectionBorder className="mt-0 pt-0" />
+              </Reveal>
 
+              {/* Thoughts Section */}
+              <Reveal delay={0.1}>
+                <div className="sm:px-12 py-2">
+                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
+                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)] italic ">Thoughts</h2>
+                  </div>
+                  <div className="px-4">
+                    <div className="space-y-0">
+                      {blogs.slice(0, 3).map((blog) => (
+                        <BlogCard key={blog.id} blog={blog} />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link 
+                      href="/blogs"
+                      className="text-sm sm:text-base text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      View All
+                      <span>→</span>
+                    </Link>
+                  </div>
+                </div>
+              </Reveal>
               
               <Reveal delay={0.05}>
                 <SectionBorder className="mt-0 pt-0" />
@@ -124,7 +159,7 @@ export default function NewHeroSection() {
               {/* GitHub Contributions */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 px-0 mt-4">
-                  <h2 className="text-base sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4 px-4">
+                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] italic sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4 px-4">
                     GitHub Contributions <span className="opacity-20">●</span> @KartikLabhshetwar
                   </h2>
                   <div className="mb-4 sm:mb-6">
@@ -157,7 +192,7 @@ export default function NewHeroSection() {
               {/* Open Source Contributions Section */}
               <Reveal delay={0.1}>
                 <div className="sm:px-12 mt-4">
-                  <h2 className="text-base sm:text-xl opacity-20 mt-4 sm:mt-8 sm:ml-5 leading-relaxed -tracking-[0.01em] mb-4 px-4">
+                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] italic sm:text-xl opacity-20 mt-4 sm:mt-8 sm:ml-5 leading-relaxed -tracking-[0.01em] mb-4 px-4">
                     Open Source Contributions <span className="opacity-20">●</span> {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
                   </h2>
                   <div className="px-4">

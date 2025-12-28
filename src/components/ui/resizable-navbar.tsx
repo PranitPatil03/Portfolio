@@ -87,8 +87,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <div
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent transition-all duration-400 ease-out",
-        visible && "bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-lg transform translate-y-5 w-[min(40%,800px)]",
+        "relative z-[60] mx-auto hidden w-full max-w-4xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent transition-all duration-400 ease-out",
+        visible && "bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-lg transform translate-y-5 w-[min(30%,500px)]",
         className,
       )}
     >

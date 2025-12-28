@@ -13,7 +13,7 @@ export const BlogCard: FC<BlogCardProps> = ({ blog }) => {
         
         {/* Title - Takes up most of the grid */}
         <div className="col-span-12 lg:col-span-8">
-          <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-100 leading-tight mb-2 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+          <h2 className="text-md font-medium text-neutral-900 dark:text-neutral-100 leading-tight mb-2 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
             {blog.title}
           </h2>
         </div>
