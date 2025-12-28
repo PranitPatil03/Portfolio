@@ -73,28 +73,28 @@ export default function OpenSourceContributionsCard() {
           ))}
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-4 group">
           {displayedContributions.map((contribution, index) => (
           <motion.div
             key={contribution.title}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="group"
+            className="group/item transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-2">
                   {contribution.state === 'merged' && (
-                    <GitMerge className="w-4 h-4 text-purple-500 dark:text-purple-400" />
+                    <GitMerge className="w-4 h-4 text-purple-500 dark:text-purple-400 transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100" />
                   )}
-                  <h4 className="text-md text-neutral-800 dark:text-neutral-200 group-hover:text-[#006FEE] transition-colors duration-200">
+                  <h4 className="text-[15px] leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/80 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300">
                     {contribution.title}
                   </h4>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400">{contribution.date}</span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400 transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">{contribution.date}</span>
                 </div>
                 
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100">
                   {contribution.description}
                 </p>
               </div>
@@ -103,14 +103,14 @@ export default function OpenSourceContributionsCard() {
                 href={contribution.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 p-2 rounded-lg bg-neutral-200 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-500 hover:opacity-70 transition-all duration-200"
+                className="shrink-0 p-2 rounded-lg bg-neutral-200 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-500 transition-all duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100"
               >
                 <ArrowUpRight className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
               </Link>
             </div>
             
             {index < displayedContributions.length - 1 && (
-              <div className="mt-4 border-b border-neutral-300 dark:border-[#2E2E2E]" />
+              <div className="mt-4 border-b border-neutral-300 dark:border-[#2E2E2E] transition-opacity duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100" />
             )}
           </motion.div>
           ))}

@@ -178,7 +178,7 @@ export default function Reachout({
                   userSelect: 'none'
                 }}
               >
-                <FaPaperclip size={24} className="group-hover:scale-110 transition-transform duration-200 flex-shrink-0 text-gray-700 dark:text-gray-200 sm:text-gray-600 sm:dark:text-gray-300" />
+                <FaPaperclip size={20} className="group-hover:scale-110 transition-transform duration-200 shrink-0 text-zinc-700 dark:text-white sm:text-zinc-600 sm:dark:text-gray-300" />
                 <span className="hidden sm:inline text-sm font-medium dark:text-white/80 text-black/80 group-hover:text-[#006FEE] transition-colors duration-200">
                   Resume
                 </span>

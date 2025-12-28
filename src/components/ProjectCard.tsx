@@ -66,7 +66,7 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
     return (
       <Link 
         href={`/projects/${project.id}`}
-        className="block touch-manipulation active:opacity-75"
+        className="group block touch-manipulation active:opacity-75"
         style={{ 
           WebkitTapHighlightColor: 'transparent',
           WebkitTouchCallout: 'none',
@@ -74,8 +74,10 @@ export const ProjectCard = ({ project, isDetailed = false }: ProjectCardProps) =
           userSelect: 'none'
         }}
       >
-        <div className="hover:underline py-2 text-base sm:text-lg md:text-xl pb-4 sm:pb-5 border-b border-neutral-600 dark:border-neutral-500">
-          {project.title}
+        <div className="py-2 text-base sm:text-lg md:text-xl pb-4 sm:pb-5 border-b border-neutral-600 dark:border-neutral-500 transition-all duration-300 group-hover:border-neutral-400 dark:group-hover:border-neutral-400 group-hover:pl-2">
+          <span className="inline-block transition-all duration-300 group-hover:translate-x-1 group-hover:text-neutral-700 dark:group-hover:text-neutral-300">
+            {project.title}
+          </span>
         </div>
       </Link>
     );

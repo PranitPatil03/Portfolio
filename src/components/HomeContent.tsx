@@ -105,7 +105,7 @@ export default function NewHeroSection() {
                     <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Proof of Work</h2>
                   </div>
                   <div className="px-4">
-                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
                       {projects.slice(0, 6).map((project) => (
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
@@ -114,7 +114,7 @@ export default function NewHeroSection() {
                   <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
                     <Link 
                       href="/projects"
-                      className="text-sm sm:text-base text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
                     >
                       View All
                       <span>→</span>
@@ -134,7 +134,7 @@ export default function NewHeroSection() {
                     <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Thoughts</h2>
                   </div>
                   <div className="px-4">
-                    <div className="space-y-0">
+                    <div className="space-y-0 group">
                       {blogs.slice(0, 3).map((blog) => (
                         <BlogCard key={blog.id} blog={blog} />
                       ))}
@@ -143,7 +143,7 @@ export default function NewHeroSection() {
                   <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
                     <Link 
                       href="/blogs"
-                      className="text-sm sm:text-base text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
                     >
                       View All
                       <span>→</span>

@@ -32,7 +32,7 @@ export const MasonryGrid = ({ projects, className = "" }: MasonryGridProps) => {
   return (
     <div className={`w-full ${className}`}>
       <div className="sm:py-6 lg:py-8">
-        <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
           {/* Column 1 */}
           <div className="flex flex-col gap-4 sm:gap-3">
             {col1.map((project) => (
@@ -53,7 +53,7 @@ export const MasonryGrid = ({ projects, className = "" }: MasonryGridProps) => {
         </div>
         
         {/* Mobile: Show remaining projects in single column */}
-        <div className="sm:hidden flex flex-col gap-4 mt-4">
+        <div className="sm:hidden flex flex-col gap-4 mt-4 group">
           {mobileRemaining.map((project) => (
             <div key={project.id}>
               <MasonryProjectCard project={project} />

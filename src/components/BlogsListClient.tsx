@@ -39,7 +39,7 @@ export default function BlogsListClient({ blogs }: BlogsListClientProps) {
               <div className="sm:px-12 py-2">
                 <div className="px-4">
                   {blogs.length > 0 ? (
-                    <div className="space-y-0">
+                    <div className="space-y-0 group">
                       {blogs.map((blog, index) => (
                         <FadeIn key={blog.id} delay={0.3 + index * 0.05}>
                           <BlogCard blog={blog} />
