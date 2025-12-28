@@ -21,12 +21,12 @@ export default function CallToAction({
   return (
     <div className="mt-4 sm:mt-6 pb-6 sm:pb-8 sm:flex sm:justify-between sm:items-center w-full flex-col">
       <p className="text-neutral-600 dark:text-neutral-400 font-[family-name:var(--font-instrument-serif)] italic text-base sm:text-xl mb-3 sm:mb-3">{preText}</p>
-      <div className="gradient bg-gradient-to-b from-zinc-800 to-zinc-700 dark:from-zinc-800 dark:to-zinc-700 rounded-lg p-[1px] relative overflow-hidden w-full sm:w-auto mt-3 sm:mt-0">
+      <div className="gradient bg-linear-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 rounded-lg p-[1px] relative overflow-hidden w-full sm:w-auto mt-3 sm:mt-0">
         <a 
           href={linkUrl} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="gradient h-full bg-zinc-900 dark:bg-zinc-900 rounded-lg text-white text-sm sm:text-md px-4 sm:px-6 py-2.5 sm:py-2 w-full flex items-center justify-center transition-all group relative overflow-hidden touch-manipulation active:opacity-75"
+          className="gradient h-full bg-zinc-100 dark:bg-zinc-900 rounded-lg text-zinc-900 dark:text-white text-sm sm:text-md px-4 sm:px-6 py-2.5 sm:py-2 w-full flex items-center justify-center transition-all group relative overflow-hidden touch-manipulation active:opacity-75"
           style={{ 
             '--x': '-90.45457%',
             '--spread': '90deg',
@@ -40,9 +40,18 @@ export default function CallToAction({
             userSelect: 'none'
           } as React.CSSProperties}
         >
-          {/* Shimmer Effect Layer */}
+          {/* Shimmer Effect Layer - Light Mode */}
           <div 
-            className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+            className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-500 dark:hidden z-0"
+            style={{
+              background: 'linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%)',
+              backgroundSize: '200% 100%',
+              animation: 'shimmer 3s ease-in-out infinite',
+            }}
+          />
+          {/* Shimmer Effect Layer - Dark Mode */}
+          <div 
+            className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500 hidden dark:block z-0"
             style={{
               background: 'linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
               backgroundSize: '200% 100%',
@@ -51,7 +60,7 @@ export default function CallToAction({
           />
 
           <div className="flex items-center gap-2 group-hover:gap-6 sm:group-hover:gap-12 transition-all duration-300 relative z-20">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden flex-shrink-0">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden shrink-0">
               <Image 
                 alt={profileAlt} 
                 width={26} 
@@ -77,7 +86,7 @@ export default function CallToAction({
                 <path d="M5 12h14"></path>
                 <path d="M12 5v14"></path>
               </svg>
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 flex items-center justify-center text-[8px] sm:text-[10px]">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-zinc-900/10 dark:bg-white/10 flex items-center justify-center text-[8px] sm:text-[10px]">
                 You
               </div>
             </div>
