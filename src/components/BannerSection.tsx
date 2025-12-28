@@ -8,8 +8,8 @@ interface BannerSectionProps {
 }
 
 export default function BannerSection({ 
-  quote = "Build • Ship • Learn • Repeat",
-  bannerImage = "/mountain.jpg"
+  quote = "You make your own luck if you stay at it long enough.",
+  bannerImage = "/banner.jpg"
 }: BannerSectionProps) {
   return (
     <div className="w-full mb-2 relative">
