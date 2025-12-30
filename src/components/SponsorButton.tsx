@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Heart, ArrowUpRight } from 'lucide-react'
+import { Heart} from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ShimmeringText } from './shimmering-text'
 import {
   Tooltip,
   TooltipContent,
@@ -23,7 +24,7 @@ export default function SponsorButton({
       <TooltipTrigger asChild>
         <Button
           asChild
-          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium transition-all hover:bg-zinc-800 dark:hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
+          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-zinc-800 text-white text-sm font-medium transition-all hover:bg-zinc-700 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
           style={{ 
             WebkitTapHighlightColor: 'transparent',
             WebkitTouchCallout: 'none',
@@ -36,9 +37,8 @@ export default function SponsorButton({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Heart className="w-4 h-4 fill-current text-red-600" />
-            Sponsor Me
-            <ArrowUpRight className="w-4 h-4" />
+            <Heart className="w-4 h-4 fill-current text-red-500" />
+            <ShimmeringText text="Become a Sponsor" />
           </Link>
         </Button>
       </TooltipTrigger>
