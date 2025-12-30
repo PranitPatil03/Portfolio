@@ -43,6 +43,7 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
                   <MasonryGrid projects={projects} />
                 </div>
               </div>
+              <div className="pb-24 sm:pb-28" />
             </div>
           </div>
         </div>
