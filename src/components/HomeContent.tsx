@@ -20,7 +20,7 @@ import { blogs } from '@/data/blogs'
 import { BlogCard } from './BlogCard'
 import { sponsors } from '@/data/sponsors'
 import SponsorShowcase from './SponsorShowcase'
-import { Heart, ArrowUpRight } from 'lucide-react'
+import SponsorButton from './SponsorButton'
 
 export default function NewHeroSection() {
   return (
@@ -164,22 +164,10 @@ export default function NewHeroSection() {
                 <div className="sm:px-12 py-2">
                   <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6 flex items-center justify-between">
                     <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Sponsors</h2>
-                    <Link
+                    <SponsorButton 
                       href="https://github.com/sponsors/KartikLabhshetwar"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium transition-all hover:bg-zinc-800 dark:hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
-                      style={{ 
-                        WebkitTapHighlightColor: 'transparent',
-                        WebkitTouchCallout: 'none',
-                        WebkitUserSelect: 'none',
-                        userSelect: 'none'
-                      }}
-                    >
-                      <Heart className="w-4 h-4 fill-current text-red-600" />
-                      Sponsor Me
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
+                      tooltipText="Support my open source work"
+                    />
                   </div>
                   <div className="px-4 mb-4 sm:mb-6">
                     <SponsorShowcase sponsors={sponsors} />
