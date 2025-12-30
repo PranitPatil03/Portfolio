@@ -29,7 +29,7 @@ export default function Reachout({
   }
 }: ReachoutProps) {
   return (
-    <div className="sm:px-12 px-4 pb-8">
+    <div className="sm:px-12 px-4 pb-24 sm:pb-28">
       <div className="text-left w-full">
         <div className="mb-4 sm:mb-6">
           <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl mb-2 opacity-20 mt-4 sm:mt-6">

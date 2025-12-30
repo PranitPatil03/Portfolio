@@ -48,7 +48,7 @@ export const ScrollToTop = () => {
 
   return (
     <motion.button
-      className={`fixed bottom-8 right-8 z-50 p-3 bg-black dark:bg-white text-white dark:text-black rounded-full shadow-lg hover:shadow-xl transition-shadow`}
+      className={`fixed bottom-8 right-8 z-200 p-3 bg-black dark:bg-white text-white dark:text-black rounded-full shadow-lg hover:shadow-xl transition-shadow`}
       onClick={scrollToTop}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ 
