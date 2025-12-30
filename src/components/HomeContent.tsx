@@ -172,6 +172,15 @@ export default function NewHeroSection() {
                   <div className="px-4 mb-4 sm:mb-6">
                     <SponsorShowcase sponsors={sponsors} />
                   </div>
+                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link 
+                      href="/sponsors"
+                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      View All
+                      <span>→</span>
+                    </Link>
+                  </div>
                 </div>
               </Reveal>
               
