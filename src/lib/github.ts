@@ -174,6 +174,25 @@ export async function fetchUserPullRequests(username: string, limit: number = 50
   }
 }
 
+export async function fetchRepositoryStars(owner: string, repo: string): Promise<number> {
+  const token = process.env.GITHUB_TOKEN || process.env.NEXT_PUBLIC_GITHUB_TOKEN
+  
+  if (!token) {
+    return 0
+  }
+
+  try {
+    const { data } = await octokit.repos.get({
+      owner,
+      repo,
+    })
+    
+    return data.stargazers_count
+  } catch {
+    return 0
+  }
+}
+
 // Fallback data in case API fails
 export const fallbackContributions: ProcessedContribution[] = [
   {

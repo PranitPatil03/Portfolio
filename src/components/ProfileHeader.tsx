@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 import * as React from 'react';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import PortfolioStars from './PortfolioStars';
 
 interface ProfileHeaderProps {
   name?: string
@@ -39,12 +40,15 @@ export default function ProfileHeader({
 
   return (
     <div className="flex-col -mt-10">
-      <div 
-        className="w-24 h-24 sm:w-28 sm:h-28 mb-4 sm:ml-8 ml-4 relative z-10 rounded-full overflow-hidden bg-cover bg-center"
-        role="img"
-        aria-label={name}
-        style={{ backgroundImage: `url("${profileImage}")` }}
-      />
+      <div className="flex items-center justify-between mb-4 sm:ml-8 ml-4 sm:mr-8 mr-4">
+        <div 
+          className="w-24 h-24 sm:w-28 sm:h-28 relative z-10 rounded-full overflow-hidden bg-cover bg-center shrink-0"
+          role="img"
+          aria-label={name}
+          style={{ backgroundImage: `url("${profileImage}")` }}
+        />
+        <PortfolioStars />
+      </div>
       <div className="text-left sm:flex sm:justify-between sm:items-center w-full sm:px-8 px-4 flex-col sm:flex-row">
         <div className="px-0">
           <h1 className="font-[family-name:var(--font-instrument-serif)] italic text-2xl sm:text-4xl tracking-[0.01em] font-medium mb-0">
