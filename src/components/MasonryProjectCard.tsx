@@ -18,6 +18,7 @@ import stage from '/videos/stage.mp4';
 import readmelingo from '/videos/readmelingo.mp4';
 import foliox from '/videos/foliox.mp4';
 import mercurius from '/videos/mercurius.mp4';
+import oneurl from '/videos/oneurl.mp4';
 
 interface MasonryProjectCardProps {
   project: Project;
@@ -52,6 +53,8 @@ const getVideoSource = (videoId: string) => {
       return foliox;
     case 'mercurius':
       return mercurius;
+    case 'oneurl':
+      return oneurl;
     default:
       return null;
   }

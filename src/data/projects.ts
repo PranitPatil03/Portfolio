@@ -2,6 +2,32 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: "oneurl",
+    title: "OneURL",
+    description: "One URL for all your links, An open-source alternative to Linktree. Create a beautiful profile page to share all your important links in one place.",
+    longDescription:
+      "OneURL is an open-source alternative to Linktree. Create a beautiful profile page to share all your important links in one place.",
+    liveLink: "https://www.oneurl.live",
+    githubLink: "https://github.com/KartikLabhshetwar/oneurl",
+    video: "oneurl",
+    image: "/images/oneurl.png",
+    tweetUrl: "https://x.com/code_kartik/status/2006784332246167877",
+    tags: [
+      "Next.js",
+      "React 19",
+      "TypeScript",
+      "UploadThing",
+      "Prisma",
+      "Base UI",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Tanstack Query",
+      "Zod",
+      "Express.js",
+      "Better Auth"
+    ],
+  },
+  {
     id: 'mind-mentor',
     title: "Mind Mentor AI",
     description: "An AI-powered educational assistant that revolutionizes learning through advanced AI technology.",
