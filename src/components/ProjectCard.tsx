@@ -22,6 +22,7 @@ import readmelingo from '/videos/readmelingo.mp4';
 import foliox from '/videos/foliox.mp4';
 import mercurius from '/videos/mercurius.mp4';
 import oneurl from '/videos/oneurl.mp4';
+import bettershot from '/videos/bettershot.mp4';
 
 interface ProjectCardProps {
   project: Project;
@@ -60,6 +61,8 @@ const getVideoSource = (videoId: string) => {
       return mercurius
     case 'oneurl':
       return oneurl
+    case 'bettershot':
+      return bettershot
     default:
       return null;
   }

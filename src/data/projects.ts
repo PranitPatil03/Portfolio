@@ -2,6 +2,28 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: "bettershot",
+    title: "BetterShot",
+    description: "An open-source alternative to CleanShot X for macOS. Capture, edit, and enhance your screenshots with professional quality.",
+    longDescription:
+      "BetterShot is an open-source alternative to CleanShot X for macOS. Capture, edit, and enhance your screenshots with professional quality.",
+    liveLink: "https://www.bettershot.site",
+    githubLink: "https://github.com/KartikLabhshetwar/better-shot",
+    video: "bettershot",
+    image: "/images/bettershot.png",
+    tweetUrl: "https://x.com/code_kartik/status/2010651653125607464",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Shadcn/ui",
+      "Tauri",
+      "Rust",
+      "File System",
+      "Screenshot API kit",
+    ],
+  },
+  {
     id: "oneurl",
     title: "OneURL",
     description: "One URL for all your links, An open-source alternative to Linktree. Create a beautiful profile page to share all your important links in one place.",
