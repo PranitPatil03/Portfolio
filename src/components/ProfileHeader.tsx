@@ -1,10 +1,11 @@
 'use client';
 import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
-import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import * as React from 'react';
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import PortfolioStars from './PortfolioStars';
+import NeumorphButton from "./NeumorphButton";
 
 interface ProfileHeaderProps {
   name?: string
@@ -62,22 +63,22 @@ export default function ProfileHeader({
           {socialLinks.github && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-                  <a 
-                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                    href={socialLinks.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{ 
-                      WebkitTapHighlightColor: 'transparent',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserSelect: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
+                <a 
+                  className="touch-manipulation active:opacity-75 flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8" 
+                  href={socialLinks.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
+                >
+                  <NeumorphButton className="flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8 rounded-full">
                     <FaGithub className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-                  </a>
-                </div>
+                  </NeumorphButton>
+                </a>
               </TooltipTrigger>
               <TooltipContent>
                 GitHub
@@ -87,22 +88,22 @@ export default function ProfileHeader({
           {socialLinks.twitter && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-                  <a 
-                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                    href={socialLinks.twitter} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{ 
-                      WebkitTapHighlightColor: 'transparent',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserSelect: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
+                <a 
+                  className="touch-manipulation active:opacity-75 flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8" 
+                  href={socialLinks.twitter} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
+                >
+                  <NeumorphButton className="flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8 rounded-full">
                     <FaXTwitter className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-                  </a>
-                </div>
+                  </NeumorphButton>
+                </a>
               </TooltipTrigger>
               <TooltipContent>
                 Twitter
@@ -112,22 +113,22 @@ export default function ProfileHeader({
           {socialLinks.resume && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-                  <a 
-                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                    href={socialLinks.resume} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{ 
-                      WebkitTapHighlightColor: 'transparent',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserSelect: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
+                <a 
+                  className="touch-manipulation active:opacity-75 flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8" 
+                  href={socialLinks.resume} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
+                >
+                  <NeumorphButton className="flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8 rounded-full">
                     <FaPaperclip className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-                  </a>
-                </div>
+                  </NeumorphButton>
+                </a>
               </TooltipTrigger>
               <TooltipContent>
                 Resume
@@ -137,22 +138,22 @@ export default function ProfileHeader({
           {socialLinks.linkedin && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-                  <a 
-                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full" 
-                    href={socialLinks.linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    style={{ 
-                      WebkitTapHighlightColor: 'transparent',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserSelect: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
+                <a 
+                  className="touch-manipulation active:opacity-75 flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8" 
+                  href={socialLinks.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
+                >
+                  <NeumorphButton className="flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8 rounded-full">
                     <FaLinkedin className="text-[16px] sm:text-[16px] text-black/75 dark:text-white/80" />
-                  </a>
-                </div>
+                  </NeumorphButton>
+                </a>
               </TooltipTrigger>
               <TooltipContent>
                 LinkedIn
@@ -162,34 +163,35 @@ export default function ProfileHeader({
           {mounted && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="w-8 h-8 sm:w-8 sm:h-8 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full flex items-center justify-center">
-                  <button
-                    onClick={() => {
-                      const newTheme = theme === 'light' ? 'dark' : 'light'
-                      if (typeof document !== "undefined" && "startViewTransition" in document) {
-                        ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(() => {
-                          setTheme(newTheme)
-                        })
-                      } else {
+                <button
+                  onClick={() => {
+                    const newTheme = theme === 'light' ? 'dark' : 'light'
+                    if (typeof document !== "undefined" && "startViewTransition" in document) {
+                      ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(() => {
                         setTheme(newTheme)
-                      }
-                    }}
-                    className="touch-manipulation active:opacity-75 flex items-center justify-center w-full h-full"
-                    aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-                    style={{ 
-                      WebkitTapHighlightColor: 'transparent',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserSelect: 'none',
-                      userSelect: 'none'
-                    }}
-                  >
+                      })
+                    } else {
+                      setTheme(newTheme)
+                    }
+                  }}
+                  className="touch-manipulation active:opacity-75 flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8"
+                  aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                  style={{ 
+                    WebkitTapHighlightColor: 'transparent',
+                    WebkitTouchCallout: 'none',
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none'
+                  }}
+                  type="button"
+                >
+                  <NeumorphButton className="flex items-center justify-center w-8 h-8 sm:w-8 sm:h-8 rounded-full">
                     {theme === 'light' ? (
                       <Moon className="size-[14px] -mt-px" aria-hidden="true" />
                     ) : (
                       <Sun className="size-[14px] -mt-px" aria-hidden="true" />
                     )}
-                  </button>
-                </div>
+                  </NeumorphButton>
+                </button>
               </TooltipTrigger>
               <TooltipContent>
                 {theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}

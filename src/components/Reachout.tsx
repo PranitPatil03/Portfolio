@@ -1,9 +1,10 @@
 'use client'
-import { FaLinkedin, FaXTwitter, FaGithub, FaPaperclip } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
-import { Tooltip } from "./ui/tooltip-card";
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaPaperclip, FaXTwitter } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import NeumorphButton from "./NeumorphButton";
 import { VisitorCount } from "./VisitorCount";
+import { Tooltip } from "./ui/tooltip-card";
 
 interface ReachoutProps {
   title?: string
@@ -40,9 +41,10 @@ export default function Reachout({
           </p>
         </div>
         
-        <div className="flex justify-center sm:justify-start gap-3 sm:gap-3">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
           {socialLinks.github && (
-            <Tooltip content={
+            <Tooltip
+              content={
                 <Image
                   width={3024}
                   height={1720}
@@ -51,27 +53,33 @@ export default function Reachout({
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
                 />
-            }>
-              <a 
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
-                href={socialLinks.github} 
-                target="_blank" 
+              }
+            >
+              <a
+                className="touch-manipulation active:opacity-75"
+                href={socialLinks.github}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
-                <FaGithub className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">GitHub</span>
+                <NeumorphButton className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2">
+                  <FaGithub className="text-[28px] sm:text-[18px] text-neutral-800 dark:text-white/80 shrink-0" />
+                  <span className="hidden sm:inline text-sm font-medium text-neutral-800 dark:text-white/80">
+                    GitHub
+                  </span>
+                </NeumorphButton>
               </a>
             </Tooltip>
           )}
           
           {socialLinks.twitter && (
-            <Tooltip content={
+            <Tooltip
+              content={
                 <Image
                   width={1206}
                   height={1220}
@@ -80,27 +88,33 @@ export default function Reachout({
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
                 />
-            }>
-              <a 
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
-                href={socialLinks.twitter} 
-                target="_blank" 
+              }
+            >
+              <a
+                className="touch-manipulation active:opacity-75"
+                href={socialLinks.twitter}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
-                <FaXTwitter className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Twitter</span>
+                <NeumorphButton className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2">
+                  <FaXTwitter className="text-[28px] sm:text-[18px] text-neutral-800 dark:text-white/80 shrink-0" />
+                  <span className="hidden sm:inline text-sm font-medium text-neutral-800 dark:text-white/80">
+                    Twitter
+                  </span>
+                </NeumorphButton>
               </a>
             </Tooltip>
           )}
           
           {socialLinks.linkedin && (
-            <Tooltip content={
+            <Tooltip
+              content={
                 <Image
                   width={1596}
                   height={1108}
@@ -109,47 +123,57 @@ export default function Reachout({
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
                 />
-            }>
-              <a 
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
-                href={socialLinks.linkedin} 
-                target="_blank" 
+              }
+            >
+              <a
+                className="touch-manipulation active:opacity-75"
+                href={socialLinks.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
-                <FaLinkedin className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">LinkedIn</span>
+                <NeumorphButton className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2">
+                  <FaLinkedin className="text-[28px] sm:text-[18px] text-neutral-800 dark:text-white/80 shrink-0" />
+                  <span className="hidden sm:inline text-sm font-medium text-neutral-800 dark:text-white/80">
+                    LinkedIn
+                  </span>
+                </NeumorphButton>
               </a>
             </Tooltip>
           )}
 
           {socialLinks.mail && (
             <Tooltip content="kartik.labhshetwar@gmail.com">
-              <a 
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
-                href={socialLinks.mail} 
-                target="_blank" 
+              <a
+                className="touch-manipulation active:opacity-75"
+                href={socialLinks.mail}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
-                <IoMdMail className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Mail</span>
+                <NeumorphButton className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2">
+                  <IoMdMail className="text-[28px] sm:text-[18px] text-neutral-800 dark:text-white/80 shrink-0" />
+                  <span className="hidden sm:inline text-sm font-medium text-neutral-800 dark:text-white/80">
+                    Mail
+                  </span>
+                </NeumorphButton>
               </a>
             </Tooltip>
           )}
           
           {socialLinks.resume && (
-            <Tooltip content={
+            <Tooltip
+              content={
                 <Image
                   width={1076}
                   height={1394}
@@ -158,21 +182,26 @@ export default function Reachout({
                   className="rounded-sm max-w-full h-auto"
                   unoptimized
                 />
-            }>
-              <a 
-                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-black/5 dark:bg-white/10 has-hover:hover:bg-black/10 dark:has-hover:hover:bg-white/20 transition-[colors] duration-200 rounded-full touch-manipulation active:opacity-75" 
-                href={socialLinks.resume} 
-                target="_blank" 
+              }
+            >
+              <a
+                className="touch-manipulation active:opacity-75"
+                href={socialLinks.resume}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  WebkitTapHighlightColor: 'transparent',
-                  WebkitTouchCallout: 'none',
-                  WebkitUserSelect: 'none',
-                  userSelect: 'none'
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  WebkitTouchCallout: "none",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
                 }}
               >
-                <FaPaperclip className="text-[28px] sm:text-[18px] text-black/75 dark:text-white/80 shrink-0" />
-                <span className="hidden sm:inline text-sm font-medium text-black/75 dark:text-white/80">Resume</span>
+                <NeumorphButton className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2">
+                  <FaPaperclip className="text-[28px] sm:text-[18px] text-neutral-800 dark:text-white/80 shrink-0" />
+                  <span className="hidden sm:inline text-sm font-medium text-neutral-800 dark:text-white/80">
+                    Resume
+                  </span>
+                </NeumorphButton>
               </a>
             </Tooltip>
           )}

@@ -21,6 +21,7 @@ import { BlogCard } from './BlogCard'
 import { sponsors } from '@/data/sponsors'
 import SponsorShowcase from './SponsorShowcase'
 import SponsorButton from './SponsorButton'
+import NeumorphButton from './NeumorphButton'
 
 export default function NewHeroSection() {
   return (
@@ -114,13 +115,12 @@ export default function NewHeroSection() {
                       ))}
                     </div>
                   </div>
-                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link 
-                      href="/projects"
-                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
-                    >
-                      View All
-                      <span>→</span>
+                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link href="/projects">
+                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
+                        <span>View All</span>
+                        <span>→</span>
+                      </NeumorphButton>
                     </Link>
                   </div>
                 </div>
@@ -143,13 +143,12 @@ export default function NewHeroSection() {
                       ))}
                     </div>
                   </div>
-                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link 
-                      href="/blogs"
-                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
-                    >
-                      View All
-                      <span>→</span>
+                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link href="/blogs">
+                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
+                        <span>View All</span>
+                        <span>→</span>
+                      </NeumorphButton>
                     </Link>
                   </div>
                 </div>
@@ -163,22 +162,21 @@ export default function NewHeroSection() {
               <Reveal delay={0.1}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6 flex items-center justify-between">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Sponsors</h2>
+                  <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Sponsors</h2>
                     <SponsorButton 
                       href="https://github.com/sponsors/KartikLabhshetwar"
                       tooltipText="Support my open source work"
                     />
                   </div>
                   <div className="px-4 mb-4 sm:mb-6">
-                    <SponsorShowcase sponsors={sponsors} />
+                    <SponsorShowcase sponsors={sponsors} showEmptySlot={false} />
                   </div>
-                  <div className="px-4 flex justify-end mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link 
-                      href="/sponsors"
-                      className="text-xs sm:text-sm text-black/50 dark:text-white/50 hover:text-black/80 dark:hover:text-white/80 transition-colors inline-flex items-center gap-1"
-                    >
-                      View All
-                      <span>→</span>
+                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
+                    <Link href="/sponsors">
+                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
+                        <span>View All</span>
+                        <span>→</span>
+                      </NeumorphButton>
                     </Link>
                   </div>
                 </div>
