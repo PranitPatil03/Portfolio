@@ -73,7 +73,7 @@ export default function SponsorShowcase({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 transition-colors duration-300 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-900/40 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
+                className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 transition-colors duration-300 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800/40 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
               >
                 <FaGithub className="h-[14.5px] w-[14.5px]" />
                 <span className="ml-1.5 truncate">{sponsor.github}</span>
@@ -85,7 +85,7 @@ export default function SponsorShowcase({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 transition-colors duration-300 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-900/40 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
+                className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 transition-colors duration-300 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800/40 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
               >
                 <FaXTwitter className="h-[14.5px] w-[14.5px]" />
                 <span className="ml-1.5 truncate">{sponsor.twitter}</span>

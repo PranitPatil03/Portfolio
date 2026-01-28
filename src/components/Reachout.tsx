@@ -45,14 +45,40 @@ export default function Reachout({
           {socialLinks.github && (
             <Tooltip
               content={
-                <Image
-                  width={3024}
-                  height={1720}
-                  src="/github.png"
-                  alt="GitHub"
-                  className="rounded-sm max-w-full h-auto"
-                  unoptimized
-                />
+                <div className="w-[300px] sm:w-[340px]">
+                  <div className="rounded-2xl border border-neutral-200 bg-white px-4 py-3 dark:border-neutral-800 dark:bg-neutral-900">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src="/pfp.jpg"
+                        alt="Kartik Labhshetwar"
+                        width={56}
+                        height={56}
+                        className="h-14 w-14 rounded-full object-cover"
+                      />
+                      <div>
+                        <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+                          Kartik Labhshetwar
+                        </p>
+                        <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                          @KartikLabhshetwar · he/him
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-xs text-neutral-700 dark:text-neutral-300">
+                      Build ship grow.
+                    </p>
+                    <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+                      <span className="font-medium text-neutral-900 dark:text-neutral-50">
+                        615
+                      </span>{" "}
+                      followers ·{" "}
+                      <span className="font-medium text-neutral-900 dark:text-neutral-50">
+                        188
+                      </span>{" "}
+                      following
+                    </p>
+                  </div>
+                </div>
               }
             >
               <a
@@ -148,7 +174,7 @@ export default function Reachout({
           )}
 
           {socialLinks.mail && (
-            <Tooltip content="kartik.labhshetwar@gmail.com">
+            <Tooltip content="kartik.labhshetwar@gmail.com" padded>
               <a
                 className="touch-manipulation active:opacity-75"
                 href={socialLinks.mail}
@@ -172,18 +198,7 @@ export default function Reachout({
           )}
           
           {socialLinks.resume && (
-            <Tooltip
-              content={
-                <Image
-                  width={1076}
-                  height={1394}
-                  src="/resume.png"
-                  alt="Resume"
-                  className="rounded-sm max-w-full h-auto"
-                  unoptimized
-                />
-              }
-            >
+            <Tooltip content="View my resume" padded>
               <a
                 className="touch-manipulation active:opacity-75"
                 href={socialLinks.resume}

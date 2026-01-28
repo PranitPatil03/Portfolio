@@ -7,10 +7,12 @@ export const Tooltip = ({
   content,
   children,
   containerClassName,
+  padded = false,
 }: {
   content: string | React.ReactNode;
   children: React.ReactNode;
   containerClassName?: string;
+  padded?: boolean;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [mouse, setMouse] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -227,7 +229,10 @@ export const Tooltip = ({
               stiffness: 300,
               damping: 25,
             }}
-            className="pointer-events-none absolute z-[9999] max-w-[90vw] rounded-md shadow-sm shadow-black/5 dark:shadow-white/10"
+            className={cn(
+              "pointer-events-none absolute z-[9999] max-w-[90vw] rounded-2xl border border-neutral-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.35)] dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-[0_18px_45px_rgba(0,0,0,0.65)]",
+              padded && "px-3 py-1.5 border-neutral-300/80 dark:border-neutral-700/80"
+            )}
             style={{
               top: position.y,
               left: position.x,
@@ -236,7 +241,7 @@ export const Tooltip = ({
           >
             <div
               ref={contentRef}
-              className="text-sm text-neutral-600 p-4 dark:text-neutral-400 leading-relaxed [&_img]:max-w-[300px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
+              className="text-[13px] leading-relaxed text-neutral-700 dark:text-neutral-300 [&_img]:max-w-[300px] [&_img]:h-auto [&_img]:bg-transparent [&_img]:block [&_img]:relative [&_img]:z-10 [&_img]:mb-0 [&_span]:!opacity-100 [&_span>img]:!opacity-100 [&>p]:mb-2 [&>p]:last:mb-0 [&>p]:leading-relaxed [&>*+*]:mt-2"
             >
               {content}
             </div>
