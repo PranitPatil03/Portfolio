@@ -69,6 +69,25 @@ export const projects: Project[] = [
       "Node.js"
     ],
   },
+  {
+    id: "linkpreview",
+    title: "Link Preview",
+    description: "Preview how your links appear on social platforms. Test metadata across Telegram, Discord, Slack, X, Facebook, LinkedIn, and WhatsApp.",
+    longDescription:
+      "Link Preview is a tool that allows you to preview how your links appear on social platforms. Test metadata across Telegram, Discord, Slack, X, Facebook, LinkedIn, and WhatsApp.",
+    liveLink: "https://linkpreview.kartikk.tech",
+    githubLink: "https://github.com/KartikLabhshetwar/linkpreview",
+    video: "linkpreview",
+    image: "/images/linkpreview.png",
+    tweetUrl: "https://x.com/code_kartik/status/2014328471141663162",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "shadcn/ui",
+      "cheerio"
+    ],
+  },
    {
     id: 'lazycommit',
     title: "Lazy Commit",

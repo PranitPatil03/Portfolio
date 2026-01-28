@@ -20,6 +20,7 @@ import foliox from '/videos/foliox.mp4';
 import mercurius from '/videos/mercurius.mp4';
 import oneurl from '/videos/oneurl.mp4';
 import bettershot from '/videos/bettershot.mp4';
+import linkpreview from '/videos/linkpreview.mp4';
 
 interface MasonryProjectCardProps {
   project: Project;
@@ -58,6 +59,8 @@ const getVideoSource = (videoId: string) => {
       return oneurl;
     case 'bettershot':
       return bettershot;
+    case 'linkpreview':
+      return linkpreview;
     default:
       return null;
   }
