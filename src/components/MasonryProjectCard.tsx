@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Video from "next-video";
 import { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import donezovideo from '/videos/donezo.mp4';
 import mindMentorVideo from '/videos/mind-mentor.mp4';
 import satyaCheckVideo from '/videos/satya-check.mp4';
@@ -66,59 +67,76 @@ const getVideoSource = (videoId: string) => {
   }
 };
 
+// Function to get status based on project
+const getProjectStatus = (project: Project): { label: string; color: string; dotColor: string } => {
+  if (project.liveLink) {
+    return { label: 'Live', color: 'text-green-600 dark:text-green-400', dotColor: 'bg-green-500' };
+  }
+  return { label: 'Building', color: 'text-red-600 dark:text-red-400', dotColor: 'bg-red-500' };
+};
+
 export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const videoSource = project.video ? getVideoSource(project.video) : null;
 
   return (
     <Link 
-      href={`/projects/${project.id}`} 
-      className="group/item block w-full touch-manipulation"
-      style={{ 
-        WebkitTapHighlightColor: 'transparent',
-        WebkitTouchCallout: 'none',
-        WebkitUserSelect: 'none',
-        userSelect: 'none'
-      }}
+      href={`/projects/${project.id}`}
+      className={`group/item relative rounded-xl p-4 transition-all duration-300 bg-neutral-50 dark:bg-neutral-800/40 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 hover:scale-[1.02] hover:z-10 group-hover:opacity-50 hover:opacity-100! border border-neutral-200/50 dark:border-transparent block cursor-pointer ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div 
-        className={`flex flex-col gap-3 w-full p-1 bg-white dark:bg-white/10 border border-black/10 dark:border-white/5 rounded-[10px] transition-all duration-300 ease-out group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100 group-has-hover:group-hover/item:border-black/20 group-has-hover:group-hover/item:dark:border-white/10 group-has-hover:group-hover/item:scale-[1.02] group-has-hover:group-hover/item:shadow-lg group-has-hover:group-hover/item:shadow-black/5 dark:group-has-hover:group-hover/item:shadow-black/20 ${className}`}
-      >
-        <div className="relative overflow-hidden rounded-md w-full aspect-4/3 bg-black/10 dark:bg-white/10 border border-black/5 dark:border-white/5 transition-all duration-300 group-has-hover:group-hover/item:border-black/10 dark:group-has-hover:group-hover/item:border-white/10">
-          {videoSource && isHovered ? (
-            <Video
-              key={project.id}
-              src={videoSource}
-              poster={project.image}
-              className="w-full h-full rounded-md object-cover transition-transform duration-300 group-has-hover:group-hover/item:scale-105"
-              playsInline
-              autoPlay
-              muted
-              loop
-              controls={false}
-            />
-          ) : project.image ? (
-            <Image
-              src={project.image}
-              alt={`${project.title} project cover`}
-              width={1200}
-              height={900}
-              className="rounded-md w-full h-full object-cover transition-transform duration-300 group-has-hover:group-hover/item:scale-105"
-              style={{ color: 'transparent' }}
-              sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
-              quality={75}
-              priority
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-purple-600/20 rounded-md transition-transform duration-300 group-has-hover:group-hover/item:scale-105" />
-          )}
+      {/* Content Container */}
+      <div className="relative z-10 flex flex-col rounded-lg overflow-hidden">
+        {/* Media Container */}
+        <div className="block">
+          <div className="relative overflow-hidden w-full aspect-video rounded-lg">
+            {videoSource && isHovered ? (
+              <Video
+                key={project.id}
+                src={videoSource}
+                poster={project.image}
+                className="w-full h-full object-cover"
+                playsInline
+                autoPlay
+                muted
+                loop
+                controls={false}
+              />
+            ) : project.image ? (
+              <Image
+                src={project.image}
+                alt={`${project.title} project cover`}
+                width={1200}
+                height={900}
+                className="w-full h-full object-cover"
+                style={{ color: 'transparent' }}
+                sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
+                quality={75}
+                priority
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-700 dark:to-neutral-800" />
+            )}
+          </div>
         </div>
         
-        <div className="w-full px-2 pb-4">
-          <span className="text-[15px] leading-7 text-black/80 group-has-hover:hover:text-black dark:text-white/80 dark:group-has-hover:hover:text-white font-medium transition-colors duration-300">
+        {/* Project Info */}
+        <div className="pt-3">
+          {/* Title */}
+          <h3 className="font-semibold text-black dark:text-white text-base mb-1">
             {project.title}
+          </h3>
+          
+          {/* Description */}
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-3 line-clamp-2 leading-relaxed">
+            {project.description}
+          </p>
+          
+          {/* View Project Link */}
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-black dark:text-white">
+            View Project
+            <span className="text-base">→</span>
           </span>
         </div>
       </div>

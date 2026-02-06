@@ -23,18 +23,18 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kartik017.vercel.app'),
-  title: 'Kartik Labhshetwar',
+  title: 'Pranit Patil',
   description: 'I build products that solve real problems. Available for new opportunities.',
   openGraph: {
     url: 'https://kartik017.vercel.app/',
-    siteName: 'Kartik Labhshetwar Portfolio',
+    siteName: 'Pranit Patil Portfolio',
     locale: 'en_US',
     type: 'website',
     images: [{
       url: '/open-graph.png',
       width: 1200,
       height: 630,
-      alt: 'Kartik Labhshetwar - Portfolio'
+      alt: 'Pranit Patil - Portfolio'
     }],
   },
 };
@@ -61,11 +61,11 @@ export default function RootLayout({
           </div>
           <GradualBlur 
             position="bottom" 
-            height="5rem" 
+            height="3rem" 
             target="page" 
             zIndex={1}
-            strength={2}
-            divCount={5}
+            strength={1}
+            divCount={3}
           />
           <ScrollToTop />
         </ThemeProvider>

@@ -11,7 +11,7 @@ interface GitHubContributionsProps {
   className?: string;
 }
 
-const GitHubContributions: React.FC<GitHubContributionsProps> = ({ 
+const GitHubContributions: React.FC<GitHubContributionsProps> = ({
   username,
   compact = false,
   className = ""
@@ -30,7 +30,7 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
 
   if (!mounted) {
     return (
-      <div className={`w-full ${compact ? 'h-[120px]' : 'h-[160px]'} rounded-xl bg-muted animate-pulse ${className}`} />
+      <div className={`w-full ${compact ? 'h-30' : 'h-40'} rounded-xl bg-muted animate-pulse ${className}`} />
     );
   }
 
@@ -42,15 +42,13 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className={`${compact ? 'p-2' : 'p-3'} hover:scale-[1.005] transition-transform duration-300`}>
-          
+        <div className={`${compact ? 'p-2' : 'p-3'}`}>
           <GitHubCalendar
             username={username}
             colorScheme={resolvedTheme as "light" | "dark"}
             fontSize={compact ? 14 : 12}
-            blockSize={compact ? 10 : 12}
+            blockSize={compact ? 10 : 11}
             blockMargin={compact ? 2 : 4}
-            showWeekdayLabels={!compact}
             theme={theme}
           />
         </div>

@@ -3,16 +3,19 @@
 interface DiagonalPatternProps {
   side: 'left' | 'right'
   className?: string
-  topOffset?: string
 }
 
-export default function DiagonalPattern({ side, className = '', topOffset = '0' }: DiagonalPatternProps) {
+export default function DiagonalPattern({ side, className = '' }: DiagonalPatternProps) {
   return (
-    <div className={`absolute ${side}-0 w-[60px] h-full overflow-hidden sm:block hidden ${className}`} style={{ top: topOffset }}>
+    <div 
+      className={`absolute ${side}-0 top-0 w-px h-full sm:block hidden ${className}`}
+    >
+      {/* Dotted vertical line */}
       <div 
-        className="absolute dark:opacity-[0.04] opacity-[0.06] inset-0 w-[60px] h-full border dark:border-[#eee] border-[#000]/70"
+        className="w-full h-full"
         style={{
-          backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)'
+          backgroundImage: 'repeating-linear-gradient(to bottom, currentcolor, currentcolor 4px, transparent 4px, transparent 16px)',
+          opacity: 0.15
         }}
       />
     </div>

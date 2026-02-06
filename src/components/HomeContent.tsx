@@ -6,111 +6,98 @@ import BannerSection from './BannerSection'
 import ProfileHeader from './ProfileHeader'
 import ContentSection from './ContentSection'
 import ContentParagraph from './ContentParagraph'
-import SectionBorder from './SectionBorder'
+import SectionHeading from './SectionHeading'
 import ExperienceContent from './ExperienceContent'
 import Reachout from './Reachout'
 import CallToAction from './CallToAction'
 import ContributionsDisplay from './ContributionsDisplay'
-import OpenSourceContributionsCard from './ContributionCard'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 import { projects } from '@/data/projects'
-import { MasonryProjectCard } from './MasonryProjectCard'
 import { blogs } from '@/data/blogs'
+import { MasonryProjectCard } from './MasonryProjectCard'
 import { BlogCard } from './BlogCard'
-import { sponsors } from '@/data/sponsors'
-import SponsorShowcase from './SponsorShowcase'
-import SponsorButton from './SponsorButton'
 import NeumorphButton from './NeumorphButton'
+import SectionBorder from './SectionBorder'
 
 export default function NewHeroSection() {
   return (
     <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
       <div className="relative mx-auto max-w-4xl">
-        {/* Diagonal Patterns */}
-        <DiagonalPattern side="left" />
-        <DiagonalPattern side="right" />
-        
         {/* Main Content */}
-        <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
+        <div className="relative mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
+          {/* Diagonal Patterns - positioned at the edges of content */}
+          <DiagonalPattern side="left" />
+          <DiagonalPattern side="right" />
+
           {/* Banner Section */}
           <Reveal delay={0.1}>
-            <BannerSection 
-              bannerImage="/banner.jpg"
-              quote="You make your own luck if you stay at it long enough."
-            />
+            <BannerSection />
           </Reveal>
-          
+
           {/* Profile Header */}
           <Reveal delay={0.2}>
-            <ProfileHeader 
-              name="Kartik Labhshetwar"
-              age="21"
-              title="engineer • developer • builder"
-              profileImage="/pfp.jpg"
+            <ProfileHeader
+              name="Pranit Patil"
+              title="learner • engineer  • builder"
               socialLinks={{
-                twitter: "https://x.com/code_kartik",
-                github: "https://github.com/KartikLabhshetwar",
-                linkedin: "https://www.linkedin.com/in/kartikcode/",
-                resume: "https://drive.google.com/file/d/1U8450r8Qsf9Xo1IcQhMdSrdzFY2__JXP/view?usp=sharing",
+                twitter: "https://x.com/Patilpranit3112",
+                github: "https://github.com/pranitpatil03",
+                linkedin: "https://www.linkedin.com/in/patilpranit03/",
+                resume: "https://drive.google.com/file/d/1qOAkWlNj3qq9ZgAPFJFEvGA_s6FLF9kL/view?usp=sharing",
               }}
             />
           </Reveal>
-          
+
           {/* Content Prose */}
           <div className="prose dark:prose-invert max-w-none">
             <div className="text-base">
+              {/* Dotted line above objective - full width to touch vertical borders */}
+              <div
+                className="h-px mt-6"
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(to right, currentcolor, currentcolor 2px, transparent 2px, transparent 6px)',
+                  opacity: 0.15
+                }}
+              />
+
               {/* Current Role Section */}
               <Reveal delay={0.1}>
                 <ContentSection
                   subtitle="AI Engineer | Full-stack Developer"
                   title=''
-                  className="mt-6"
+                  className="mt-4"
                 >
                   <div></div>
                 </ContentSection>
               </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-6" />
-              </Reveal>
-              
+
               {/* About Section */}
               <Reveal delay={0.1}>
-                <ContentSection className="pb-6 sm:pb-8 pt-4 sm:pt-6 px-2 sm:px-0">
-                  <ContentParagraph className="mb-2 text-base sm:text-lg">
+                <ContentSection className="pb-4 sm:pb-6 pt-4 sm:pt-6 px-2 sm:px-0">
+                  <ContentParagraph className="mb-0 text-base sm:text-lg">
                     <span className="font-medium dark:text-white text-black">I build from zero.</span> Whether it&apos;s frontend, backend, full-stack applications, or AI-powered experiences, I work across the entire development lifecycle. From UI/UX to deployment to user feedback, I care less about technology debates and more about delivering results that people love using.
                   </ContentParagraph>
                 </ContentSection>
               </Reveal>
 
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-6" />
-              </Reveal>
-
-               {/* Experience Section */}
+              {/* Experience Section */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <h2 className="text-base sm:text-xl mb-3 opacity-20 mt-4 sm:mt-6 px-4 font-[family-name:var(--font-instrument-serif)]">Professional Experience</h2>
-                  <div className="px-4">
+                <div>
+                  <SectionHeading className="mt-6">Professional Experience</SectionHeading>
+                  <div className='sm:px-8 px-4'>
                     <ExperienceContent />
                   </div>
                 </div>
               </Reveal>
 
-                <Reveal delay={0.05}>
-                  <SectionBorder className="mt-4" />
-                </Reveal>
-              
-                 {/* Proof of Work */}
+              {/* Projects */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Proof of Work</h2>
-                  </div>
-                  <div className="px-4">
+                <div>
+                  <SectionHeading className="mt-6">Projects</SectionHeading>
+                  <div className="sm:px-8 px-4">
                     <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
-                      {projects.slice(0, 6).map((project) => (
+                      {projects.slice(0, 4).map((project) => (
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
                     </div>
@@ -126,130 +113,65 @@ export default function NewHeroSection() {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
+              {/* Tech Stack Section */}
+              <Reveal delay={0.1}>
+                <div>
+                  <SectionHeading className="mt-6">Tech Stack</SectionHeading>
+                  <div className="sm:px-8 px-4 py-4">
+                    <TechStackMarquee className="w-full" showTitle={false} />
+                  </div>
+                </div>
               </Reveal>
 
-              {/* Thoughts Section */}
-              <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6">
-                    <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Thoughts</h2>
-                  </div>
-                  <div className="px-4">
-                    <div className="space-y-0 group">
-                      {blogs.slice(0, 3).map((blog) => (
-                        <BlogCard key={blog.id} blog={blog} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link href="/blogs">
-                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
-                        <span>View All</span>
-                        <span>→</span>
-                      </NeumorphButton>
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
-              {/* Sponsors Section */}
-              <Reveal delay={0.1}>
-                <div className="sm:px-12 py-2">
-                  <div className="px-4 mb-4 sm:mb-6 mt-4 sm:mt-6 flex items-center justify-between">
-                  <h2 className="text-base sm:text-xl opacity-20 font-[family-name:var(--font-instrument-serif)]">Sponsors</h2>
-                    <SponsorButton 
-                      href="https://github.com/sponsors/KartikLabhshetwar"
-                      tooltipText="Support my open source work"
-                    />
-                  </div>
-                  <div className="px-4 mb-4 sm:mb-6">
-                    <SponsorShowcase sponsors={sponsors} showEmptySlot={false} />
-                  </div>
-                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link href="/sponsors">
-                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
-                        <span>View All</span>
-                        <span>→</span>
-                      </NeumorphButton>
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
               {/* GitHub Contributions */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 px-0 mt-4">
-                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-20 leading-relaxed -tracking-[0.01em] mb-4 px-4">
-                    GitHub Contributions <span className="opacity-20">●</span> @KartikLabhshetwar
-                  </h2>
-                  <div className="mb-4 sm:mb-6">
+                <div>
+                  <SectionHeading className="mt-6">GitHub Contributions</SectionHeading>
+                  <div className="sm:px-8 px-4 py-4">
                     <ContributionsDisplay
-                      username="KartikLabhshetwar"
-                      variant="compact"
+                      username="pranitpatil03"
                       className="w-full"
                     />
                   </div>
                 </div>
               </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
-              {/* Tech Stack Section */}
+
+              {/* Blogs & Thoughts Section */}
               <Reveal delay={0.1}>
-                <div className="sm:px-12 mt-4 sm:mt-6 mb-4 sm:mb-6">
-                  <div className="px-4">
-                    <TechStackMarquee className="w-full" />
+                <div>
+                  <SectionHeading className="mt-6">Blogs & Thoughts</SectionHeading>
+                  <div className="sm:px-8 px-4 py-8">
+                    <div className="flex flex-col items-center justify-center text-center py-8">
+                      <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg">
+                        🍳 Blogs are cooking, stay tuned!
+                      </p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
-              {/* Open Source Contributions Section */}
+
+              {/* Open Source Contributions Section - Commented out for future use
               <Reveal delay={0.1}>
-                <div className="sm:px-12 mt-4">
-                  <h2 className="text-base font-[family-name:var(--font-instrument-serif)] sm:text-xl opacity-20 mt-4 sm:mt-8 sm:ml-5 leading-relaxed -tracking-[0.01em] mb-4 px-4">
-                    Open Source Contributions <span className="opacity-20">●</span> {new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
-                  </h2>
-                  <div className="px-4">
+                <div className="sm:px-4">
+                  <SectionHeading className="mt-6">Open Source Contributions</SectionHeading>
+                  <div className="px-4 py-4">
                     <OpenSourceContributionsCard />
                   </div>
                 </div>
               </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-4 pt-0" />
-              </Reveal>
+              */}
 
               {/* call to action*/}
               <Reveal delay={0.1}>
-                <div className="px-4 sm:px-0">
-                  <CallToAction/>
+                <div className="px-4 sm:px-0 mt-8">
+                  <CallToAction />
                 </div>
               </Reveal>
-              
-              <Reveal delay={0.05}>
-                <SectionBorder className="mt-0 pt-0" />
-              </Reveal>
-              
+
               {/* Reachout Section */}
               <Reveal delay={0.1}>
-                <div className="mt-4 sm:mt-6">
-                  <Reachout 
+                <div className="mt-6 sm:mt-8">
+                  <Reachout
                     title="Let's connect"
                     subtitle="Find me on these platforms"
                   />

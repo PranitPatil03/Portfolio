@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   
   return {
-    title: `${project.title} | Kartik Labhshetwar`,
+    title: `${project.title} | Pranit Patil`,
     description: project.description,
     openGraph: {
       title: project.title,

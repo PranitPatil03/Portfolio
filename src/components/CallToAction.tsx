@@ -12,10 +12,10 @@ interface CallToActionProps {
 }
 
 export default function CallToAction({
-  profileImage = "/pfp.jpg",
+  profileImage = "/images/profile2.png",
   profileAlt = "Profile",
-  linkText = "Book a Free Call",
-  linkUrl = "https://cal.com/kartik-labhshetwar/15min",
+  linkText = "Book a Call with me",
+  linkUrl = "https://cal.com/pranitpatil",
   preText = "If you've read this far, you might be interested in what I do."
 }: CallToActionProps) {
 
@@ -46,26 +46,6 @@ export default function CallToAction({
                   src={profileImage}
                   style={{ color: 'transparent' }}
                 />
-              </div>
-              <div className="flex items-center gap-1 overflow-hidden w-0 group-hover:w-[50px] transition-all duration-300 ease-out">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className="w-2 h-2 sm:w-3 sm:h-3"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5v14"></path>
-                </svg>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-zinc-900/10 dark:bg-white/10 flex items-center justify-center text-[8px] sm:text-[10px]">
-                  You
-                </div>
               </div>
               <span className="whitespace-nowrap">
                 {linkText}
