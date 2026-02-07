@@ -14,11 +14,8 @@ import ContributionsDisplay from './ContributionsDisplay'
 import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 import { projects } from '@/data/projects'
-import { blogs } from '@/data/blogs'
 import { MasonryProjectCard } from './MasonryProjectCard'
-import { BlogCard } from './BlogCard'
 import NeumorphButton from './NeumorphButton'
-import SectionBorder from './SectionBorder'
 
 export default function NewHeroSection() {
   return (

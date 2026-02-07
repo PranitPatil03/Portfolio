@@ -16,8 +16,8 @@ export default function ProjectsListClient({ projects }: ProjectsListClientProps
     <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
       <OnekoCat />
       <div className="relative mx-auto max-w-4xl">
-        <DiagonalPattern side="left" topOffset="0" />
-        <DiagonalPattern side="right" topOffset="0" />
+        <DiagonalPattern side="left" />
+        <DiagonalPattern side="right" />
         
         <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
           <div className="prose dark:prose-invert max-w-none">

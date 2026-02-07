@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Video from "next-video";
 import { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import donezovideo from '/videos/donezo.mp4';
 import mindMentorVideo from '/videos/mind-mentor.mp4';
 import satyaCheckVideo from '/videos/satya-check.mp4';
@@ -65,14 +64,6 @@ const getVideoSource = (videoId: string) => {
     default:
       return null;
   }
-};
-
-// Function to get status based on project
-const getProjectStatus = (project: Project): { label: string; color: string; dotColor: string } => {
-  if (project.liveLink) {
-    return { label: 'Live', color: 'text-green-600 dark:text-green-400', dotColor: 'bg-green-500' };
-  }
-  return { label: 'Building', color: 'text-red-600 dark:text-red-400', dotColor: 'bg-red-500' };
 };
 
 export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCardProps) => {
