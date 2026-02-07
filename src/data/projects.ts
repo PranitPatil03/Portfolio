@@ -2,6 +2,36 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: "spark",
+    title: "Spark",
+    description: "An AI-powered IDE that transforms your ideas into production-ready applications with real-time collaboration.",
+    longDescription:
+      "Spark is an AI-powered IDE that transforms your ideas into production-ready applications. Just describe what you want to build and Spark handles the rest — from code generation to deployment.",
+    features: [
+      "Real-time collaborative code editing",
+      "AI-powered code suggestions and quick edit (Cmd+K)",
+      "Conversation-based AI assistant",
+      "In-browser code execution with WebContainer",
+      "GitHub import/export integration",
+      "Multi-file project management",
+    ],
+    liveLink: "https://spark-gules-eight.vercel.app/",
+    githubLink: "https://github.com/PranitPatil03/Spark",
+    video: "",
+    image: "/images/project1.png",
+    tweetUrl: "",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Convex",
+      "Claude AI",
+      "WebContainer",
+      "CodeMirror",
+    ],
+  },
+  {
     id: "lunel",
     title: "Lunel",
     description: "A modern project management tool with AI-powered insights and team collaboration features.",
@@ -10,7 +40,7 @@ export const projects: Project[] = [
     liveLink: "",
     githubLink: "https://github.com/pranitpatil03/lunel",
     video: "",
-    image: "/images/image1.png",
+    image: "/images/project1.png",
     tweetUrl: "",
     tags: [
       "Next.js",
@@ -29,7 +59,7 @@ export const projects: Project[] = [
     liveLink: "",
     githubLink: "https://github.com/pranitpatil03/asana-clone",
     video: "",
-    image: "/images/image2.png",
+    image: "/images/project1.png",
     tweetUrl: "",
     tags: [
       "React",
@@ -48,7 +78,7 @@ export const projects: Project[] = [
     liveLink: "",
     githubLink: "https://github.com/pranitpatil03/ai-chatbot",
     video: "",
-    image: "/images/image.png",
+    image: "/images/project1.png",
     tweetUrl: "",
     tags: [
       "Python",
@@ -67,7 +97,7 @@ export const projects: Project[] = [
     liveLink: "",
     githubLink: "https://github.com/pranitpatil03/portfolio-builder",
     video: "",
-    image: "/images/image copy.png",
+    image: "/images/project1.png",
     tweetUrl: "",
     tags: [
       "Next.js",

@@ -25,6 +25,32 @@ import oneurl from '/videos/oneurl.mp4';
 import bettershot from '/videos/bettershot.mp4';
 import linkpreview from '/videos/linkpreview.mp4';
 
+// Tech icon mapping
+const techIconMap: Record<string, string> = {
+  "Next.js": "/tech-icons/nextjs.svg",
+  "React": "/tech-icons/react.svg",
+  "TypeScript": "/tech-icons/typescript.svg",
+  "JavaScript": "/tech-icons/javascript.svg",
+  "Tailwind CSS": "/tech-icons/tailwind.svg",
+  "Tailwind": "/tech-icons/tailwind.svg",
+  "Node.js": "/tech-icons/nodejs.svg",
+  "Python": "/tech-icons/python.svg",
+  "FastAPI": "/tech-icons/fastapi.svg",
+  "Express": "/tech-icons/express.svg",
+  "PostgreSQL": "/tech-icons/postgresql.svg",
+  "MongoDB": "/tech-icons/mongodb.svg",
+  "Redis": "/tech-icons/redis.svg",
+  "Docker": "/tech-icons/docker.svg",
+  "Git": "/tech-icons/Git.svg",
+  "AWS": "/tech-icons/AWS.svg",
+  "Prisma": "/tech-icons/prisma.svg",
+  "Drizzle": "/tech-icons/drizzle.svg",
+  "GitHub Actions": "/tech-icons/github-actions.svg",
+  "Zustand": "/tech-icons/zustand.svg",
+  "shadcn/ui": "/tech-icons/shadcn.svg",
+  "TanStack Query": "/tech-icons/tanstack.svg",
+};
+
 interface ProjectCardProps {
   project: Project;
   isDetailed?: boolean;
@@ -148,9 +174,23 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
         </div>
         <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
           {project.tags.map(tag => (
-            <span key={tag} className="px-2 sm:px-3 py-0.5 sm:py-1 bg-neutral-100 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-full text-xs">
-              {tag}
-            </span>
+            <div 
+              key={tag} 
+              className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-2 after:border-b-2 after:border-b-neutral-300 dark:bg-[#212121] dark:border-black/50 dark:after:border-[#2A2A2A] dark:after:border-b-black/50 after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']"
+            >
+              <div className="flex items-center gap-2 px-3 py-1.5">
+                {techIconMap[tag] && (
+                  <Image
+                    src={techIconMap[tag]}
+                    alt={tag}
+                    width={16}
+                    height={16}
+                    className="w-4 h-4 object-contain"
+                  />
+                )}
+                <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{tag}</span>
+              </div>
+            </div>
           ))}
         </div>
       </header>
@@ -189,6 +229,7 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
       {/* Content Section - Fixed Container */}
       <div className="mb-6 sm:mb-8">
         <div className="space-y-3 sm:space-y-4">
+          {/* Description */}
           <div className="text-sm sm:text-base md:text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed">
             {project.longDescription ? (
               project.longDescription.split('\n\n').map((paragraph, index) => (
@@ -238,6 +279,23 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
               </p>
             )}
           </div>
+
+          {/* Features */}
+          {project.features && project.features.length > 0 && (
+            <div className="mt-6">
+              <h3 className="text-base sm:text-lg font-semibold text-black dark:text-white mb-3">
+                Features
+              </h3>
+              <ul className="space-y-2">
+                {project.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
+                    <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
+                    <span className="leading-6">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
 

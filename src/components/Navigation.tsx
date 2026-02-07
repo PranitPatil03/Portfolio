@@ -16,7 +16,7 @@ export default function PageNavigation() {
     setMounted(true)
   }, [])
 
-  const showBackArrow = pathname !== '/projects' && pathname !== '/blogs' && pathname !== '/sponsors'
+  const showBackArrow = pathname !== '/projects' && pathname !== '/blogs' && pathname !== '/sponsors' && !pathname.startsWith('/experience/')
 
   return (
     <section className="flex items-center justify-between w-full will-change-transform" style={{ opacity: 1, filter: 'blur(0px)', transform: 'none' }}>

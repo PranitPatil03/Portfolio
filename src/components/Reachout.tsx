@@ -109,8 +109,10 @@ export default function Reachout({
             <a
               className="touch-manipulation active:opacity-75"
               href={socialLinks.mail}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.href = socialLinks.mail!;
+              }}
               style={{
                 WebkitTapHighlightColor: "transparent",
                 WebkitTouchCallout: "none",

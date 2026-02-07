@@ -1,7 +1,6 @@
 'use client'
 
 import { ProjectCard } from '@/components/ProjectCard'
-import OnekoCat from '@/components/OnekoCat'
 import FadeIn from '@/components/FadeIn'
 import { FadeInUp } from '@/components/ui/PageTransitions'
 import DiagonalPattern from '@/components/DiagonalPattern'
@@ -16,7 +15,6 @@ interface ProjectDetailClientProps {
 export default function ProjectDetailClient({ project, allProjects }: ProjectDetailClientProps) {
   return (
     <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
       <div className="relative mx-auto max-w-4xl">
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />

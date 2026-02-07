@@ -42,6 +42,7 @@ export default function NewHeroSection() {
                 github: "https://github.com/pranitpatil03",
                 linkedin: "https://www.linkedin.com/in/patilpranit03/",
                 resume: "https://drive.google.com/file/d/1qOAkWlNj3qq9ZgAPFJFEvGA_s6FLF9kL/view?usp=sharing",
+                email: "mailto:patilpranit3112@gmail.com",
               }}
             />
           </Reveal>
@@ -72,8 +73,11 @@ export default function NewHeroSection() {
               {/* About Section */}
               <Reveal delay={0.1}>
                 <ContentSection className="pb-4 sm:pb-6 pt-4 sm:pt-6 px-2 sm:px-0">
+                  <ContentParagraph className="mb-4 text-base sm:text-lg">
+                    <span className="font-medium dark:text-white text-black">I&apos;m a builder who takes ideas to production</span> — crafting clean UIs, scalable systems, and full-stack products, from user needs to production, I enjoy owning the entire stack.
+                  </ContentParagraph>
                   <ContentParagraph className="mb-0 text-base sm:text-lg">
-                    <span className="font-medium dark:text-white text-black">I build from zero.</span> Whether it&apos;s frontend, backend, full-stack applications, or AI-powered experiences, I work across the entire development lifecycle. From UI/UX to deployment to user feedback, I care less about technology debates and more about delivering results that people love using.
+                    When I&apos;m not building, I&apos;m lifting at the gym, watching good movies, or going down rabbit holes about tech , space and more.
                   </ContentParagraph>
                 </ContentSection>
               </Reveal>
