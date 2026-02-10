@@ -42,7 +42,7 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
       <div className="relative mx-auto max-w-4xl">
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />
-        
+
         <div className="mx-auto sm:w-[calc(100%-120px)] w-full max-w-4xl sm:px-0">
           <div className="prose dark:prose-invert max-w-none">
             <div className="text-base">
@@ -55,14 +55,14 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                   </div>
                 </div>
               </FadeIn>
-              
+
               <FadeInUp delay={0.2}>
                 <div className="sm:px-12 py-2">
                   <div className="px-4">
                     {/* Header */}
                     <div className="mb-8">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="px-3 py-1 text-xs font-medium rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+                        <span className="px-3 py-1 text-xs font-medium rounded-full bg-neutral-100 dark:bg-white/[0.08] text-neutral-600 dark:text-neutral-400">
                           {experience.type}
                         </span>
                         <span className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -97,9 +97,9 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                       </h2>
                       <div className="flex flex-wrap gap-2">
                         {experience.techStack.map((tech) => (
-                          <div 
+                          <div
                             key={tech}
-                            className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-2 after:border-b-2 after:border-b-neutral-300 dark:bg-[#212121] dark:border-black/50 dark:after:border-[#2A2A2A] dark:after:border-b-black/50 after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']"
+                            className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-2 after:border-b-2 after:border-b-neutral-300 dark:bg-white/[0.05] dark:border-white/[0.1] dark:after:border-white/[0.06] dark:after:border-b-white/[0.03] after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']"
                           >
                             <div className="flex items-center gap-2 px-3 py-1.5">
                               {techIconMap[tech] && (
@@ -130,18 +130,17 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                             <h3 className="text-base font-semibold text-black dark:text-white">
                               {project.title}
                             </h3>
-                            <span className={`px-2 py-0.5 text-xs rounded-full ${
-                              project.status === 'completed'
-                                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
-                                : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400'
-                            }`}>
+                            <span className={`px-2 py-0.5 text-xs rounded-full ${project.status === 'completed'
+                              ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                              : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400'
+                              }`}>
                               {project.status === 'completed' ? 'Completed' : 'In Progress'}
                             </span>
                           </div>
                           <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
                             {project.description}
                           </p>
-                          
+
                           {/* Project Points */}
                           <ul className="space-y-1.5">
                             {project.points.slice(0, project.title === 'Risk Prediction Platform' ? project.points.length : 3).map((point, pointIdx) => (
@@ -157,7 +156,7 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                   </div>
                 </div>
               </FadeInUp>
-              
+
               <div className="pb-16 sm:pb-20" />
             </div>
           </div>

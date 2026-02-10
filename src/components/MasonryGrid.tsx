@@ -32,7 +32,7 @@ export const MasonryGrid = ({ projects, className = "" }: MasonryGridProps) => {
   return (
     <div className={`w-full ${className}`}>
       <div className="sm:py-6 lg:py-8">
-        <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
+        <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
           {/* Column 1 */}
           <div className="flex flex-col gap-4 sm:gap-3">
             {col1.map((project) => (

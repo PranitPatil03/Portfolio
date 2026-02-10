@@ -1,6 +1,5 @@
 'use client'
 
-import OnekoCat from '@/components/OnekoCat'
 import { MasonryGrid } from '@/components/MasonryGrid'
 import FadeIn from '@/components/FadeIn'
 import DiagonalPattern from '@/components/DiagonalPattern'
@@ -14,7 +13,6 @@ interface ProjectsListClientProps {
 export default function ProjectsListClient({ projects }: ProjectsListClientProps) {
   return (
     <div className="min-h-screen transition-colors duration-300 relative" style={{ fontFamily: 'var(--font-hk-grotesk)' }}>
-      <OnekoCat />
       <div className="relative mx-auto max-w-4xl">
         <DiagonalPattern side="left" />
         <DiagonalPattern side="right" />

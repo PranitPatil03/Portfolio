@@ -11,4 +11,5 @@ export interface Project {
   tags: string[];
   date?: string;
   tweetUrl?: string;
+  status?: 'building' | 'live';
 }

@@ -16,11 +16,11 @@ export default function BlogNotFoundClient() {
         <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mb-6 sm:mb-8">
           The blog post you&apos;re looking for doesn&apos;t exist or has been removed.
         </p>
-        <Link 
+        <Link
           href="/blogs"
-          className="inline-block px-4 py-2 text-sm sm:text-base bg-neutral-100 dark:bg-neutral-800 
+          className="inline-block px-4 py-2 text-sm sm:text-base bg-neutral-100 dark:bg-white/[0.08] 
                     text-neutral-800 dark:text-neutral-200 rounded-md border border-neutral-300 
-                    dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-700 
+                    dark:border-white/[0.1] hover:bg-neutral-200 dark:hover:bg-white/[0.12] 
                     transition-colors"
         >
           Back to Blog

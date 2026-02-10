@@ -38,7 +38,7 @@ interface TechIconProps {
 
 function TechIcon({ tech }: TechIconProps) {
   return (
-    <div className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-[2px] after:border-b-[2px] after:border-b-neutral-300 dark:bg-[#212121] dark:border-black/50 dark:after:border-[#2A2A2A] dark:after:border-b-black/50 after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']">
+    <div className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-[2px] after:border-b-[2px] after:border-b-neutral-300 dark:bg-white/[0.05] dark:border-white/[0.1] dark:after:border-white/[0.06] dark:after:border-b-white/[0.03] after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']">
       <div className="flex items-center gap-2 px-3 py-2">
         <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center">
           <Image

@@ -34,10 +34,10 @@ export default function Reachout({
             {title}
           </h2>
           <p className="opacity-20 text-md sm:text-lg mb-3 sm:mb-4">
-           {subtitle}
+            {subtitle}
           </p>
         </div>
-        
+
         <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
           {socialLinks.github && (
             <a
@@ -60,7 +60,7 @@ export default function Reachout({
               </NeumorphButton>
             </a>
           )}
-          
+
           {socialLinks.twitter && (
             <a
               className="touch-manipulation active:opacity-75"
@@ -82,7 +82,7 @@ export default function Reachout({
               </NeumorphButton>
             </a>
           )}
-          
+
           {socialLinks.linkedin && (
             <a
               className="touch-manipulation active:opacity-75"
@@ -128,7 +128,7 @@ export default function Reachout({
               </NeumorphButton>
             </a>
           )}
-          
+
           {socialLinks.resume && (
             <a
               className="touch-manipulation active:opacity-75"
@@ -151,9 +151,9 @@ export default function Reachout({
             </a>
           )}
         </div>
-        
+
         {/* Footer Section */}
-        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
+        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-white/[0.08]">
           <div className="flex flex-col space-y-2 sm:flex-row sm:justify-center sm:items-center sm:space-y-0 text-center">
             <div className="text-md dark:text-white/40 text-black/40">
               © {new Date().getFullYear()} Pranit Patil.

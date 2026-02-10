@@ -39,10 +39,10 @@ export default function EmptySponsorSlotCard({ sponsorUrl }: EmptySponsorSlotCar
           </h4>
 
           <div className="flex w-full flex-col gap-1 rounded-[6px] border border-border p-1">
-            <div className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 dark:bg-zinc-900/40 dark:text-zinc-300">
+            <div className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 dark:bg-white/[0.04] dark:text-zinc-300">
               <span className="ml-1.5 truncate">github.com/you</span>
             </div>
-            <div className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 dark:bg-zinc-900/40 dark:text-zinc-300">
+            <div className="flex w-full select-none items-center rounded-[4px] border border-border/40 bg-zinc-100 px-2 py-1 text-sm font-medium text-zinc-600 dark:bg-white/[0.04] dark:text-zinc-300">
               <span className="ml-1.5 truncate">x.com/you</span>
             </div>
           </div>

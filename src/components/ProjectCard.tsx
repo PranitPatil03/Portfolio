@@ -1,7 +1,7 @@
 'use client';
 
 import { Project } from '@/types/project'
-import { FaGithub} from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
@@ -67,7 +67,7 @@ const getVideoSource = (videoId: string) => {
     case 'satya-check':
       return satyaCheckVideo;
     case 'fleethq':
-      return fleethq; 
+      return fleethq;
     case 'rebatr-short':
       return rebatr;
     case 'lazycommit-video':
@@ -101,10 +101,10 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
 
   if (!isDetailed) {
     return (
-      <Link 
+      <Link
         href={`/projects/${project.id}`}
         className="group block touch-manipulation active:opacity-75"
-        style={{ 
+        style={{
           WebkitTapHighlightColor: 'transparent',
           WebkitTouchCallout: 'none',
           WebkitUserSelect: 'none',
@@ -129,11 +129,11 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
             {project.liveLink && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link 
-                    href={project.liveLink} 
-                    target="_blank" 
-                    className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
-                    style={{ 
+                  <Link
+                    href={project.liveLink}
+                    target="_blank"
+                    className="bg-neutral-200 border-2 border-black dark:bg-white/[0.08] dark:border-white/[0.15] p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
+                    style={{
                       WebkitTapHighlightColor: 'transparent',
                       WebkitTouchCallout: 'none',
                       WebkitUserSelect: 'none',
@@ -151,11 +151,11 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
             {project.githubLink && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link 
-                    href={project.githubLink} 
-                    target="_blank" 
-                    className="bg-neutral-200 border-2 border-black dark:bg-neutral-800 dark:border-neutral-500 p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
-                    style={{ 
+                  <Link
+                    href={project.githubLink}
+                    target="_blank"
+                    className="bg-neutral-200 border-2 border-black dark:bg-white/[0.08] dark:border-white/[0.15] p-1.5 rounded-full hover:opacity-70 touch-manipulation active:opacity-75"
+                    style={{
                       WebkitTapHighlightColor: 'transparent',
                       WebkitTouchCallout: 'none',
                       WebkitUserSelect: 'none',
@@ -174,9 +174,9 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
         </div>
         <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
           {project.tags.map(tag => (
-            <div 
-              key={tag} 
-              className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-2 after:border-b-2 after:border-b-neutral-300 dark:bg-[#212121] dark:border-black/50 dark:after:border-[#2A2A2A] dark:after:border-b-black/50 after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']"
+            <div
+              key={tag}
+              className="relative flex items-center justify-center overflow-hidden rounded-2xl border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-neutral-50 border-neutral-200 after:border-neutral-100 after:border-t-2 after:border-b-2 after:border-b-neutral-300 dark:bg-white/[0.05] dark:border-white/[0.1] dark:after:border-white/[0.06] dark:after:border-b-white/[0.03] after:absolute after:inset-0 after:rounded-2xl after:border-r-0 after:content-['']"
             >
               <div className="flex items-center gap-2 px-3 py-1.5">
                 {techIconMap[tag] && (
@@ -212,7 +212,7 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
           </div>
         ) : project.image && (
           <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5">
-            <Image 
+            <Image
               src={project.image}
               alt={project.title}
               width={1200}
@@ -238,11 +238,11 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
                   {index === 0 && project.tweetUrl && (
                     <>
                       {' '}
-                      <Link 
-                        href={project.tweetUrl} 
-                        target="_blank" 
+                      <Link
+                        href={project.tweetUrl}
+                        target="_blank"
                         className="text-cyan-500 dark:text-cyan-600 hover:underline touch-manipulation active:opacity-75"
-                        style={{ 
+                        style={{
                           WebkitTapHighlightColor: 'transparent',
                           WebkitTouchCallout: 'none',
                           WebkitUserSelect: 'none',
@@ -261,11 +261,11 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
                 {project.tweetUrl && (
                   <>
                     {' '}
-                    <Link 
-                      href={project.tweetUrl} 
-                      target="_blank" 
+                    <Link
+                      href={project.tweetUrl}
+                      target="_blank"
                       className="text-cyan-500 dark:text-cyan-600 hover:underline touch-manipulation active:opacity-75"
-                      style={{ 
+                      style={{
                         WebkitTapHighlightColor: 'transparent',
                         WebkitTouchCallout: 'none',
                         WebkitUserSelect: 'none',

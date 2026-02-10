@@ -20,6 +20,7 @@ export const projects: Project[] = [
     video: "",
     image: "/images/project1.png",
     tweetUrl: "",
+    status: 'building',
     tags: [
       "Next.js",
       "React",
@@ -42,6 +43,7 @@ export const projects: Project[] = [
     video: "",
     image: "/images/project1.png",
     tweetUrl: "",
+    status: 'live',
     tags: [
       "Next.js",
       "TypeScript",
@@ -61,6 +63,7 @@ export const projects: Project[] = [
     video: "",
     image: "/images/project1.png",
     tweetUrl: "",
+    status: 'live',
     tags: [
       "React",
       "Node.js",
@@ -80,6 +83,7 @@ export const projects: Project[] = [
     video: "",
     image: "/images/project1.png",
     tweetUrl: "",
+    status: 'live',
     tags: [
       "Python",
       "FastAPI",
@@ -99,6 +103,7 @@ export const projects: Project[] = [
     video: "",
     image: "/images/project1.png",
     tweetUrl: "",
+    status: 'live',
     tags: [
       "Next.js",
       "TypeScript",

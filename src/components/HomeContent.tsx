@@ -97,7 +97,7 @@ export default function NewHeroSection() {
                 <div>
                   <SectionHeading className="mt-6">Projects</SectionHeading>
                   <div className="sm:px-8 px-4">
-                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2 group">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
                       {projects.slice(0, 4).map((project) => (
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
@@ -162,12 +162,13 @@ export default function NewHeroSection() {
               </Reveal>
               */}
 
-              {/* call to action*/}
+              {/* Call to Action - commented out for now
               <Reveal delay={0.1}>
                 <div className="px-4 sm:px-0 mt-8">
                   <CallToAction />
                 </div>
               </Reveal>
+              */}
 
               {/* Reachout Section */}
               <Reveal delay={0.1}>

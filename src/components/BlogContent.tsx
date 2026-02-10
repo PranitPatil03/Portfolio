@@ -21,9 +21,9 @@ export const BlogContent: FC<BlogContentProps> = ({ blog }) => {
         {blog.tags && blog.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4 md:mt-6">
             {blog.tags.map(tag => (
-              <span 
-                key={tag} 
-                className="px-2 sm:px-3 py-0.5 sm:py-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-full text-xs whitespace-nowrap"
+              <span
+                key={tag}
+                className="px-2 sm:px-3 py-0.5 sm:py-1 bg-neutral-100 dark:bg-white/[0.08] text-neutral-800 dark:text-neutral-200 rounded-full text-xs whitespace-nowrap"
               >
                 {tag}
               </span>
@@ -31,7 +31,7 @@ export const BlogContent: FC<BlogContentProps> = ({ blog }) => {
           </div>
         )}
       </header>
-      
+
       {blog.content && (
         <div className="content prose-sm sm:prose-base md:prose-lg">
           <ReactMarkdown
@@ -51,9 +51,9 @@ export const BlogContent: FC<BlogContentProps> = ({ blog }) => {
       )}
       {blog.externalUrl && (
         <div className="mt-6 sm:mt-8 md:mt-12">
-          <a 
-            href={blog.externalUrl} 
-            target="_blank" 
+          <a
+            href={blog.externalUrl}
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors underline"
           >

@@ -71,9 +71,9 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
   const videoSource = project.video ? getVideoSource(project.video) : null;
 
   return (
-    <Link 
+    <Link
       href={`/projects/${project.id}`}
-      className={`group/item relative rounded-xl p-4 transition-all duration-300 bg-neutral-50 dark:bg-neutral-800/40 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 hover:scale-[1.02] hover:z-10 group-hover:opacity-50 hover:opacity-100! border border-neutral-200/50 dark:border-transparent block cursor-pointer ${className}`}
+      className={`group/item relative rounded-xl p-4 transition-colors duration-300 bg-neutral-50 dark:bg-white/[0.04] border border-neutral-200/50 dark:border-white/[0.08] block cursor-pointer ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -111,19 +111,33 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
             )}
           </div>
         </div>
-        
+
         {/* Project Info */}
         <div className="pt-3">
-          {/* Title */}
-          <h3 className="font-semibold text-black dark:text-white text-base mb-1">
-            {project.title}
-          </h3>
-          
+          {/* Title + Status */}
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="font-semibold text-black dark:text-white text-base">
+              {project.title}
+            </h3>
+            {project.status && (
+              <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${project.status === 'building'
+                ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400'
+                : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400'
+                }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${project.status === 'building'
+                  ? 'bg-amber-500 animate-pulse'
+                  : 'bg-emerald-500'
+                  }`} />
+                {project.status === 'building' ? 'Building' : 'Live'}
+              </span>
+            )}
+          </div>
+
           {/* Description */}
           <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-3 line-clamp-2 leading-relaxed">
             {project.description}
           </p>
-          
+
           {/* View Project Link */}
           <span className="inline-flex items-center gap-1 text-sm font-medium text-black dark:text-white">
             View Project

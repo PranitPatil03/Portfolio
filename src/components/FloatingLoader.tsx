@@ -8,10 +8,10 @@ interface FloatingLoaderProps {
   position?: 'top' | 'bottom' | 'center'
 }
 
-export const FloatingLoader = ({ 
-  isVisible, 
-  text = 'Loading...', 
-  position = 'top' 
+export const FloatingLoader = ({
+  isVisible,
+  text = 'Loading...',
+  position = 'top'
 }: FloatingLoaderProps) => {
   const positionClasses = {
     top: 'top-20 left-1/2 transform -translate-x-1/2',
@@ -27,7 +27,7 @@ export const FloatingLoader = ({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: position === 'top' ? -50 : 50, scale: 0.8 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className={`fixed ${positionClasses[position]} z-50 bg-white dark:bg-zinc-900 border border-neutral-200 dark:border-neutral-700 rounded-full px-4 py-2 shadow-lg backdrop-blur-md`}
+          className={`fixed ${positionClasses[position]} z-50 bg-white dark:bg-white/[0.05] border border-neutral-200 dark:border-white/[0.1] rounded-full px-4 py-2 shadow-lg backdrop-blur-md`}
         >
           <div className="flex items-center space-x-3">
             <div className="loader" style={{ fontSize: '16px' }}>
