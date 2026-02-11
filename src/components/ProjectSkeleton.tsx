@@ -1,4 +1,4 @@
-w'use client';
+'use client';
 
 interface ProjectSkeletonProps {
   className?: string;
