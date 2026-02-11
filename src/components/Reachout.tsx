@@ -30,10 +30,10 @@ export default function Reachout({
     <div className="sm:px-12 px-4 pb-24 sm:pb-28">
       <div className="text-left w-full">
         <div className="mb-4 sm:mb-6">
-          <h2 className="font-[family-name:var(--font-instrument-serif)] text-lg sm:text-xl mb-2 opacity-20 mt-4 sm:mt-6">
+          <h2 className="font-(family-name:var(--font-instrument-serif)) text-white text-lg sm:text-xl mb-2 mt-4 sm:mt-6">
             {title}
           </h2>
-          <p className="opacity-20 text-md sm:text-lg mb-3 sm:mb-4">
+          <p className="text-md sm:text-lg mb-3 sm:mb-4">
             {subtitle}
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function Reachout({
         {/* Footer Section */}
         <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-white/[0.08]">
           <div className="flex flex-col space-y-2 sm:flex-row sm:justify-center sm:items-center sm:space-y-0 text-center">
-            <div className="text-md dark:text-white/40 text-black/40">
+            <div className="text-md text-white">
               © {new Date().getFullYear()} Pranit Patil.
             </div>
           </div>

@@ -2,6 +2,39 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    id: "relay",
+    title: "Relay",
+    description: "Start Chatting without frictions. One click to create a room. One link to invite your team. Zero barriers to communication.",
+    longDescription:
+      "Relay is an instant communication platform that lets you create and join chat rooms in seconds. Create a room with one click, share a link to invite your team — no signup required for guests. Features include real-time messaging powered by WebSockets, file sharing via AWS S3 + CloudFront, optional Google/GitHub authentication, and a modern responsive UI built with Tailwind CSS and Framer Motion. Deployed as a monorepo with Turborepo: frontend on Vercel, backend on Railway.",
+    features: [
+      "Instant Rooms: Create and join chat rooms in seconds, no unnecessary barriers",
+      "Privacy First: Designed for private, ephemeral communication",
+      "Real-Time: High-performance WebSockets for instant message delivery",
+      "File Sharing: Share images and files via AWS S3 + CloudFront CDN",
+      "Secure Authentication: Optional Google and GitHub login for persistent rooms",
+      "Modern UI: Beautiful, responsive interface with Tailwind CSS and Framer Motion",
+      "User Dashboard: Track room usage and manage active sessions",
+    ],
+    liveLink: "https://getrealy.vercel.app/",
+    githubLink: "https://github.com/PranitPatil03/relay",
+    video: "",
+    image: "/images/relay.png",
+    tweetUrl: "",
+    status: "live",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "Express",
+      "Node.js",
+    ],
+  },
+  {
     id: "spark",
     title: "Spark",
     description: "An AI-powered IDE that transforms your ideas into production-ready applications with real-time collaboration.",
