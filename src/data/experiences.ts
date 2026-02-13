@@ -45,24 +45,31 @@ export const experiences: ExperienceDetail[] = [
       },
       {
         title: "AI Data Analytics Platform",
-        description: "An enterprise data analytics platform with AI-powered insights and automated reporting capabilities.",
+        description: "An AI data science chatbot platform that combines conversational analytics with notebook-style Python execution for real-time insights.",
         points: [
-          "Building comprehensive data visualization and reporting tools for enterprise clients",
-          "Implementing ETL pipelines for multi-source data integration and processing"
+          "Built an intelligent chat interface in Next.js 16 using AI SDK 5.0 and Anthropic Claude to translate natural language questions into executable analysis workflows.",
+          "Integrated E2B Code Interpreter to spin up isolated Python notebook environments with pre-installed data-science libraries (pandas, numpy, matplotlib, seaborn, plotly, scikit-learn).",
+          "Implemented file upload and persistence using Vercel Blob and PostgreSQL (Drizzle ORM), making uploaded CSV/XLS files available inside notebook sessions.",
+          "Designed a modern, dark-mode optimized UI with Tailwind CSS v4, shadcn/ui components, and CodeMirror/ProseMirror editors for code and rich-text outputs.",
+          "Secured the platform with Auth.js-based authentication and guest sessions, preparing it for production deployments on Vercel with migrations and observability hooks."
         ],
-        techStack: ["Next.js", "Python", "PostgreSQL", "AWS"],
+        techStack: [
+          "Next.js",
+          "AI SDK",
+          "Anthropic Claude",
+          "E2B Code Interpreter",
+          "PostgreSQL",
+          "Drizzle ORM",
+          "Vercel Blob",
+          "Auth.js",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "CodeMirror",
+          "ProseMirror"
+        ],
         status: "in-progress"
       },
-      {
-        title: "News Sentiment Analysis System",
-        description: "An NLP-based platform focused on detecting religious hate speech in news content with real-time content moderation.",
-        points: [
-          "Developing NLP models for sentiment analysis and hate speech detection using transformer architectures",
-          "Building real-time content moderation pipeline with multi-source news aggregation"
-        ],
-        techStack: ["Python", "FastAPI", "Next.js", "PostgreSQL"],
-        status: "in-progress"
-      }
+      // Previously: News Sentiment Analysis System (removed to keep focus on AI data analytics and notebook-based chatbot work)
     ],
     techStack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "AWS", "Docker", "Redis", "TanStack Query", "Zustand"]
   }

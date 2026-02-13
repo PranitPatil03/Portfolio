@@ -49,7 +49,7 @@ export default function ProfileHeader({
     twitter: "https://x.com/Patilpranit3112",
     github: "https://github.com/pranitpatil03",
     linkedin: "https://www.linkedin.com/in/patilpranit03/",
-    resume: "https://drive.google.com/file/d/1qOAkWlNj3qq9ZgAPFJFEvGA_s6FLF9kL/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
     email: "mailto:patilpranit3112@gmail.com",
   }
 }: ProfileHeaderProps) {

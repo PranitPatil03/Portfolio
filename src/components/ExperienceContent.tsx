@@ -104,7 +104,9 @@ export default function ExperienceContent() {
         "Designed RBAC systems with JWT auth, secure data isolation, scoped access across tenants and orgs.",
         "Developed ML inference pipelines (LightGBM, Logistic Regression) serving real-time and bulk predictions.",
         "Architected AWS infrastructure (ECS Fargate, RDS, Redis) with CI/CD pipelines and auto-scaling.",
-        "Currently building AI-powered data analytics and news sentiment analysis platforms."
+        "Currently building AI-powered data analytics and notebook-driven data science chatbot platform.",
+        "This includes an AI data science assistant with Jupyter-style notebooks, E2B-powered Python sandboxes, and pre-installed ML libraries for analytics and visualization.",
+        "Users can upload CSV/XLS files, ask questions in natural language, and get executable Python code, charts, and insights streamed back in real time."
       ],
       techStack: ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "AWS", "Docker", "Redis"],
       logo: <IndependentLogo />,

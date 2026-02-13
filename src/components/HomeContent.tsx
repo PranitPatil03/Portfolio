@@ -40,7 +40,7 @@ export default function NewHeroSection() {
                 twitter: "https://x.com/Patilpranit3112",
                 github: "https://github.com/pranitpatil03",
                 linkedin: "https://www.linkedin.com/in/patilpranit03/",
-                resume: "https://drive.google.com/file/d/1qOAkWlNj3qq9ZgAPFJFEvGA_s6FLF9kL/view?usp=sharing",
+                    resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
                 email: "mailto:patilpranit3112@gmail.com",
               }}
             />
@@ -101,14 +101,6 @@ export default function NewHeroSection() {
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
                     </div>
-                  </div>
-                  <div className="px-4 flex justify-center mt-6 sm:mt-8 mb-4 sm:mb-6">
-                    <Link href="/projects">
-                      <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
-                        <span>View All</span>
-                        <span>→</span>
-                      </NeumorphButton>
-                    </Link>
                   </div>
                 </div>
               </Reveal>
