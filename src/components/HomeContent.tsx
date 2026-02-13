@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import DiagonalPattern from './DiagonalPattern'
 import BannerSection from './BannerSection'
 import ProfileHeader from './ProfileHeader'
@@ -14,7 +13,6 @@ import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 import { projects } from '@/data/projects'
 import { MasonryProjectCard } from './MasonryProjectCard'
-import NeumorphButton from './NeumorphButton'
 
 export default function NewHeroSection() {
   return (
