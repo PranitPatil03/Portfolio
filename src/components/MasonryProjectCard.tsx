@@ -4,7 +4,7 @@ import { Project } from '@/types/project'
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from 'lucide-react';
-import { useState } from 'react';
+
 
 // Tech icon mapping - matches ProjectCard
 const techIconMap: Record<string, string> = {
@@ -38,14 +38,11 @@ interface MasonryProjectCardProps {
 }
 
 export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
   const techTags = project.tags.filter((tag) => techIconMap[tag]).slice(0, 6);
 
   return (
     <div
       className={`group/item relative rounded-xl p-4 transition-colors duration-300 bg-neutral-50 dark:bg-white/[0.04] border border-neutral-200/50 dark:border-white/[0.08] ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <Link href={`/projects/${project.id}`} className="block cursor-pointer">
         {/* Media Container */}
@@ -117,14 +114,14 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
         {project.status && (
           <span
             className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${project.status === "building"
-                ? "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400"
-                : "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"
+              ? "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400"
+              : "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"
               }`}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full ${project.status === "building"
-                  ? "bg-amber-500 animate-pulse"
-                  : "bg-emerald-500"
+                ? "bg-amber-500 animate-pulse"
+                : "bg-emerald-500"
                 }`}
             />
             {project.status === "building" ? "Building" : "Live"}
