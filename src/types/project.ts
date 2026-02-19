@@ -4,7 +4,6 @@ export interface Project {
   description: string;
   longDescription?: string;
   features?: string[];
-  video?: string;
   image?: string;
   liveLink?: string;
   githubLink?: string;

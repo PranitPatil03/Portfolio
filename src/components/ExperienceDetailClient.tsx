@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
 import { FadeInUp } from '@/components/ui/PageTransitions'
 import DiagonalPattern from '@/components/DiagonalPattern'
@@ -127,9 +128,16 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                         <div key={index} className="">
                           {/* Project Header */}
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="text-base font-semibold text-black dark:text-white">
+                            <Link
+                              href={`/experience/${experience.slug}?project=${project.projectSlug}`}
+                              className="text-base font-semibold text-black dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors inline-flex items-center gap-1.5 group underline decoration-neutral-300 dark:decoration-neutral-600 underline-offset-4 hover:decoration-neutral-500 dark:hover:decoration-neutral-400"
+                            >
                               {project.title}
-                            </h3>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 group-hover:opacity-100 transition-opacity duration-200 shrink-0">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                              </svg>
+                            </Link>
                             <span className={`px-2 py-0.5 text-xs rounded-full ${project.status === 'completed'
                               ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                               : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400'
@@ -143,7 +151,7 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
 
                           {/* Project Points */}
                           <ul className="space-y-1.5">
-                            {project.points.slice(0, project.title === 'Risk Prediction Platform' ? project.points.length : 3).map((point, pointIdx) => (
+                            {project.points.map((point, pointIdx) => (
                               <li key={pointIdx} className="flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-300">
                                 <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
                                 <span className="leading-6">{point}</span>

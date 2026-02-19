@@ -4,24 +4,7 @@ import { Project } from '@/types/project'
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from 'lucide-react';
-import Video from "next-video";
 import { useState } from 'react';
-import donezovideo from '/videos/donezo.mp4';
-import mindMentorVideo from '/videos/mind-mentor.mp4';
-import satyaCheckVideo from '/videos/satya-check.mp4';
-import fleethq from '/videos/fleethq.mp4';
-import rebatr from '/videos/rebatr-short.mp4';
-import lazycommitVideo from '/videos/lazycommit-video.mp4';
-import gocache from '/videos/gocache.mp4';
-import quotick from '/videos/quotick.mp4'
-import doable from '/videos/doable.mp4';
-import stage from '/videos/stage.mp4';
-import readmelingo from '/videos/readmelingo.mp4';
-import foliox from '/videos/foliox.mp4';
-import mercurius from '/videos/mercurius.mp4';
-import oneurl from '/videos/oneurl.mp4';
-import bettershot from '/videos/bettershot.mp4';
-import linkpreview from '/videos/linkpreview.mp4';
 
 // Tech icon mapping - matches ProjectCard
 const techIconMap: Record<string, string> = {
@@ -54,48 +37,8 @@ interface MasonryProjectCardProps {
   className?: string;
 }
 
-const getVideoSource = (videoId: string) => {
-  switch (videoId) {
-    case 'donezo':
-      return donezovideo;
-    case 'mind-mentor':
-      return mindMentorVideo;
-    case 'satya-check':
-      return satyaCheckVideo;
-    case 'fleethq':
-      return fleethq;
-    case 'rebatr-short':
-      return rebatr;
-    case 'lazycommit-video':
-      return lazycommitVideo;
-    case 'gocache':
-      return gocache;
-    case 'quotick':
-      return quotick;
-    case 'doable':
-      return doable;
-    case 'stage':
-      return stage;
-    case 'readmelingo':
-      return readmelingo;
-    case 'foliox':
-      return foliox;
-    case 'mercurius':
-      return mercurius;
-    case 'oneurl':
-      return oneurl;
-    case 'bettershot':
-      return bettershot;
-    case 'linkpreview':
-      return linkpreview;
-    default:
-      return null;
-  }
-};
-
 export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const videoSource = project.video ? getVideoSource(project.video) : null;
   const techTags = project.tags.filter((tag) => techIconMap[tag]).slice(0, 6);
 
   return (
@@ -108,25 +51,13 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
         {/* Media Container */}
         <div className="relative z-10 rounded-lg overflow-hidden">
           <div className="relative overflow-hidden w-full aspect-video rounded-lg">
-            {videoSource && isHovered ? (
-              <Video
-                key={project.id}
-                src={videoSource}
-                poster={project.image}
-                className="w-full h-full object-cover"
-                playsInline
-                autoPlay
-                muted
-                loop
-                controls={false}
-              />
-            ) : project.image ? (
+            {project.image ? (
               <Image
                 src={project.image}
                 alt={`${project.title} project cover`}
                 width={1200}
                 height={900}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ color: "transparent" }}
                 sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
                 quality={75}
@@ -185,18 +116,16 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
         </div>
         {project.status && (
           <span
-            className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${
-              project.status === "building"
+            className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${project.status === "building"
                 ? "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400"
                 : "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"
-            }`}
+              }`}
           >
             <span
-              className={`w-1.5 h-1.5 rounded-full ${
-                project.status === "building"
+              className={`w-1.5 h-1.5 rounded-full ${project.status === "building"
                   ? "bg-amber-500 animate-pulse"
                   : "bg-emerald-500"
-              }`}
+                }`}
             />
             {project.status === "building" ? "Building" : "Live"}
           </span>

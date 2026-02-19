@@ -32,6 +32,12 @@ const techIconMap: Record<string, string> = {
   "TanStack Query": "/tech-icons/tanstack.svg",
 }
 
+interface ProjectGroup {
+  name: string;
+  href: string;
+  points: string[];
+}
+
 interface ExperienceItem {
   company: string;
   position: string;
@@ -39,6 +45,7 @@ interface ExperienceItem {
   duration: string;
   location: string;
   points: string[];
+  projectGroups?: ProjectGroup[];
   techStack: string[];
   logo: React.ReactNode;
   href?: string;
@@ -99,14 +106,27 @@ export default function ExperienceContent() {
       type: "Contract",
       duration: "Oct 2025 – Current",
       location: "India - Remote",
-      points: [
-        "Built multi-tenant SaaS platforms with Next.js 15, FastAPI, ML-powered analytics for enterprise clients.",
-        "Designed RBAC systems with JWT auth, secure data isolation, scoped access across tenants and orgs.",
-        "Developed ML inference pipelines (LightGBM, Logistic Regression) serving real-time and bulk predictions.",
-        "Architected AWS infrastructure (ECS Fargate, RDS, Redis) with CI/CD pipelines and auto-scaling.",
-        "Currently building AI-powered data analytics and notebook-driven data science chatbot platform.",
-        "This includes an AI data science assistant with Jupyter-style notebooks, E2B-powered Python sandboxes, and pre-installed ML libraries for analytics and visualization.",
-        "Users can upload CSV/XLS files, ask questions in natural language, and get executable Python code, charts, and insights streamed back in real time."
+      points: [],
+      projectGroups: [
+        {
+          name: "AccuNode — Credit Risk Assessment Platform",
+          href: "/experience/contractor?project=accunode",
+          points: [
+            "Built multi-tenant SaaS platforms with Next.js 15, FastAPI, ML-powered analytics for enterprise clients.",
+            "Designed RBAC systems with JWT auth, secure data isolation, scoped access across tenants and orgs.",
+            "Developed ML inference pipelines (LightGBM, Logistic Regression) serving real-time and bulk predictions.",
+            "Architected AWS infrastructure (ECS Fargate, RDS, Redis) with CI/CD pipelines and auto-scaling.",
+          ],
+        },
+        {
+          name: "Notebook AI — AI Data Analysis Platform",
+          href: "/experience/contractor?project=notebook-ai",
+          points: [
+            "Currently building AI-powered data analytics and notebook-driven data science chatbot platform.",
+            "This includes an AI data science assistant with Jupyter-style notebooks, E2B-powered Python sandboxes, and pre-installed ML libraries for analytics and visualization.",
+            "Users can upload CSV/XLS files, ask questions in natural language, and get executable Python code, charts, and insights streamed back in real time.",
+          ],
+        },
       ],
       techStack: ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "AWS", "Docker", "Redis"],
       logo: <IndependentLogo />,
@@ -226,18 +246,49 @@ export default function ExperienceContent() {
             >
               <div className="overflow-hidden">
                 <div className="px-5 pb-5 pt-0">
-                  {/* Bullet Points */}
-                  <ul className="space-y-2.5 mb-4">
-                    {exp.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
-                        <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
-                        <span className="leading-6">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Project Groups (for contractor with multiple projects) */}
+                  {exp.projectGroups && exp.projectGroups.length > 0 ? (
+                    <div className="space-y-5 mb-4">
+                      {exp.projectGroups.map((group, groupIdx) => (
+                        <div key={groupIdx}>
+                          <Link
+                            href={group.href}
+                            scroll={true}
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-black dark:text-white hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors mb-2 group underline decoration-neutral-300 dark:decoration-neutral-600 underline-offset-4 hover:decoration-neutral-500 dark:hover:decoration-neutral-400"
+                          >
+                            <span>{group.name}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 group-hover:opacity-100 transition-opacity duration-200 shrink-0">
+                              <path d="M7 7h10v10" />
+                              <path d="M7 17 17 7" />
+                            </svg>
+                          </Link>
+                          <ul className="space-y-1.5">
+                            {group.points.map((point, idx) => (
+                              <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
+                                <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
+                                <span className="leading-6">{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <>
+                      {/* Bullet Points */}
+                      <ul className="space-y-2.5 mb-4">
+                        {exp.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
+                            <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
+                            <span className="leading-6">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
 
                   {/* Read More Link */}
-                  {exp.slug && (
+                  {exp.slug && !exp.projectGroups && (
                     <div className="mb-4">
                       <Link
                         href={`/experience/${exp.slug}`}

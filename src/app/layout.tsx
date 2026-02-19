@@ -52,29 +52,29 @@ export default function RootLayout({
       <body className={`${hkGrotesk.className} ${instrumentSerif.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="relative z-10">
             {children}
           </div>
-          <GradualBlur 
-            position="bottom" 
-            height="3rem" 
-            target="page" 
+          <GradualBlur
+            position="bottom"
+            height="3rem"
+            target="page"
             zIndex={1}
             strength={1}
             divCount={3}
           />
           <ScrollToTop />
         </ThemeProvider>
-       <script
+        <script
           src="https://cdn.databuddy.cc/databuddy.js"
           data-client-id="2cYj0B5Uv0T4q70DhnoAc"
           data-enable-batching="true"
           async
-  ></script>
+        ></script>
       </body>
     </html>
   );

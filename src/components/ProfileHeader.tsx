@@ -4,7 +4,6 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import PortfolioStars from './PortfolioStars';
 import NeumorphButton from "./NeumorphButton";
 
 const PROFILE_IMAGES = [
@@ -62,16 +61,19 @@ export default function ProfileHeader({
     setProfileImage(getSessionProfileImage());
   }, []);
 
+
+
+
   return (
     <div className="flex-col -mt-10">
       <div className="flex items-center justify-between mb-4 sm:ml-8 ml-4 sm:mr-8 mr-4">
+        {/* ... profile image ... */}
         <div
           className="w-24 h-24 sm:w-28 sm:h-28 relative z-10 rounded-full overflow-hidden bg-cover bg-center shrink-0"
           role="img"
           aria-label={name}
           style={{ backgroundImage: `url("${profileImage}")` }}
         />
-        <PortfolioStars />
       </div>
 
       {/* Name + Social Icons Row */}
@@ -79,7 +81,7 @@ export default function ProfileHeader({
         <h1 className="font-(family-name:--font-instrument-serif) italic text-2xl sm:text-4xl tracking-[0.01em] font-medium">
           {name}
         </h1>
-        
+
         {/* Social Icons */}
         <div className="flex gap-1 sm:gap-2">
           {socialLinks.github && (
@@ -247,10 +249,10 @@ export default function ProfileHeader({
         <p className="opacity-40 text-xs sm:text-sm">
           {age} • {title}
         </p>
-        
+
         {/* Open for Opportunities Status */}
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="relative flex items-center justify-center overflow-hidden rounded-full border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-green-100 border-green-200 after:border-green-100 after:border-t-2 after:border-b-2 after:border-b-green-300 dark:bg-green-900/30 dark:border-green-800 dark:after:border-green-800 dark:after:border-b-green-900 after:absolute after:inset-0 after:rounded-full after:border-r-0 after:content-['']">
+          <div className="relative flex items-center justify-center overflow-hidden rounded-full border [box-shadow:0_4px_10px_-4px_rgba(15,23,42,0.15)] bg-green-100 border-green-200 after:border-green-100 after:border-t-white after:border-t-2 after:border-b-2 after:border-b-green-300 dark:bg-green-900/30 dark:border-green-800 dark:after:border-green-800 dark:after:border-t-green-800 dark:after:border-b-green-900 after:absolute after:inset-0 after:rounded-full after:border-r-0 after:content-['']">
             <div className="flex items-center gap-1.5 px-3 py-1.5">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
