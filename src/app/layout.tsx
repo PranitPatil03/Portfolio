@@ -22,11 +22,11 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kartik017.vercel.app'),
+  metadataBase: new URL('https://pranitpatil.tech'),
   title: 'Pranit Patil',
   description: 'I build products that solve real problems. Available for new opportunities.',
   openGraph: {
-    url: 'https://kartik017.vercel.app/',
+    url: 'https://pranitpatil.tech',
     siteName: 'Pranit Patil Portfolio',
     locale: 'en_US',
     type: 'website',
