@@ -23,19 +23,31 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pranitpatil.tech'),
-  title: 'Pranit Patil',
+  title: {
+    default: 'Pranit Patil - Software Engineer',
+    template: '%s | Pranit Patil'
+  },
   description: 'I build products that solve real problems. Available for new opportunities.',
+  keywords: ['Pranit Patil', 'Software Engineer', 'Full Stack Developer', 'Portfolio', 'Web Development'],
   openGraph: {
     url: 'https://pranitpatil.tech',
     siteName: 'Pranit Patil Portfolio',
+    title: 'Pranit Patil - Software Engineer',
+    description: 'I build products that solve real problems. Available for new opportunities.',
     locale: 'en_US',
     type: 'website',
     images: [{
       url: '/open-graph.png',
       width: 1200,
       height: 630,
-      alt: 'Pranit Patil - Portfolio'
+      alt: 'Pranit Patil - Portfolio Open Graph Image'
     }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pranit Patil - Software Engineer',
+    description: 'I build products that solve real problems. Available for new opportunities.',
+    images: ['/open-graph.png'],
   },
 };
 
