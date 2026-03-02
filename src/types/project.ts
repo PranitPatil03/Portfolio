@@ -5,6 +5,7 @@ export interface Project {
   longDescription?: string;
   features?: string[];
   image?: string;
+  imagePosition?: 'top' | 'center' | 'bottom';
   liveLink?: string;
   githubLink?: string;
   tags: string[];

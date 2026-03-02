@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 const BANNER_IMAGES = [
-  '/images/image-copy-3.png',
-  '/images/image-copy-3.png'
+  '/images/main-banner.png',
+  '/images/main-banner.png'
 ]
 
 const STORAGE_KEY = 'portfolio_banner_image'

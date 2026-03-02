@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import NeumorphButton from "./NeumorphButton";
 
 const PROFILE_IMAGES = [
-  '/images/profile2.png'
+  '/images/profile.png'
 ]
 
 const STORAGE_KEY = 'portfolio_profile_image'

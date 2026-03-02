@@ -141,13 +141,13 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
       {/* Media Section - Fixed Container */}
       <div className="mb-6 sm:mb-8">
         {project.image && (
-          <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5">
+          <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5 group/image">
             <Image
               src={project.image}
               alt={project.title}
               width={1200}
               height={900}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover/image:scale-200 ${project.imagePosition === 'top' ? 'object-top' : project.imagePosition === 'bottom' ? 'object-bottom' : ''}`}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1200px) 70vw, 60vw"
               quality={95}
               priority

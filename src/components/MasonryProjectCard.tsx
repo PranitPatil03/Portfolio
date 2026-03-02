@@ -54,7 +54,7 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
                 alt={`${project.title} project cover`}
                 width={1200}
                 height={900}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover/item:scale-[1.03] ${project.imagePosition === 'top' ? 'object-top' : project.imagePosition === 'bottom' ? 'object-bottom' : ''}`}
                 style={{ color: "transparent" }}
                 sizes="(max-width: 640px) 384px, (max-width: 768px) 50vw, (max-width: 1024px) 50vw, 317px"
                 quality={75}
