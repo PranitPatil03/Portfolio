@@ -135,7 +135,7 @@ export const projects: Project[] = [
     ],
     liveLink: "https://getrealy.vercel.app/",
     githubLink: "https://github.com/PranitPatil03/relay",
-    image: "/images/relay.png",
+    image: "/images/replayy.jpeg",
     tweetUrl: "",
     status: "live",
     tags: [
