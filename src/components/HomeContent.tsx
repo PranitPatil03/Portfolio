@@ -38,7 +38,7 @@ export default function NewHeroSection() {
                 twitter: "https://x.com/Patilpranit3112",
                 github: "https://github.com/pranitpatil03",
                 linkedin: "https://www.linkedin.com/in/patilpranit03/",
-                    resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
+                resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
                 email: "mailto:patilpranit3112@gmail.com",
               }}
             />
@@ -95,7 +95,7 @@ export default function NewHeroSection() {
                   <SectionHeading className="mt-6">Projects</SectionHeading>
                   <div className="sm:px-8 px-4">
                     <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
-                      {projects.slice(0, 4).map((project) => (
+                      {projects.map((project) => (
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
                     </div>

@@ -46,7 +46,7 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
     >
       <Link href={`/projects/${project.id}`} className="block cursor-pointer">
         {/* Media Container */}
-        <div className="relative z-10 rounded-lg overflow-hidden">
+        <div className="relative z-10 rounded-lg overflow-hidden border border-neutral-200 dark:border-white/[0.1]">
           <div className="relative overflow-hidden w-full aspect-video rounded-lg">
             {project.image ? (
               <Image
