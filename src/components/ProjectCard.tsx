@@ -11,7 +11,11 @@ import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip
 // Tech icon mapping
 const techIconMap: Record<string, string> = {
   "Next.js": "/tech-icons/nextjs.svg",
+  "Next.js 14": "/tech-icons/nextjs.svg",
+  "Next.js 15": "/tech-icons/nextjs.svg",
   "React": "/tech-icons/react.svg",
+  "React 18": "/tech-icons/react.svg",
+  "React 19": "/tech-icons/react.svg",
   "TypeScript": "/tech-icons/typescript.svg",
   "JavaScript": "/tech-icons/javascript.svg",
   "Tailwind CSS": "/tech-icons/tailwind.svg",
@@ -141,7 +145,7 @@ export const ProjectCard = ({ project, isDetailed = false, allProjects = [] }: P
       {/* Media Section - Fixed Container */}
       <div className="mb-6 sm:mb-8">
         {project.image && (
-          <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5 border border-neutral-200 dark:border-white/[0.1]">
+          <div className="w-full aspect-4/3 relative rounded-lg overflow-hidden bg-black/5 dark:bg-white/5">
             <Image
               src={project.image}
               alt={project.title}

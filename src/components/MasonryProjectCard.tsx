@@ -9,7 +9,11 @@ import { ArrowUpRight } from 'lucide-react';
 // Tech icon mapping - matches ProjectCard
 const techIconMap: Record<string, string> = {
   "Next.js": "/tech-icons/nextjs.svg",
+  "Next.js 14": "/tech-icons/nextjs.svg",
+  "Next.js 15": "/tech-icons/nextjs.svg",
   "React": "/tech-icons/react.svg",
+  "React 18": "/tech-icons/react.svg",
+  "React 19": "/tech-icons/react.svg",
   "TypeScript": "/tech-icons/typescript.svg",
   "JavaScript": "/tech-icons/javascript.svg",
   "Tailwind CSS": "/tech-icons/tailwind.svg",
@@ -46,7 +50,7 @@ export const MasonryProjectCard = ({ project, className = "" }: MasonryProjectCa
     >
       <Link href={`/projects/${project.id}`} className="block cursor-pointer">
         {/* Media Container */}
-        <div className="relative z-10 rounded-lg overflow-hidden border border-neutral-200 dark:border-white/[0.1]">
+        <div className="relative z-10 rounded-lg overflow-hidden">
           <div className="relative overflow-hidden w-full aspect-video rounded-lg">
             {project.image ? (
               <Image

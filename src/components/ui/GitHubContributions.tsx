@@ -42,13 +42,14 @@ const GitHubContributions: React.FC<GitHubContributionsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className={`${compact ? 'p-2' : 'p-3'}`}>
+        <div className={`${compact ? 'p-2' : 'p-3'} [&>div]:w-full [&_svg]:w-full [&_svg]:max-w-full [&_svg]:h-auto`}>
           <GitHubCalendar
             username={username}
+            year={new Date().getFullYear()}
             colorScheme={resolvedTheme as "light" | "dark"}
-            fontSize={compact ? 14 : 12}
-            blockSize={compact ? 10 : 11}
-            blockMargin={compact ? 2 : 4}
+            fontSize={compact ? 11 : 10}
+            blockSize={compact ? 9 : 10}
+            blockMargin={compact ? 2 : 3}
             theme={theme}
           />
         </div>

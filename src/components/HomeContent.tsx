@@ -13,6 +13,7 @@ import TechStackMarquee from './TechStackMarquee'
 import { Reveal } from './Reveal'
 import { projects } from '@/data/projects'
 import { MasonryProjectCard } from './MasonryProjectCard'
+import Link from 'next/link'
 
 export default function NewHeroSection() {
   return (
@@ -95,10 +96,21 @@ export default function NewHeroSection() {
                   <SectionHeading className="mt-6">Projects</SectionHeading>
                   <div className="sm:px-8 px-4">
                     <div className="grid grid-cols-1 gap-4 sm:gap-3 sm:grid-cols-2">
-                      {projects.map((project) => (
+                      {projects.slice(0, 4).map((project) => (
                         <MasonryProjectCard key={project.id} project={project} />
                       ))}
                     </div>
+                    {projects.length > 4 && (
+                      <div className="flex justify-center mt-6">
+                        <Link
+                          href="/projects"
+                          className="inline-flex items-center gap-1.5 px-5 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white border border-neutral-300 dark:border-neutral-700 rounded-lg hover:border-neutral-400 dark:hover:border-neutral-500 transition-all duration-200"
+                        >
+                          View all projects
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>
