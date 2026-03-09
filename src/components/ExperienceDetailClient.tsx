@@ -8,6 +8,23 @@ import DiagonalPattern from '@/components/DiagonalPattern'
 import PageNavigation from '@/components/Navigation'
 import { ExperienceDetail } from '@/data/experiences'
 
+// Helper function to render highlighted text
+function renderPointWithHighlights(point: string): React.ReactNode {
+  const parts = point.split(/(<highlight>.*?<\/highlight>)/g)
+
+  return parts.map((part, idx) => {
+    if (part.startsWith('<highlight>') && part.endsWith('</highlight>')) {
+      const text = part.replace(/<\/?highlight>/g, '')
+      return (
+        <span key={idx} className="font-semibold text-blue-600 dark:text-blue-400">
+          {text}
+        </span>
+      )
+    }
+    return part
+  })
+}
+
 // Tech icon mapping
 const techIconMap: Record<string, string> = {
   "Next.js": "/tech-icons/nextjs.svg",
@@ -154,7 +171,7 @@ export default function ExperienceDetailClient({ experience }: ExperienceDetailC
                             {project.points.map((point, pointIdx) => (
                               <li key={pointIdx} className="flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-300">
                                 <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
-                                <span className="leading-6">{point}</span>
+                                <span className="leading-6 text-justify">{renderPointWithHighlights(point)}</span>
                               </li>
                             ))}
                           </ul>

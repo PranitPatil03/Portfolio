@@ -1,4 +1,5 @@
 'use client'
+
 import { FaGithub, FaLinkedin, FaPaperclip, FaXTwitter } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import NeumorphButton from "./NeumorphButton";
@@ -22,7 +23,7 @@ export default function Reachout({
     twitter: "https://x.com/Patilpranit3112",
     github: "https://github.com/pranitpatil03",
     linkedin: "https://www.linkedin.com/in/patilpranit03/",
-    resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
+    resume: "https://shorturl.at/EMiad",
     mail: "mailto:patilpranit3112@gmail.com"
   }
 }: ReachoutProps) {

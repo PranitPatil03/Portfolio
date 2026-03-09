@@ -112,23 +112,25 @@ export default function ExperienceContent() {
           name: "AccuNode — Credit Risk Assessment Platform",
           href: "/experience/contractor?project=accunode",
           points: [
-            "Built multi-tenant SaaS platforms with Next.js 15, FastAPI, ML-powered analytics for enterprise clients.",
-            "Designed RBAC systems with JWT auth, secure data isolation, scoped access across tenants and orgs.",
-            "Developed ML inference pipelines (LightGBM, Logistic Regression) serving real-time and bulk predictions.",
-            "Architected AWS infrastructure (ECS Fargate, RDS, Redis) with CI/CD pipelines and auto-scaling.",
+            "Designed and built a multi-tenant credit risk analytics SaaS platform enabling financial institutions to evaluate company default risk using predictive machine learning models trained on financial datasets.",
+            "Developed scalable backend services using FastAPI, PostgreSQL, Redis, and SQLAlchemy exposing REST APIs for financial data ingestion, analytics workflows, and ML inference pipelines.",
+            "Implemented machine learning inference pipelines using Logistic Regression and LightGBM ensemble models generating real-time default probability scores from structured financial statement data.",
+            "Designed asynchronous data processing architecture using Redis queues and background worker services enabling batch analysis of large CSV and Excel portfolios containing hundreds of companies.",
+            "Implemented secure multi-tenant RBAC authorization using JWT authentication and tenant-aware database queries ensuring strict cross-organization data isolation.",
+            "Deployed production infrastructure on AWS with automated CI/CD pipelines via GitHub Actions enabling reliable deployments and horizontal scaling."
           ],
         },
         {
           name: "Notebook AI — AI Data Analysis Platform",
           href: "/experience/contractor?project=notebook-ai",
           points: [
-            "Currently building AI-powered data analytics and notebook-driven data science chatbot platform.",
-            "This includes an AI data science assistant with Jupyter-style notebooks, E2B-powered Python sandboxes, and pre-installed ML libraries for analytics and visualization.",
-            "Users can upload CSV/XLS files, ask questions in natural language, and get executable Python code, charts, and insights streamed back in real time.",
+            "Built an AI-powered data analysis platform allowing users to upload datasets and perform conversational analytics using natural language queries.",
+            "Integrated Vercel AI SDK with sandboxed Python execution environments enabling dynamic generation and execution of Python scripts for chart generation and data exploration.",
+            "Implemented notebook-style analysis workflows where AI generates executable Python code, runs it in isolated environments, and streams tables, charts, and insights to the frontend."
           ],
-        },
+        }
       ],
-      techStack: ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "AWS", "Docker", "Redis"],
+      techStack: ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "AWS", "Docker", "Redis", "Python", "SQLAlchemy", "LightGBM"],
       logo: <IndependentLogo />,
       slug: "contractor",
     },
@@ -137,15 +139,15 @@ export default function ExperienceContent() {
       position: "Full Stack Engineer",
       type: "Full Time",
       duration: "Sep 2024 – Aug 2025",
-      location: "Mumbai",
+      location: "Remote",
       points: [
-        "Developed an AI-powered tool to transform blogs into engaging audio podcast content.",
-        "Integrated OpenAI image generation into AgentCoach AI chatbot to enhance visual interaction.",
-        "Deployed advanced UI modules for contract analysis and intelligence in the Orchestro platform.",
-        "Architected and delivered a robust search module for the Promenade intelligence platform.",
-        "Built end-to-end frontend for city relocation tool; processed and visualized data for 30K+ US ZIP codes."
+        "Architected distributed backend pipelines using Node.js, Express.js, and PostgreSQL processing thousands of AI content jobs including summarization, document analysis, metadata extraction, and automated audio generation.",
+        "Developed an AI blog-to-podcast pipeline converting long-form blog articles into summarized scripts and synthesized audio content using TTS APIs and prompt engineering.",
+        "Built enterprise search modules enabling structured retrieval and analysis of company intelligence datasets across internal research platforms and knowledge indexing pipelines.",
+        "Optimized PostgreSQL queries and Redis caching layers for low-latency analytics; built Next.js and React dashboards visualizing relocation and demographic data across 30,000+ US ZIP codes.",
+        "Built data extraction and processing pipelines using prompt engineering and Pandas for structured Excel inputs; designed knowledge indexing pipelines for document ingestion and AI summarization workflows."
       ],
-      techStack: ["Next", "Tailwind", "TypeScript", "JavaScript", "Express", "PostgreSQL", "Docker"],
+      techStack: ["Next.js", "React", "TypeScript", "Express.js", "PostgreSQL", "Node.js", "Docker", "Redis", "Pandas"],
       logo: <LumioLogo />,
       href: "https://lumio.ai/",
     },
@@ -156,12 +158,11 @@ export default function ExperienceContent() {
       duration: "Jan 2023 – Jul 2023",
       location: "Remote",
       points: [
-        "Revamp Point-of-sale UI module using React and UIkit and Implemented the UI for dashboard interfaces",
-        "Enhanced email service with Nodemailer API for efficient and reliable information exchange.",
-        "Integrated Cashfree payment API for seamless onboarding and secure data collection like bank details",
-        "Implemented WhatsApp Cloud API for critical notifications on Leads, proposals, and Inventory requests"
+        "Designed and implemented POS dashboard interfaces using React and Tailwind CSS enabling retail operators to manage transactions, reporting workflows, and inventory with an improved and intuitive UI.",
+        "Integrated Cashfree payment gateway APIs supporting merchant onboarding, payment verification, and transaction workflows; built automated transactional email notifications using Nodemailer for system alerts.",
+        "Integrated WhatsApp Cloud API enabling real-time operational notifications and business alerts for merchants, improving communication speed across payment and onboarding workflows."
       ],
-      techStack: ["React", "Tailwind", "Node.js", "MongoDB", "Express"],
+      techStack: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express.js", "Cashfree", "WhatsApp Cloud API", "Nodemailer"],
       logo: <HubXLogo />,
       href: "https://hubx.ai/",
     },
@@ -266,7 +267,7 @@ export default function ExperienceContent() {
                             {group.points.map((point, idx) => (
                               <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
                                 <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
-                                <span className="leading-6">{point}</span>
+                                <span className="leading-6 text-justify">{point}</span>
                               </li>
                             ))}
                           </ul>
@@ -280,7 +281,7 @@ export default function ExperienceContent() {
                         {exp.points.map((point, idx) => (
                           <li key={idx} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
                             <span className="text-neutral-400 dark:text-neutral-500 leading-6">•</span>
-                            <span className="leading-6">{point}</span>
+                            <span className="leading-6 text-justify">{point}</span>
                           </li>
                         ))}
                       </ul>

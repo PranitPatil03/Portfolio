@@ -39,7 +39,7 @@ export default function NewHeroSection() {
                 twitter: "https://x.com/Patilpranit3112",
                 github: "https://github.com/pranitpatil03",
                 linkedin: "https://www.linkedin.com/in/patilpranit03/",
-                resume: "https://drive.google.com/file/d/11bkE5GpAIlIIh1rqMb0Ns0gwqJgB-3gP/view",
+                resume: "https://shorturl.at/EMiad",
                 email: "mailto:patilpranit3112@gmail.com",
               }}
             />

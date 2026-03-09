@@ -64,12 +64,14 @@ export const experiences: ExperienceDetail[] = [
         projectSlug: "accunode",
         description: "A multi-tenant SaaS platform for financial institutions to assess company default probability using ML-powered models. The platform enables real-time risk assessment and bulk portfolio analysis.",
         points: [
-          "Built multi-tenant SaaS platforms with Next.js 15, FastAPI, ML-powered analytics for enterprise clients.",
-          "Designed RBAC systems with JWT auth, secure data isolation, scoped access across tenants and orgs.",
-          "Developed ML inference pipelines (LightGBM, Logistic Regression) serving real-time and bulk predictions.",
-          "Architected AWS infrastructure (ECS Fargate, RDS, Redis) with CI/CD pipelines and auto-scaling."
+          "Designed and built a multi-tenant credit risk analytics SaaS platform enabling financial institutions to evaluate company default risk using predictive machine learning models trained on financial datasets.",
+          "Developed scalable backend services using FastAPI, PostgreSQL, Redis, and SQLAlchemy exposing REST APIs for financial data ingestion, analytics workflows, and ML inference pipelines.",
+          "Implemented machine learning inference pipelines using Logistic Regression and LightGBM ensemble models generating real-time default probability scores from structured financial statement data.",
+          "Designed asynchronous data processing architecture using Redis queues and background worker services enabling batch analysis of large CSV and Excel portfolios containing hundreds of companies.",
+          "Implemented secure multi-tenant RBAC authorization using JWT authentication and tenant-aware database queries ensuring strict cross-organization data isolation.",
+          "Deployed production infrastructure on AWS with automated CI/CD pipelines via GitHub Actions enabling reliable deployments and horizontal scaling."
         ],
-        techStack: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "AWS", "Docker", "TanStack Query", "Zustand", "Python"],
+        techStack: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "AWS", "Docker", "Python", "SQLAlchemy", "LightGBM"],
         status: "completed"
       },
       {
@@ -78,25 +80,40 @@ export const experiences: ExperienceDetail[] = [
         projectSlug: "notebook-ai",
         description: "An AI data science chatbot platform that combines conversational analytics with notebook-style Python execution for real-time insights.",
         points: [
-          "Currently building AI-powered data analytics and notebook-driven data science chatbot platform.",
-          "This includes an AI data science assistant with Jupyter-style notebooks, E2B-powered Python sandboxes, and pre-installed ML libraries for analytics and visualization.",
-          "Users can upload CSV/XLS files, ask questions in natural language, and get executable Python code, charts, and insights streamed back in real time."
+          "Built an AI-powered data analysis platform allowing users to upload datasets and perform conversational analytics using natural language queries.",
+          "Integrated Vercel AI SDK with sandboxed Python execution environments enabling dynamic generation and execution of Python scripts for chart generation and data exploration.",
+          "Implemented notebook-style analysis workflows where AI generates executable Python code, runs it in isolated environments, and streams tables, charts, and insights to the frontend."
         ],
-        techStack: [
-          "Next.js",
-          "AI SDK",
-          "Anthropic Claude",
-          "E2B Code Interpreter",
-          "PostgreSQL",
-          "Drizzle ORM",
-          "Vercel Blob",
-          "Auth.js",
-          "Tailwind CSS",
-          "shadcn/ui",
-          "CodeMirror",
-          "ProseMirror"
+        techStack: ["Next.js", "AI SDK", "Anthropic Claude", "E2B Code Interpreter", "PostgreSQL", "Drizzle ORM", "Vercel Blob", "Auth.js", "Tailwind CSS", "shadcn/ui", "CodeMirror", "ProseMirror"],
+        status: "completed"
+      },
+      {
+        title: "Lumio — AI Content Processing Platform",
+        displayName: "Lumio",
+        projectSlug: "lumio",
+        description: "Enterprise AI content processing platform handling thousands of jobs including summarization, document analysis, metadata extraction, and automated audio generation.",
+        points: [
+          "Architected distributed backend pipelines using Node.js, Express.js, and PostgreSQL processing thousands of AI content jobs including summarization, document analysis, metadata extraction, and automated audio generation.",
+          "Developed an AI blog-to-podcast pipeline converting long-form blog articles into summarized scripts and synthesized audio content using TTS APIs and prompt engineering.",
+          "Built enterprise search modules enabling structured retrieval and analysis of company intelligence datasets across internal research platforms and knowledge indexing pipelines.",
+          "Optimized PostgreSQL queries and Redis caching layers for low-latency analytics; built Next.js and React dashboards visualizing relocation and demographic data across 30,000+ US ZIP codes.",
+          "Built data extraction and processing pipelines using prompt engineering and Pandas for structured Excel inputs; designed knowledge indexing pipelines for document ingestion and AI summarization workflows."
         ],
-        status: "in-progress"
+        techStack: ["Node.js", "Express.js", "PostgreSQL", "Redis", "Next.js", "React", "Python", "Pandas", "Tailwind CSS"],
+        status: "completed"
+      },
+      {
+        title: "HubX.ai — POS & Payment Platform",
+        displayName: "HubX.ai",
+        projectSlug: "hubx-ai",
+        description: "Enterprise POS and payment platform for retail operators with transaction management, payment gateway integration, and real-time notifications.",
+        points: [
+          "Designed and implemented POS dashboard interfaces using React and Tailwind CSS enabling retail operators to manage transactions, reporting workflows, and inventory with an improved and intuitive UI.",
+          "Integrated Cashfree payment gateway APIs supporting merchant onboarding, payment verification, and transaction workflows; built automated transactional email notifications using Nodemailer for system alerts.",
+          "Integrated WhatsApp Cloud API enabling real-time operational notifications and business alerts for merchants, improving communication speed across payment and onboarding workflows."
+        ],
+        techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "Cashfree", "WhatsApp Cloud API", "Nodemailer", "PostgreSQL"],
+        status: "completed"
       },
     ],
     caseStudies: [
@@ -191,8 +208,86 @@ export const experiences: ExperienceDetail[] = [
         outcome: "Notebook AI delivers a unique chat-plus-notebook experience that lets users analyze real datasets conversationally. It makes data science faster, more accessible, and more interactive — for both technical and non-technical users — without requiring any prior coding knowledge.",
         images: [],
       },
+      {
+        projectSlug: "lumio",
+        title: "Lumio — AI Content Processing Platform",
+        tagline: "Enterprise AI content processing at scale with distributed pipelines and intelligent search.",
+        overview: "Lumio is an enterprise AI content processing platform that handles thousands of AI content jobs including summarization, document analysis, metadata extraction, and automated audio generation. Built to process large volumes of content efficiently with distributed backend pipelines.",
+        problem: "Enterprises face challenges processing large volumes of content at scale — from blog articles to documents to audio. Traditional approaches lack automation, scalability, and intelligent processing capabilities needed for modern content workflows.",
+        targetUsers: [
+          { label: "Content Teams", description: "automate content processing workflows" },
+          { label: "Marketing Teams", description: "convert blogs to podcasts automatically" },
+          { label: "Research Teams", description: "index and search company intelligence" },
+          { label: "Data Teams", description: "process and analyze large datasets" },
+        ],
+        howItWorks: [
+          { heading: "AI Content Pipeline", content: "Distributed Node.js/Express.js pipelines process thousands of jobs including summarization, document analysis, and metadata extraction." },
+          { heading: "Blog to Podcast", content: "AI converts long-form blog articles into summarized scripts and synthesized audio using TTS APIs and prompt engineering." },
+          { heading: "Enterprise Search", content: "Structured retrieval and analysis of company intelligence datasets across internal research platforms." },
+          { heading: "Analytics Dashboards", content: "Next.js and React dashboards visualize relocation and demographic data across 30,000+ US ZIP codes." },
+        ],
+        architecture: [
+          { heading: "Backend API (Node.js/Express)", content: "Distributed pipelines handling thousands of AI content jobs with PostgreSQL for persistence." },
+          { heading: "Data Processing", content: "Pandas for structured Excel inputs, prompt engineering for AI workflows." },
+          { heading: "Cache Layer", content: "Redis for low-latency analytics and query optimization." },
+          { heading: "Frontend", content: "Next.js and React dashboards for data visualization." },
+        ],
+        techStack: [
+          { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+          { category: "Backend", items: ["Node.js", "Express.js", "PostgreSQL", "Redis"] },
+          { category: "AI & Data", items: ["Python", "Pandas", "TTS APIs", "Prompt Engineering"] },
+        ],
+        role: [
+          "Architected distributed backend pipelines using Node.js, Express.js, and PostgreSQL",
+          "Developed AI blog-to-podcast pipeline using TTS APIs and prompt engineering",
+          "Built enterprise search modules for company intelligence datasets",
+          "Optimized PostgreSQL queries and Redis caching for low-latency analytics",
+          "Built Next.js/React dashboards for 30,000+ US ZIP codes data visualization",
+          "Designed data extraction pipelines with Pandas and knowledge indexing workflows",
+        ],
+        outcome: "Lumio processes thousands of AI content jobs efficiently with distributed pipelines, enabling automated content transformation from blogs to podcasts, enterprise search capabilities, and real-time analytics dashboards.",
+        images: [],
+      },
+      {
+        projectSlug: "hubx-ai",
+        title: "HubX.ai — POS & Payment Platform",
+        tagline: "Enterprise POS and payment solutions for retail operators with seamless integrations.",
+        overview: "HubX.ai is an enterprise POS and payment platform designed for retail operators. It enables transaction management, payment gateway integration, and real-time notifications via WhatsApp, providing a complete solution for modern retail operations.",
+        problem: "Retail operators need intuitive POS systems with seamless payment processing and real-time notifications. Traditional solutions lack modern UI, integrated payment gateways, and efficient communication channels.",
+        targetUsers: [
+          { label: "Retail Operators", description: "manage transactions and inventory" },
+          { label: "Merchants", description: "process payments securely" },
+          { label: "Business Owners", description: "receive real-time operational alerts" },
+        ],
+        howItWorks: [
+          { heading: "POS Dashboard", content: "React and Tailwind CSS interfaces for transaction management, reporting, and inventory control." },
+          { heading: "Payment Gateway", content: "Cashfree integration for merchant onboarding, payment verification, and transaction workflows." },
+          { heading: "Notifications", content: "WhatsApp Cloud API for real-time operational alerts on leads, proposals, and inventory." },
+          { heading: "Email Alerts", content: "Nodemailer-powered transactional email notifications for system alerts." },
+        ],
+        architecture: [
+          { heading: "Frontend", content: "React and Tailwind CSS for intuitive POS dashboard interfaces." },
+          { heading: "Backend", content: "Node.js/Express.js APIs for payment and notification services." },
+          { heading: "Payment Integration", content: "Cashfree payment gateway for secure transactions." },
+          { heading: "Communication", content: "WhatsApp Cloud API and Nodemailer for notifications." },
+        ],
+        techStack: [
+          { category: "Frontend", items: ["React", "Tailwind CSS", "UIkit"] },
+          { category: "Backend", items: ["Node.js", "Express.js", "MongoDB"] },
+          { category: "Integrations", items: ["Cashfree", "WhatsApp Cloud API", "Nodemailer"] },
+        ],
+        role: [
+          "Designed and implemented POS dashboard interfaces using React and Tailwind CSS",
+          "Integrated Cashfree payment gateway APIs for merchant onboarding and transactions",
+          "Built automated transactional email notifications using Nodemailer",
+          "Integrated WhatsApp Cloud API for real-time operational notifications",
+          "Improved UI for transaction management, reporting, and inventory workflows",
+        ],
+        outcome: "HubX.ai provides retail operators with a modern POS system featuring intuitive dashboards, seamless payment processing via Cashfree, and real-time WhatsApp notifications for improved operational communication.",
+        images: [],
+      },
     ],
-    techStack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "AWS", "Docker", "Redis", "TanStack Query", "Zustand"]
+    techStack: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "AWS", "Docker", "Redis", "SQLAlchemy", "LightGBM", "Node.js", "Express.js", "E2B", "Claude", "Drizzle ORM", "Cashfree", "WhatsApp API", "Pandas"]
   }
 ];
 
